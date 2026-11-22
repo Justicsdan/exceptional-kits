@@ -160,7 +160,78 @@ const WORLD_CLASS_SLIDES = [
   },
 ];
 
+
+const MOTION_HERO_SLIDES = [
+  {
+    badge: "Tactical & Patrol",
+    kicker: "Workshop Lookbook",
+    lead: "Security",
+    accent: "Uniforms",
+    tail: "& Tactical Kits",
+    summary:
+      "Built for daily field wear with durable patrol sets, tactical vests, reinforced belts, and sharp custom cresting crafted straight from our workshop.",
+    image: "/images/tactical-vest.jpeg",
+    caption: "Field Tested Duty Sets & Tactical Vests",
+    ctaHref: "/catalog",
+    ctaLabel: "Explore Catalog",
+  },
+  {
+    badge: "Duty Shirts",
+    kicker: "Precision Tailoring",
+    lead: "Sharp",
+    accent: "Duty Shirts",
+    tail: "& Tailored Wear",
+    summary:
+      "Clean structured cuts, reinforced seams, and consistent sizing that keep security personnel, corporate teams, and staff looking authoritative every shift.",
+    image: "/images/duty-shirt.png",
+    caption: "Crisp Duty Shirts & Structured Fit",
+    ctaHref: "/production",
+    ctaLabel: "Workshop & QC",
+  },
+  {
+    badge: "Custom Cresting",
+    kicker: "Brand Identity",
+    lead: "Custom",
+    accent: "Cresting",
+    tail: "& Branded Caps",
+    summary:
+      "Put your organization identity front and center with clean embroidery, woven crests, and branded caps tailored to your exact brand colors.",
+    image: "/images/branded-cap.png",
+    caption: "Embroidery, Badges & Branded Headwear",
+    ctaHref: "/sectors",
+    ctaLabel: "View Sectors",
+  },
+  {
+    badge: "Batch Supply",
+    kicker: "Institutional Orders",
+    lead: "Tailored",
+    accent: "Batch Runs",
+    tail: "Ready to Issue",
+    summary:
+      "From new security intakes and estates to schools and enterprises, order full batches with saved size records for effortless reorders.",
+    image: "/images/batch-pack.jpeg",
+    caption: "Full Batch Production & Saved Size Charts",
+    ctaHref: "/quote",
+    ctaLabel: "Request a Quote",
+  },
+];
+
 export default function HomePage() {
+  const [slideIdx, setSlideIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setSlideIdx((prev) => (prev + 1) % MOTION_HERO_SLIDES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  const activeHero = MOTION_HERO_SLIDES[slideIdx] ?? MOTION_HERO_SLIDES[0];
+  const goPrev = () => setSlideIdx((prev) => (prev - 1 + MOTION_HERO_SLIDES.length) % MOTION_HERO_SLIDES.length);
+  const goNext = () => setSlideIdx((prev) => (prev + 1) % MOTION_HERO_SLIDES.length);
+
   const [heroIdx, setHeroIdx] = useState(0);
   const [heroPaused, setHeroPaused] = useState(false);
 
@@ -258,95 +329,134 @@ export default function HomePage() {
       <main className="flex-1">
 
       <section
-        aria-label="Hero Carousel"
-        onMouseEnter={() => setHeroPaused(true)}
-        onMouseLeave={() => setHeroPaused(false)}
-        className="w-full bg-white border-b border-slate-200 py-12 sm:py-16 lg:py-20"
+        aria-label="Motion Hero Showcase"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        className="w-full bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-10 sm:py-14 lg:py-16"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          <div className="lg:col-span-6 space-y-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-6 space-y-5">
             <div className="flex flex-wrap items-center gap-2">
-              {WORLD_CLASS_SLIDES.map((item, idx) => {
-                const active = idx === heroIdx;
+              {MOTION_HERO_SLIDES.map((item, idx) => {
+                const isCurrent = idx === slideIdx;
                 return (
                   <button
-                    key={item.tabLabel}
+                    key={item.badge}
                     type="button"
-                    onClick={() => setHeroIdx(idx)}
-                    className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-all cursor-pointer ${
-                      active
-                        ? "bg-[#0B1F4C] text-white shadow-sm"
+                    onClick={() => setSlideIdx(idx)}
+                    className={`rounded-full px-3.5 py-1.5 text-sm font-semibold transition-all cursor-pointer ${
+                      isCurrent
+                        ? "bg-[#0B1F4C] text-white shadow-sm scale-[1.02]"
                         : "bg-[#EEF4FC] text-[#134E9E] border border-[#BFD3EE] hover:bg-[#DCE8FA]"
                     }`}
                   >
-                    {item.tabLabel}
+                    {item.badge}
                   </button>
                 );
               })}
             </div>
 
             <p className="text-sm font-bold uppercase tracking-wider text-[#134E9E]">
-              {currentHero.kicker}
+              {activeHero.kicker}
             </p>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B1F4C] leading-[1.06]">
-              {currentHero.lead}{" "}
+              {activeHero.lead}{" "}
               <span className="font-serif italic font-normal text-[#134E9E]">
-                {currentHero.accent}
+                {activeHero.accent}
               </span>{" "}
-              <span className="block mt-1">{currentHero.tail}</span>
+              <span className="block mt-1">{activeHero.tail}</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl">
-              {currentHero.summary}
+              {activeHero.summary}
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-1">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href={currentHero.ctaHref}
+                href={activeHero.ctaHref}
                 className="inline-flex items-center justify-center rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] text-white font-semibold text-base px-6 py-3.5 transition-colors shadow-sm"
               >
-                {currentHero.ctaLabel}
+                {activeHero.ctaLabel}
               </a>
               <a
-                href="/sectors"
+                href="/quote"
                 className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white hover:border-[#0B1F4C] text-[#0B1F4C] font-semibold text-base px-6 py-3.5 transition-colors"
               >
-                Explore Sectors
+                Get Custom Quote
               </a>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
-              {WORLD_CLASS_SLIDES.map((item, idx) => (
+            <div className="flex items-center justify-between max-w-md pt-3">
+              <div className="flex items-center gap-2">
+                {MOTION_HERO_SLIDES.map((item, idx) => (
+                  <button
+                    key={item.badge}
+                    type="button"
+                    aria-label={`Go to slide ${idx + 1}: ${item.badge}`}
+                    onClick={() => setSlideIdx(idx)}
+                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      idx === slideIdx ? "w-10 bg-[#0B1F4C]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                    }`}
+                  />
+                ))}
+              </div>
+              <div className="flex items-center gap-2">
                 <button
-                  key={item.kicker}
                   type="button"
-                  aria-label={`Slide ${idx + 1}: ${item.tabLabel}`}
-                  onClick={() => setHeroIdx(idx)}
-                  className={`h-2.5 rounded-full transition-all cursor-pointer ${
-                    idx === heroIdx ? "w-10 bg-[#0B1F4C]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
-                  }`}
-                />
-              ))}
+                  onClick={goPrev}
+                  aria-label="Previous slide"
+                  className="h-9 w-9 rounded-full border border-slate-300 bg-white hover:bg-[#EEF4FC] text-[#0B1F4C] font-bold flex items-center justify-center transition-colors cursor-pointer"
+                >
+                  &#8592;
+                </button>
+                <button
+                  type="button"
+                  onClick={goNext}
+                  aria-label="Next slide"
+                  className="h-9 w-9 rounded-full border border-slate-300 bg-white hover:bg-[#EEF4FC] text-[#0B1F4C] font-bold flex items-center justify-center transition-colors cursor-pointer"
+                >
+                  &#8594;
+                </button>
+              </div>
             </div>
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm h-[360px] sm:h-[440px] lg:h-[480px]">
-              {WORLD_CLASS_SLIDES.map((item, idx) => (
-                <img
-                  key={item.tabLabel}
-                  src={item.image}
-                  alt={`${item.lead} ${item.accent} ${item.tail}`}
-                  className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${
-                    idx === heroIdx ? "opacity-100" : "opacity-0 pointer-events-none"
-                  }`}
-                />
-              ))}
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md h-[380px] sm:h-[450px] lg:h-[500px]">
+              {MOTION_HERO_SLIDES.map((item, idx) => {
+                const current = idx === slideIdx;
+                return (
+                  <div
+                    key={item.badge}
+                    className={`absolute inset-0 transition-all duration-700 ease-out ${
+                      current
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-105 pointer-events-none"
+                    }`}
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.caption}
+                      className={`w-full h-full object-cover object-center ${
+                        current ? "ekw-motion-photo" : ""
+                      }`}
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B1F4C]/85 via-[#0B1F4C]/35 to-transparent p-5">
+                      <p className="text-sm font-semibold tracking-wide text-white">
+                        {item.caption}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
+
+
+      
 
 
       

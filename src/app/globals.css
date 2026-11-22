@@ -57,3 +57,12 @@
 .animate-slow-zoom {
   animation: slowZoom 16s ease-in-out infinite;
 }
+
+@keyframes ekwKenBurns {
+  0% { transform: scale(1) translate3d(0, 0, 0); }
+  100% { transform: scale(1.09) translate3d(-1.5%, -1%, 0); }
+}
+.ekw-motion-photo {
+  animation: ekwKenBurns 6.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
