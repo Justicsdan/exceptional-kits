@@ -1,142 +1,137 @@
-import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { PRODUCTION_STAGES } from "@/data/siteData";
 
-const STAGE_IMAGES = [
-  "/images/img-13.jpeg",
-  "/images/img-07.jpeg",
-  "/images/workshop-floor.jpeg",
-  "/images/img-06.jpeg",
-  "/images/img-16.jpeg",
-];
-
-const SIZE_CHART = [
-  { size: "S", chest: '36" – 38"', waist: '28" – 30"', shirtLen: '28"', trouserLen: '40"' },
-  { size: "M", chest: '38" – 40"', waist: '31" – 33"', shirtLen: '29"', trouserLen: '41"' },
-  { size: "L", chest: '41" – 43"', waist: '34" – 36"', shirtLen: '30"', trouserLen: '42"' },
-  { size: "XL", chest: '44" – 46"', waist: '37" – 39"', shirtLen: '31"', trouserLen: '43"' },
-  { size: "2XL", chest: '47" – 49"', waist: '40" – 42"', shirtLen: '32"', trouserLen: '44"' },
-  { size: "3XL", chest: '50" – 52"', waist: '43" – 46"', shirtLen: '33"', trouserLen: '44"' },
+const QC_PILLARS = [
+  {
+    key: "seam",
+    title: "Seam & Stress Check",
+    caption: "Reinforced stitching & fabric check",
+    image: "/images/duty-shirt.jpeg",
+  },
+  {
+    key: "crest",
+    title: "Crest & Badge Finish",
+    caption: "Crisp embroidery & emblem alignment",
+    image: "/images/branded-cap.jpeg",
+  },
+  {
+    key: "pack",
+    title: "Batch Sizing & Pack",
+    caption: "Sorted, pressed & ready for dispatch",
+    image: "/images/field-belt.jpeg",
+  },
 ];
 
 export default function ProductionPage() {
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen flex flex-col bg-white text-slate-900">
       <Navbar />
 
-      {/* Lead Image Banner */}
-      <section className="border-b border-slate-200 bg-slate-50/70 py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">
-                Workshop & Quality Control
-              </p>
-              <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950">
-                Precision Stitching & Saved Sizes
-              </h1>
-              <p className="text-base sm:text-lg text-slate-700">
-                In-house workshop stations, shade-locked fabric, and archived size charts for clean repeat orders.
-              </p>
-              <div className="pt-1">
-                <Link
-                  href="/quote"
-                  className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 text-sm font-bold text-white hover:bg-emerald-700 transition"
-                >
-                  <span>Start Order Quote</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="lg:col-span-6">
-              <div className="relative h-80 sm:h-96 w-full overflow-hidden rounded-3xl border border-slate-200 bg-slate-950 shadow-xl">
-                <img
-                  src="/images/workshop-floor.jpeg"
-                  alt="Exceptional Kits And Wears sewing floor"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-xs font-semibold text-emerald-300">Workshop Proof</p>
-                  <p className="text-xl font-extrabold text-white">Industrial Sewing & QC Floor</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5-Stage Production Grid */}
-      <section className="py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 mb-10">
-            5-Stage Workshop Process
-          </h2>
-
-          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-            {PRODUCTION_STAGES.map((stage, idx) => (
-              <div
-                key={stage.step}
-                className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300"
+      <main className="flex-1">
+        <section className="relative bg-slate-950 text-white py-24 lg:py-32 overflow-hidden">
+          <img
+            src="/images/workshop-view.jpeg"
+            alt="Exceptional Kits production floor"
+            className="absolute inset-0 h-full w-full object-cover opacity-35"
+          />
+          <div className="relative mx-auto max-w-7xl px-6">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-300">
+              In-House Workshop
+            </p>
+            <h1 className="mt-4 text-5xl sm:text-7xl font-extrabold leading-[0.95] max-w-4xl">
+              Workshop{" "}
+              <span className="font-editorial text-emerald-300 text-6xl sm:text-8xl">
+                Craft
+              </span>{" "}
+              &amp; Quality Control
+            </h1>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/quote"
+                className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white hover:bg-emerald-500 transition-colors"
               >
-                <div className="relative h-60 w-full overflow-hidden bg-slate-950">
-                  <img
-                    src={STAGE_IMAGES[idx % STAGE_IMAGES.length]}
-                    alt={stage.title}
-                    className="h-full w-full object-cover group-hover:scale-105 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
-                  <span className="absolute top-4 left-4 rounded-full bg-white/95 px-3 py-1 text-xs font-extrabold text-slate-950">
-                    Step {stage.step}
-                  </span>
-                </div>
-                <div className="p-6 space-y-2">
-                  <h3 className="text-lg font-extrabold text-slate-950">{stage.title}</h3>
-                  <p className="text-sm text-slate-700">{stage.detail}</p>
-                </div>
-              </div>
-            ))}
+                <span>Start Batch Run</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/catalog"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/20 transition-colors"
+              >
+                <span>View Catalog</span>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Saved Size Matrix */}
-      <section className="border-t border-slate-200 bg-slate-50/70 py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 mb-8">
-            Standard Guard Size Matrix
-          </h2>
+        <section className="py-24 lg:py-36 bg-white">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="border-b border-slate-200 pb-8 mb-14">
+              <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
+                Production{" "}
+                <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
+                  Stages
+                </span>
+              </h2>
+            </div>
 
-          <div className="overflow-x-auto rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <table className="w-full text-left text-sm">
-              <thead>
-                <tr className="border-b border-slate-200 text-xs uppercase text-slate-600">
-                  <th className="py-3.5 pr-4">Size</th>
-                  <th className="py-3.5 px-4">Chest</th>
-                  <th className="py-3.5 px-4">Waist</th>
-                  <th className="py-3.5 px-4">Shirt Length</th>
-                  <th className="py-3.5 pl-4">Trouser Outseam</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-200 text-slate-800 tabular-nums">
-                {SIZE_CHART.map((row) => (
-                  <tr key={row.size} className="hover:bg-slate-50">
-                    <td className="py-4 pr-4 font-extrabold text-emerald-700">{row.size}</td>
-                    <td className="py-4 px-4">{row.chest}</td>
-                    <td className="py-4 px-4">{row.waist}</td>
-                    <td className="py-4 px-4">{row.shirtLen}</td>
-                    <td className="py-4 pl-4">{row.trouserLen}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="divide-y divide-slate-200 border-y border-slate-200">
+              {PRODUCTION_STAGES.map((stage) => (
+                <div
+                  key={stage.title}
+                  className="py-9 lg:py-12 grid gap-4 lg:grid-cols-12 lg:items-center"
+                >
+                  <div className="lg:col-span-5">
+                    <h3 className="text-2xl font-bold text-slate-950">
+                      {stage.title}
+                    </h3>
+                  </div>
+                  <div className="lg:col-span-7">
+                    <p className="text-sm sm:text-base text-slate-600">
+                      {stage.detail}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className="border-t border-slate-200 bg-slate-50/70 py-24 lg:py-36">
+          <div className="mx-auto max-w-7xl px-6">
+            <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950 mb-14">
+              Quality{" "}
+              <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
+                Inspection
+              </span>
+            </h2>
+
+            <div className="grid gap-10 md:grid-cols-3">
+              {QC_PILLARS.map((pillar) => (
+                <article key={pillar.key} className="group space-y-4">
+                  <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xs group-hover:shadow-xl transition-all duration-300">
+                    <img
+                      src={pillar.image}
+                      alt={pillar.title}
+                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="px-1">
+                    <p className="text-xs font-bold uppercase tracking-wider text-emerald-700">
+                      {pillar.caption}
+                    </p>
+                    <h3 className="mt-0.5 text-xl font-bold text-slate-950">
+                      {pillar.title}
+                    </h3>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
 
       <Footer />
     </div>

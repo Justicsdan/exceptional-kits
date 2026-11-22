@@ -1,28 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Exceptional Kits And Wears | Uniforms, Tactical Vests & Security Kits",
+  icons: { icon: "/images/logo.png?v=3", apple: "/images/logo.png?v=3" },
+  title: "Exceptional Kits And Wears",
   description:
-    "Durable security uniforms, duty trousers, branded caps, tactical vests, pads, and kits backed by saved company size charts and single-piece replacements.",
-  icons: {
-    icon: [
-      { url: "/images/logo.png?v=2", type: "image/png" },
-    ],
-    shortcut: "/images/logo.png?v=2",
-    apple: "/images/logo.png?v=2",
-  },
+    "Direct workshop production of security uniforms, tactical vests, branded caps, and field accessories.",
 };
 
 export default function RootLayout({
@@ -31,10 +14,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className="h-full antialiased">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-white text-slate-900">
         {children}
       </body>
     </html>

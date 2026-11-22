@@ -1,91 +1,91 @@
-import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SECTORS } from "@/data/siteData";
 
-const SECTOR_PHOTOS = [
-  "/images/img-16.jpeg",
-  "/images/img-17.jpeg",
-  "/images/img-18.jpeg",
-  "/images/office-seating.jpeg",
+const SECTOR_VISUALS = [
+  "/images/academy-wear.jpeg",
+  "/images/batch-pack.jpeg",
+  "/images/branded-cap.png",
+  "/images/cap-line.jpeg",
 ];
 
 export default function SectorsPage() {
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen flex flex-col bg-white text-slate-900">
       <Navbar />
 
-      {/* Lead Image Banner */}
-      <section className="border-b border-slate-200 bg-slate-50/70 py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">
-                Sectors Served
-              </p>
-              <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950">
-                Outfitting Built for Every Sector
-              </h1>
-              <p className="text-base sm:text-lg text-slate-700">
-                Tailored uniform and kit programs for private security agencies, estates, corporate spaces, and event teams.
-              </p>
-            </div>
-
-            <div className="lg:col-span-6">
-              <div className="relative h-80 sm:h-96 w-full overflow-hidden rounded-3xl border border-slate-200 bg-slate-950 shadow-xl">
-                <img
-                  src="/images/img-18.jpeg"
-                  alt="Patrol uniform outfitting across sectors"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-xs font-semibold text-emerald-300">Institutional Outfitting</p>
-                  <p className="text-xl font-extrabold text-white">Guard Forces, Estates & Facilities</p>
-                </div>
-              </div>
-            </div>
+      <main className="flex-1">
+        <section className="border-b border-slate-200 bg-slate-50/70 py-16 lg:py-24">
+          <div className="mx-auto max-w-4xl px-6 text-center space-y-4">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-700">
+              Client Sectors
+            </p>
+            <h1 className="text-5xl sm:text-7xl font-extrabold text-slate-950 leading-[0.95]">
+              Sectors We{" "}
+              <span className="font-editorial text-emerald-700 text-6xl sm:text-8xl">
+                Outfit
+              </span>
+            </h1>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Sector Cards */}
-      <section className="py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 grid gap-8 md:grid-cols-2">
-          {SECTORS.map((sector, idx) => (
-            <div
-              key={sector.title}
-              className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300"
-            >
-              <div className="relative h-72 w-full overflow-hidden bg-slate-950">
-                <img
-                  src={SECTOR_PHOTOS[idx % SECTOR_PHOTOS.length]}
-                  alt={sector.title}
-                  className="h-full w-full object-cover group-hover:scale-105 transition duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <p className="text-xs font-semibold text-emerald-300">{sector.recommendedKit}</p>
-                  <h2 className="mt-1 text-2xl font-extrabold text-white">{sector.title}</h2>
-                </div>
-              </div>
+        <section className="py-24 lg:py-36">
+          <div className="mx-auto max-w-7xl px-6 space-y-28 lg:space-y-40">
+            {SECTORS.map((sector, idx) => {
+              const imageSrc = SECTOR_VISUALS[idx % SECTOR_VISUALS.length];
+              const isReversed = idx % 2 === 1;
 
-              <div className="p-6 sm:p-7 flex items-center justify-between gap-4">
-                <p className="text-sm text-slate-700">{sector.solution}</p>
-                <Link
-                  href="/quote"
-                  className="shrink-0 inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 px-4 py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-emerald-700 transition"
+              return (
+                <div
+                  key={sector.title}
+                  className="grid gap-12 lg:grid-cols-12 lg:items-center"
                 >
-                  <span>Quote</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+                  <div
+                    className={`lg:col-span-7 ${
+                      isReversed ? "lg:order-2" : "lg:order-1"
+                    }`}
+                  >
+                    <div className="aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200 bg-slate-950 shadow-md">
+                      <img
+                        src={imageSrc}
+                        alt={sector.title}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    className={`lg:col-span-5 space-y-5 ${
+                      isReversed ? "lg:order-1" : "lg:order-2"
+                    }`}
+                  >
+                    <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-950 leading-tight">
+                      {sector.title}
+                    </h2>
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                      {sector.solution}
+                    </p>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-800">
+                      {sector.recommendedKit}
+                    </p>
+                    <div className="pt-2">
+                      <Link
+                        href="/quote"
+                        className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-700 transition-colors"
+                      >
+                        <span>Request Quote</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      </main>
 
       <Footer />
     </div>

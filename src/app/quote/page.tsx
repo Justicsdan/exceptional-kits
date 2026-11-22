@@ -1,109 +1,108 @@
 "use client";
 
-import React, { useState } from "react";
-import { Calculator, Printer, ShieldCheck } from "lucide-react";
+import { useState } from "react";
+import { CheckCircle2, PhoneCall, Send } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { COMPANY_INFO } from "@/data/siteData";
+
+const KIT_OPTIONS = [
+  "Complete Security Uniform Sets",
+  "Tactical Vests & Utility Gear",
+  "Branded Caps & Headwear",
+  "Duty Belts, Lanyards & Accessories",
+  "School & Academy Uniforms",
+  "Corporate & Facility Wear",
+];
 
 export default function QuotePage() {
-  const [orgName, setOrgName] = useState("");
+  const [organization, setOrganization] = useState("");
   const [contactName, setContactName] = useState("");
   const [phone, setPhone] = useState("");
-  const [deliveryState, setDeliveryState] = useState("Nationwide Dispatch");
-  const [completeSets, setCompleteSets] = useState<number>(10);
-  const [extraShirts, setExtraShirts] = useState<number>(0);
-  const [extraTrousers, setExtraTrousers] = useState<number>(0);
-  const [tacticalVests, setTacticalVests] = useState<number>(0);
-  const [brandedCaps, setBrandedCaps] = useState<number>(10);
-  const [sizeNotes, setSizeNotes] = useState(
-    "Specify sizes (S–3XL), uniform color, tactical gear, or agency branding requirements"
+  const [quantity, setQuantity] = useState("25–50 Sets");
+  const [selectedLines, setSelectedLines] = useState<string[]>([
+    "Complete Security Uniform Sets",
+  ]);
+  const [notes, setNotes] = useState("");
+
+  function toggleLine(line: string) {
+    setSelectedLines((prev) =>
+      prev.includes(line) ? prev.filter((item) => item !== line) : [...prev, line]
+    );
+  }
+
+  const whatsappSummary = encodeURIComponent(
+    `Hello Exceptional Kits And Wears, I would like a quote.\n` +
+      `Organization: ${organization || "Not specified"}\n` +
+      `Contact: ${contactName || "Not specified"} (${phone || "No phone"})\n` +
+      `Items: ${selectedLines.join(", ") || "General Uniform Inquiry"}\n` +
+      `Estimated Quantity: ${quantity}\n` +
+      `Notes: ${notes || "None"}`
   );
 
-  const totalUnits =
-    completeSets + extraShirts + extraTrousers + tacticalVests + brandedCaps;
-
-  const whatsappMessage = [
-    `*QUOTE REQUEST — ${COMPANY_INFO.name.toUpperCase()}*`,
-    `Organization: ${orgName || "Not specified"}`,
-    `Contact Person: ${contactName || "Not specified"}`,
-    `Phone: ${phone || "Not specified"}`,
-    `Delivery Location: ${deliveryState}`,
-    `--------------------------------`,
-    `• Complete Uniform Sets: ${completeSets}`,
-    `• Single Replacement Shirts: ${extraShirts}`,
-    `• Single Replacement Trousers: ${extraTrousers}`,
-    `• Tactical Duty Vests: ${tacticalVests}`,
-    `• Branded Security Caps / Gear: ${brandedCaps}`,
-    `Total Requested Units: ${totalUnits}`,
-    `--------------------------------`,
-    `Specs & Size Notes: ${sizeNotes}`,
-  ].join("\n");
-
-  const whatsappUrl = `https://wa.me/${COMPANY_INFO.phoneRaw}?text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
-
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen flex flex-col bg-slate-50/60 text-slate-900">
       <Navbar />
 
-      <section className="border-b border-slate-200 bg-slate-50/70 py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-6 space-y-5">
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1 text-xs font-semibold text-emerald-700">
-                <Calculator className="h-3.5 w-3.5" />
-                <span>Order & Reorder Request</span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950">
-                Request a Custom Uniform & Kit Quote
-              </h1>
-              <p className="text-base sm:text-lg text-slate-700">
-                Enter your item counts, size details, and branding notes to send a structured request directly to our workshop.
-              </p>
-            </div>
-            <div className="lg:col-span-6">
-              <div className="relative h-72 sm:h-80 w-full overflow-hidden rounded-3xl border border-slate-200 bg-slate-950 shadow-xl">
-                <img
-                  src="/images/img-06.jpeg"
-                  alt="Custom agency crest and kit branding"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <p className="text-xs font-semibold text-emerald-300">Direct Workshop Request</p>
-                  <p className="text-xl font-extrabold text-white">Tailored Sets, Vests & Branding</p>
+      <main className="flex-1 py-16 lg:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-12 max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-700">
+              Direct Workshop Desk
+            </p>
+            <h1 className="mt-3 text-5xl sm:text-6xl font-extrabold text-slate-950 leading-[0.96]">
+              Request a{" "}
+              <span className="font-editorial text-emerald-700 text-6xl sm:text-7xl">
+                Custom
+              </span>{" "}
+              Batch Quote
+            </h1>
+          </div>
+
+          <div className="grid gap-10 lg:grid-cols-12 items-start">
+            {/* Left Form Workspace */}
+            <div className="lg:col-span-7 rounded-3xl border border-slate-200 bg-white p-7 sm:p-10 shadow-xs space-y-8">
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-[0.16em] text-slate-500 mb-3">
+                  1. Select Product Lines
+                </label>
+                <div className="flex flex-wrap gap-2.5">
+                  {KIT_OPTIONS.map((option) => {
+                    const active = selectedLines.includes(option);
+                    return (
+                      <button
+                        key={option}
+                        type="button"
+                        onClick={() => toggleLine(option)}
+                        className={`rounded-full px-4 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                          active
+                            ? "bg-emerald-600 text-white"
+                            : "border border-slate-200 bg-slate-50 text-slate-700 hover:border-emerald-500"
+                        }`}
+                      >
+                        {option}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-7 space-y-6 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xs">
-              <h2 className="text-xl font-extrabold text-slate-950">
-                1. Organization & Contact Details
-              </h2>
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Organization / Estate / Firm
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
+                    Company / School / Agency
                   </label>
                   <input
                     type="text"
-                    value={orgName}
-                    onChange={(e) => setOrgName(e.target.value)}
-                    placeholder="Organization name"
-                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-950 focus:border-emerald-600 focus:outline-none"
+                    value={organization}
+                    onChange={(e) => setOrganization(e.target.value)}
+                    placeholder="e.g. Avid Security Services"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
                   />
                 </div>
+
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
                     Contact Person
                   </label>
                   <input
@@ -111,185 +110,126 @@ export default function QuotePage() {
                     value={contactName}
                     onChange={(e) => setContactName(e.target.value)}
                     placeholder="Your name"
-                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-950 focus:border-emerald-600 focus:outline-none"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
                   />
                 </div>
+
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
                     Phone / WhatsApp Number
                   </label>
                   <input
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="080X XXX XXXX"
-                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-950 focus:border-emerald-600 focus:outline-none"
+                    placeholder="0803 000 0000"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
                   />
                 </div>
+
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Delivery Location
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
+                    Estimated Quantity
                   </label>
-                  <input
-                    type="text"
-                    value={deliveryState}
-                    onChange={(e) => setDeliveryState(e.target.value)}
-                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-950 focus:border-emerald-600 focus:outline-none"
-                  />
-                </div>
-              </div>
-
-              <h2 className="text-xl font-extrabold text-slate-950 pt-4">
-                2. Requested Quantities
-              </h2>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-                  <label className="block text-xs font-extrabold text-slate-950">
-                    Complete Uniform Sets
-                  </label>
-                  <input
-                    type="number"
-                    min={0}
-                    value={completeSets}
-                    onChange={(e) => setCompleteSets(Math.max(0, Number(e.target.value)))}
-                    className="mt-2.5 w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm font-bold text-slate-950"
-                  />
-                </div>
-
-                <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-                  <label className="block text-xs font-extrabold text-slate-950">
-                    Single Replacement Shirts
-                  </label>
-                  <input
-                    type="number"
-                    min={0}
-                    value={extraShirts}
-                    onChange={(e) => setExtraShirts(Math.max(0, Number(e.target.value)))}
-                    className="mt-2.5 w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm font-bold text-slate-950"
-                  />
-                </div>
-
-                <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-                  <label className="block text-xs font-extrabold text-slate-950">
-                    Single Replacement Trousers
-                  </label>
-                  <input
-                    type="number"
-                    min={0}
-                    value={extraTrousers}
-                    onChange={(e) => setExtraTrousers(Math.max(0, Number(e.target.value)))}
-                    className="mt-2.5 w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm font-bold text-slate-950"
-                  />
-                </div>
-
-                <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-                  <label className="block text-xs font-extrabold text-slate-950">
-                    Tactical Duty Vests
-                  </label>
-                  <input
-                    type="number"
-                    min={0}
-                    value={tacticalVests}
-                    onChange={(e) => setTacticalVests(Math.max(0, Number(e.target.value)))}
-                    className="mt-2.5 w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm font-bold text-slate-950"
-                  />
-                </div>
-
-                <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 sm:col-span-2">
-                  <label className="block text-xs font-extrabold text-slate-950">
-                    Branded Caps & Duty Accessories
-                  </label>
-                  <input
-                    type="number"
-                    min={0}
-                    value={brandedCaps}
-                    onChange={(e) => setBrandedCaps(Math.max(0, Number(e.target.value)))}
-                    className="mt-2.5 w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm font-bold text-slate-950"
-                  />
+                  <select
+                    value={quantity}
+                    onChange={(e) => setQuantity(e.target.value)}
+                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
+                  >
+                    <option>10–24 Sets (Starter Batch)</option>
+                    <option>25–50 Sets</option>
+                    <option>51–150 Sets</option>
+                    <option>150+ Sets (Institutional Rollout)</option>
+                    <option>Single / Restock Pieces</option>
+                  </select>
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                  Sizes, Fabric Color & Branding Notes
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
+                  Branding, Fabric &amp; Sizing Notes
                 </label>
                 <textarea
-                  rows={3}
-                  value={sizeNotes}
-                  onChange={(e) => setSizeNotes(e.target.value)}
-                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-950 focus:border-emerald-600 focus:outline-none"
+                  rows={4}
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  placeholder="Share preferred colors, chest/sleeve embroidery, reflective strips, or delivery timeline..."
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
                 />
               </div>
-            </div>
 
-            <div className="lg:col-span-5">
-              <div className="sticky top-28 rounded-3xl border border-slate-200 bg-slate-50/80 p-7 shadow-sm space-y-6">
-                <div className="flex items-center justify-between border-b border-slate-200 pb-4">
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wider text-emerald-700">
-                      Request Sheet
-                    </p>
-                    <h3 className="text-xl font-extrabold text-slate-950 mt-0.5">
-                      Order Specification Summary
-                    </h3>
-                  </div>
-                  <ShieldCheck className="h-7 w-7 text-emerald-700" />
-                </div>
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <a
+                  href={`https://wa.me/2348032392875?text=${whatsappSummary}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white hover:bg-emerald-700 transition-colors"
+                >
+                  <WhatsAppIcon className="h-4 w-4" />
+                  <span>Send Quote via WhatsApp</span>
+                </a>
 
-                <div className="space-y-3 text-sm tabular-nums">
-                  <div className="flex justify-between text-slate-700">
-                    <span>Complete Uniform Sets</span>
-                    <span className="font-bold text-slate-950">{completeSets}</span>
-                  </div>
-                  <div className="flex justify-between text-slate-700">
-                    <span>Single Replacement Shirts</span>
-                    <span className="font-bold text-slate-950">{extraShirts}</span>
-                  </div>
-                  <div className="flex justify-between text-slate-700">
-                    <span>Single Replacement Trousers</span>
-                    <span className="font-bold text-slate-950">{extraTrousers}</span>
-                  </div>
-                  <div className="flex justify-between text-slate-700">
-                    <span>Tactical Duty Vests</span>
-                    <span className="font-bold text-slate-950">{tacticalVests}</span>
-                  </div>
-                  <div className="flex justify-between text-slate-700">
-                    <span>Branded Caps & Accessories</span>
-                    <span className="font-bold text-slate-950">{brandedCaps}</span>
-                  </div>
-                </div>
-
-                <div className="border-t border-slate-200 pt-4 flex items-baseline justify-between">
-                  <span className="text-sm font-semibold text-slate-700">Total Requested Items</span>
-                  <span className="text-3xl font-extrabold text-slate-950 tabular-nums">
-                    {totalUnits}
-                  </span>
-                </div>
-
-                <div className="space-y-3 pt-2">
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-4 text-sm sm:text-base font-extrabold text-white shadow-md hover:bg-[#20bd5a] transition"
-                  >
-                    <WhatsAppIcon className="h-5 w-5" />
-                    <span>Send Request via WhatsApp</span>
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => window.print()}
-                    className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3 text-xs sm:text-sm font-semibold text-slate-800 hover:bg-slate-100 transition cursor-pointer"
-                  >
-                    <Printer className="h-4 w-4" />
-                    <span>Print / Save Request Sheet</span>
-                  </button>
-                </div>
+                <a
+                  href="tel:+2348032392875"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3.5 text-sm font-bold text-slate-900 hover:border-emerald-600"
+                >
+                  <PhoneCall className="h-4 w-4 text-emerald-600" />
+                  <span>Call 0803 239 2875</span>
+                </a>
               </div>
             </div>
+
+            {/* Right Live Specification Summary */}
+            <aside className="lg:col-span-5 rounded-3xl bg-slate-950 text-white p-8 sm:p-10 space-y-6">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-emerald-300">
+                Specification Summary
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold">
+                Ready for{" "}
+                <span className="font-editorial text-emerald-300 text-4xl sm:text-5xl">
+                  Workshop
+                </span>{" "}
+                Review
+              </h2>
+
+              <div className="space-y-4 border-t border-white/15 pt-5 text-sm">
+                <div>
+                  <span className="text-slate-400 block text-xs uppercase tracking-wider">
+                    Selected Lines
+                  </span>
+                  <p className="mt-1 font-semibold text-white">
+                    {selectedLines.length > 0
+                      ? selectedLines.join(" • ")
+                      : "None selected yet"}
+                  </p>
+                </div>
+
+                <div>
+                  <span className="text-slate-400 block text-xs uppercase tracking-wider">
+                    Batch Size
+                  </span>
+                  <p className="mt-1 font-semibold text-white">{quantity}</p>
+                </div>
+              </div>
+
+              <div className="space-y-2.5 border-t border-white/15 pt-5 text-xs text-slate-300">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Custom embroidery &amp; woven badge sampling</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Size-run confirmation prior to bulk cutting</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Send className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Direct workshop coordination in Abuja &amp; nationwide</span>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
-      </section>
+      </main>
 
       <Footer />
     </div>
