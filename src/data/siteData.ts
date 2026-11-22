@@ -31,8 +31,7 @@ export const CATALOG_ITEMS: ProductItem[] = [
     unitPrice: 15000,
     fabricSpec: "Heavyweight Poly-Cotton Twill (240 GSM) • Fade-Resistant Dye",
     stitchingSpec: "Double-needle reinforced stress seams, bar-tacked pockets, shoulder epaulettes",
-    description:
-      "Full operational guard uniform engineered for daily patrol durability, crisp collar structure, and batch-to-batch color consistency.",
+    description: "Full operational guard uniform engineered for daily patrol durability, crisp collar structure, and batch to batch color consistency.",
     image: "/images/cap-line.jpeg",
     badge: "Most Ordered",
     minOrder: "Custom & Batch Orders",
@@ -45,8 +44,7 @@ export const CATALOG_ITEMS: ProductItem[] = [
     unitPrice: 15000,
     fabricSpec: "65/35 Polyester-Cotton Ripstop / Twill Blend • Sweat-Wicking",
     stitchingSpec: "Reinforced crotch gusset, button-down chest flaps, pen slot & badge tab",
-    description:
-      "High-authority dark patrol uniform tailored for night shifts, VIP escort units, and corporate facility guards.",
+    description: "High authority dark patrol uniform tailored for night shifts, VIP escort units, and corporate facility guards.",
     image: "/images/workshop-view.jpeg",
     badge: "Executive Patrol",
     minOrder: "Custom & Batch Orders",
@@ -59,8 +57,7 @@ export const CATALOG_ITEMS: ProductItem[] = [
     unitPrice: 4500,
     fabricSpec: "Color-Matched 220–240 GSM Twill • Saved Client Dye Lot",
     stitchingSpec: "Structured fused collar, reinforced shoulder straps, custom chest embroidery ready",
-    description:
-      "Order individual replacement shirts using your saved company size chart without waiting for a full team bulk run.",
+    description: "Order individual replacement shirts using your saved company size chart without waiting for a full team bulk run.",
     image: "/images/visor-cap.jpeg",
     badge: "Single-Piece Restock",
     minOrder: "1 Piece",
@@ -73,8 +70,7 @@ export const CATALOG_ITEMS: ProductItem[] = [
     unitPrice: 6000,
     fabricSpec: "Heavy-Duty Abrasion-Resistant Twill • Deep Pocket Bags",
     stitchingSpec: "Heavy-duty brass/nylon zipper, wide belt loops for tactical duty belts, triple-stitched seat",
-    description:
-      "Built to withstand daily sitting, kneeling, and patrol movement without seam splits or premature knee fade.",
+    description: "Built to withstand daily sitting, kneeling, and patrol movement without seam splits or premature knee fade.",
     image: "/images/web-belt.jpeg",
     badge: "Single-Piece Restock",
     minOrder: "1 Piece",
@@ -86,8 +82,7 @@ export const CATALOG_ITEMS: ProductItem[] = [
     priceLabel: "Quote by Spec",
     fabricSpec: "600D / 1000D High-Tenacity Oxford Nylon • Breathable Mesh Lining",
     stitchingSpec: "Heavy-duty webbing, quick-release side buckles, radio & flashlight holsters, back ID panel",
-    description:
-      "Structured load-bearing tactical vest designed for estate patrol teams, armed escort support, and event security supervisors.",
+    description: "Structured load bearing tactical vest designed for estate patrol teams, armed escort support, and event security supervisors.",
     image: "/images/duty-gear.jpeg",
     badge: "Heavy-Duty Field Gear",
     minOrder: "1 Piece",
@@ -99,8 +94,7 @@ export const CATALOG_ITEMS: ProductItem[] = [
     priceLabel: "Custom Branding",
     fabricSpec: "Brushed Heavy Cotton Bull Denim / Twill • Reinforced Peak",
     stitchingSpec: "High-density 3D/flat embroidery, sweatband lining, adjustable brass buckle or Velcro strap",
-    description:
-      "Peak caps, face caps, and berets finished with crisp agency crests and clean stitching that holds its crown shape.",
+    description: "Peak caps, face caps, and berets finished with crisp agency crests and clean stitching that holds its crown shape.",
     image: "/images/field-belt.jpeg",
     badge: "In-House Embroidery",
     minOrder: "5 Pieces",
@@ -112,8 +106,7 @@ export const CATALOG_ITEMS: ProductItem[] = [
     priceLabel: "Included / Add-On",
     fabricSpec: "Colorfast Madeira/Polyester Embroidery Thread on Twill Backing",
     stitchingSpec: "Merrowed overlock borders, sew-on or hook-and-loop backing, rank bars",
-    description:
-      "Precision chest badges, shoulder flashes, and rank epaulettes digitized directly from your organization logo.",
+    description: "Precision chest badges, shoulder flashes, and rank epaulettes digitized directly from your organization logo.",
     image: "/images/crew-shirt.jpeg",
     badge: "Brand Identity",
     minOrder: "10 Pieces",
@@ -125,8 +118,7 @@ export const CATALOG_ITEMS: ProductItem[] = [
     priceLabel: "Bundle / Unit",
     fabricSpec: "Heavy Webbing Belts, Chrome Pealess Whistles, Braided Lanyards, Knee/Elbow Pads",
     stitchingSpec: "Riveted belt hardware, reinforced lanyard clips, impact-resistant polymer shells",
-    description:
-      "Everything required to deploy a guard in full regalia from day one without sourcing accessories from multiple vendors.",
+    description: "Everything required to deploy a guard in full regalia from day one without sourcing accessories from multiple vendors.",
     image: "/images/guard-set.jpeg",
     badge: "Full Kit Ready",
     minOrder: "1 Kit",

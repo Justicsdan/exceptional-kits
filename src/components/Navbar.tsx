@@ -30,7 +30,7 @@ export default function Navbar() {
             <span className="block text-base lg:text-lg font-extrabold tracking-tight text-slate-950 leading-none">
               EXCEPTIONAL KITS AND WEARS
             </span>
-            <span className="mt-1.5 block text-[10px] font-bold uppercase tracking-[0.24em] text-sky-700">
+            <span className="mt-1.5 block text-sm font-bold uppercase tracking-[0.24em] text-sky-700">
               Uniforms • Tactical • Cresting
             </span>
           </div>
@@ -62,7 +62,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2.5 shrink-0">
           <Link
             href="/quote"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs sm:text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm sm:text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colors whitespace-nowrap"
           >
             <FileText className="h-4 w-4 text-[#134E9E]" />
             <span>Get Quote</span>
@@ -70,7 +70,7 @@ export default function Navbar() {
 
           <a
             href="tel:08032392875"
-            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-4 py-2 text-xs sm:text-sm font-bold text-white hover:bg-[#0B1F4C] hover:bg-[#134E9E] transition-colors whitespace-nowrap"
+            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-4 py-2 text-sm sm:text-sm font-bold text-white hover:bg-[#0B1F4C] hover:bg-[#134E9E] transition-colors whitespace-nowrap"
           >
             <Phone className="h-4 w-4" />
             <span>0803 239 2875</span>

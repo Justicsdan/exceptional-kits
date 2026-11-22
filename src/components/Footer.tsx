@@ -18,7 +18,7 @@ export default function Footer() {
               <h3 className="text-lg font-extrabold text-white">
                 Exceptional Kits And Wears
               </h3>
-              <p className="mt-1 text-xs italic text-[#1D4ED8]">
+              <p className="mt-1 text-sm italic text-[#1D4ED8]">
                 ...Quality. Style. Professionalism.
               </p>
             </div>
@@ -73,7 +73,7 @@ export default function Footer() {
                 0803 239 2875
               </a>
             </p>
-            <p className="text-xs text-slate-400">
+            <p className="text-sm text-slate-400">
               Uniform Production • Security Kits • Branding Services
             </p>
             <div className="pt-2">
@@ -90,7 +90,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-slate-800/80 pt-8 text-center text-xs text-slate-500">
+        <div className="mt-12 border-t border-slate-800/80 pt-8 text-center text-sm text-slate-500">
           Copyright © 2026 Exceptional Kits And Wears. All Rights Reserved.
         </div>
       </div>

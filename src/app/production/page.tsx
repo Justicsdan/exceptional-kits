@@ -9,13 +9,13 @@ const QC_PILLARS = [
     key: "seam",
     title: "Seam & Stress Check",
     caption: "Reinforced stitching & fabric check",
-    image: "/images/duty-shirt.jpeg",
+    image: "/images/work-shirt.jpeg",
   },
   {
     key: "crest",
     title: "Crest & Badge Finish",
     caption: "Crisp embroidery & emblem alignment",
-    image: "/images/branded-cap.jpeg",
+    image: "/images/visor-cap.jpeg",
   },
   {
     key: "pack",
@@ -38,7 +38,7 @@ export default function ProductionPage() {
             className="absolute inset-0 h-full w-full object-cover opacity-35"
           />
           <div className="relative mx-auto max-w-7xl px-6">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-300">
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">
  In House Workshop
  </p>
             <h1 className="mt-4 text-5xl sm:text-7xl font-extrabold leading-[0.95] max-w-4xl">
@@ -119,7 +119,7 @@ export default function ProductionPage() {
                     />
                   </div>
                   <div className="px-1">
-                    <p className="text-xs font-bold uppercase tracking-wider text-[#134E9E]">
+                    <p className="text-sm font-bold uppercase tracking-wider text-[#134E9E]">
                       {pillar.caption}
                     </p>
                     <h3 className="mt-0.5 text-xl font-bold text-slate-950">

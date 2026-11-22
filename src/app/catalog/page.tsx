@@ -56,14 +56,14 @@ export default function CatalogPage() {
                         key={category}
                         type="button"
                         onClick={() => setSelectedCategory(category)}
- className={`rounded full px 3.5 py 1.5 text xs font bold transition all cursor pointer ${
- active
- ? "bg-[#0B1F4C] hover:bg-[#134E9E] text white"
- : "border border slate 200 bg white text slate 700 hover:border-[#BFD3EE] hover:text-[#134E9E]"
- }`}
- >
- {category}
- </button>
+                        className={`rounded-full px-3.5 py-1.5 text-sm font-bold transition-all cursor-pointer ${
+                          active
+                            ? "bg-[#0B1F4C] hover:bg-[#134E9E] text-white"
+                            : "border border-slate-200 bg-white text-slate-700 hover:border-[#BFD3EE] hover:text-[#134E9E]"
+                        }`}
+                      >
+                        {category}
+                      </button>
                     );
                   })}
                 </div>
@@ -88,7 +88,7 @@ export default function CatalogPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-300">
+                    <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-300">
                       {selectedCategory}
                     </p>
                     <h2 className="mt-1 text-2xl sm:text-3xl font-extrabold text-white">
