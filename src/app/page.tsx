@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck, Ruler, Sparkles, Truck } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { WORKSHOP_GALLERY } from "@/data/siteData";
@@ -16,6 +16,8 @@ const HERO_SLIDES = [
     lead: "Security",
     accent: "Uniforms",
     tail: "& Tactical Kits",
+    summary:
+      "Built for daily field wear—durable patrol sets, tactical vests, reinforced belts, and sharp custom cresting made straight from our workshop.",
     image: "/images/tactical-vest.jpeg",
     ctaHref: "/catalog",
     ctaLabel: "View Catalog",
@@ -26,7 +28,9 @@ const HERO_SLIDES = [
     lead: "Custom",
     accent: "Cresting",
     tail: "& Duty Wear",
-    image: "/images/patrol-kit.jpeg",
+    summary:
+      "Put your organization's identity front and center with clean embroidery, badges, and branded caps tailored to your exact brand colors.",
+    image: "/images/duty-shirt.png",
     ctaHref: "/production",
     ctaLabel: "Workshop & QC",
   },
@@ -36,6 +40,8 @@ const HERO_SLIDES = [
     lead: "Tailored",
     accent: "Batch Runs",
     tail: "Ready to Issue",
+    summary:
+      "From new security intakes and estates to school and corporate teams—order full batches with saved size records for effortless reorders.",
     image: "/images/guard-set.jpeg",
     ctaHref: "/quote",
     ctaLabel: "Request Quote",
@@ -46,26 +52,53 @@ const SIGNATURE_LINES = [
   {
     title: "Uniform Sets",
     tag: "Duty",
-    image: "/images/guard-set.jpeg",
+    note: "Structured shirts and trousers built for all-day presence and movement.",
+    image: "/images/duty-shirt.png",
     href: "/catalog",
   },
   {
     title: "Tactical Vests",
     tag: "Field",
-    image: "/images/batch-pack.jpeg",
+    note: "Utility and tactical layers designed for practical gear carry and durability.",
+    image: "/images/tactical-vest.jpeg",
     href: "/catalog",
   },
   {
     title: "Branded Caps",
     tag: "Cresting",
-    image: "/images/cap-line.jpeg",
+    note: "Clean headwear and crests that keep teams looking unified and sharp.",
+    image: "/images/branded-cap.png",
     href: "/catalog",
   },
   {
     title: "Field Gear",
     tag: "Utility",
-    image: "/images/cargo-pant.jpeg",
+    note: "Heavy-duty belts, pouches, and accessories ready for active shifts.",
+    image: "/images/field-belt.jpeg",
     href: "/catalog",
+  },
+];
+
+const CLIENT_PILLARS = [
+  {
+    icon: ShieldCheck,
+    title: "Built for Real Duty",
+    text: "Practical fabrics, neat stitching, and dependable finishes that hold up across daily shifts.",
+  },
+  {
+    icon: Ruler,
+    title: "Saved Size Charts",
+    text: "We keep your organization's sizing on record so adding new recruits or re-kitting teams stays fast.",
+  },
+  {
+    icon: Sparkles,
+    title: "Sharp Brand Identity",
+    text: "Coordinated crests, patches, and uniform styling that help clients recognize your team on sight.",
+  },
+  {
+    icon: Truck,
+    title: "Single-Piece & Batch Ready",
+    text: "Start with sample specs or batch runs, with single-piece replacement support and nationwide dispatch.",
   },
 ];
 
@@ -121,7 +154,9 @@ export default function HomePage() {
   const galleryItems = normalizedGallery.filter(
     (item) =>
       !peopleItems.some((p) => p.image === item.image) &&
-      !/(logo|brand|mark|icon|badge|crest)/i.test(`${item.image} ${item.displayTitle}`)
+      !/(logo|brand|mark|icon|badge|crest)/i.test(
+        `${item.image} ${item.displayTitle}`
+      )
   );
 
   const lookbookBands = [
@@ -129,30 +164,40 @@ export default function HomePage() {
       key: "patrol",
       lead: "Patrol &",
       accent: "Tactical",
+      caption:
+        "Field-ready kits and tactical layers tailored for security agencies, estates, and active patrols.",
       items: galleryItems.slice(0, 3),
     },
     {
       key: "institutional",
       lead: "Institutional &",
       accent: "Tailored",
+      caption:
+        "Consistent, tidy uniforms crafted for schools, facilities, and structured organizational teams.",
       items: galleryItems.slice(3, 6),
     },
     {
       key: "cresting",
       lead: "Cresting &",
       accent: "Accessories",
+      caption:
+        "Finishing details—caps, belts, and crests—that tie an entire uniform kit together.",
       items: galleryItems.slice(6, 9),
     },
     {
       key: "batch",
       lead: "Batch Finishing &",
       accent: "Dispatch",
+      caption:
+        "Organized workshop cuts and quality checks prepared for smooth handover and nationwide delivery.",
       items: galleryItems.slice(9, 12),
     },
     {
       key: "archive",
       lead: "Workshop",
       accent: "Archive",
+      caption:
+        "A closer look at real cuts, variations, and pieces produced on our workshop floor.",
       items: galleryItems.slice(12),
     },
   ].filter((band) => band.items.length > 0);
@@ -172,7 +217,7 @@ export default function HomePage() {
 
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-              <div className="lg:col-span-5 space-y-7">
+              <div className="lg:col-span-5 space-y-6">
                 <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-emerald-800">
                   <span className="h-2 w-2 rounded-full bg-emerald-600 animate-pulse" />
                   <span>{slide.kicker}</span>
@@ -189,7 +234,11 @@ export default function HomePage() {
                   {slide.tail}
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-4 pt-2">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-md">
+                  {slide.summary}
+                </p>
+
+                <div className="flex flex-wrap items-center gap-4 pt-1">
                   <Link
                     href={slide.ctaHref}
                     className="group inline-flex items-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-emerald-700 hover:shadow-md transition-all"
@@ -206,7 +255,7 @@ export default function HomePage() {
                   </Link>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-2.5 pt-3">
+                <div className="flex flex-wrap items-center gap-2.5 pt-2">
                   {HERO_SLIDES.map((s, idx) => {
                     const active = activeSlide === idx;
                     return (
@@ -270,54 +319,103 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Band 2: Signature Lines */}
-        <section className="border-t border-slate-200 bg-slate-50/70 py-28 lg:py-40">
+        {/* Band 1.5: Clean Separate Client Value Strip */}
+        <section className="border-t border-slate-200 bg-white py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="flex items-end justify-between gap-4 mb-14">
-              <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
-                Core{" "}
-                <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
-                  Collections
+            <div className="max-w-2xl mb-10 space-y-2">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-emerald-700">
+                Why Organizations Partner With Us
+              </p>
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950">
+                Dependable Supply{" "}
+                <span className="font-editorial text-emerald-700 text-4xl sm:text-6xl">
+                  Made Simple
                 </span>
               </h2>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {CLIENT_PILLARS.map((pillar) => {
+                const Icon = pillar.icon;
+                return (
+                  <div
+                    key={pillar.title}
+                    className="rounded-2xl border border-slate-200/90 bg-slate-50/60 p-6 space-y-3"
+                  >
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600/10 text-emerald-700">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-base font-bold text-slate-950">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {pillar.text}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Band 2: Signature Lines */}
+        <section className="border-t border-slate-200 bg-slate-50/70 py-28 lg:py-36">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+              <div>
+                <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
+                  Core{" "}
+                  <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
+                    Collections
+                  </span>
+                </h2>
+                <p className="mt-3 max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                  Explore our core uniform and gear categories—each configurable
+                  with your company branding and batch requirements.
+                </p>
+              </div>
               <Link
                 href="/catalog"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-700 hover:text-emerald-800"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-700 hover:text-emerald-800 shrink-0"
               >
                 <span>Catalog</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
 
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-10">
               {SIGNATURE_LINES.map((line) => (
-                <Link
-                  key={line.title}
-                  href={line.href}
-                  className="group relative h-[26rem] overflow-hidden rounded-3xl bg-slate-950 shadow-sm hover:shadow-2xl transition-all duration-500"
-                >
-                  <img
-                    src={line.image}
-                    alt={line.title}
-                    onError={(e) => {
-                      const el = e.currentTarget;
-                      if (!el.dataset.fb) {
-                        el.dataset.fb = "1";
-                        el.src = FALLBACK_PHOTO;
-                      }
-                    }}
-                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/15 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-300">
-                      {line.tag}
-                    </p>
-                    <h3 className="mt-1 text-2xl font-bold text-white">
-                      {line.title}
-                    </h3>
-                  </div>
-                </Link>
+                <div key={line.title} className="space-y-3">
+                  <Link
+                    href={line.href}
+                    className="group relative block h-[24rem] overflow-hidden rounded-3xl bg-slate-950 shadow-sm hover:shadow-2xl transition-all duration-500"
+                  >
+                    <img
+                      src={line.image}
+                      alt={line.title}
+                      onError={(e) => {
+                        const el = e.currentTarget;
+                        if (!el.dataset.fb) {
+                          el.dataset.fb = "1";
+                          el.src = FALLBACK_PHOTO;
+                        }
+                      }}
+                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
+                    <div className="absolute bottom-5 left-5 right-5">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-300">
+                        {line.tag}
+                      </p>
+                      <h3 className="mt-1 text-2xl font-bold text-white">
+                        {line.title}
+                      </h3>
+                    </div>
+                  </Link>
+                  <p className="px-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    {line.note}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
@@ -325,18 +423,24 @@ export default function HomePage() {
 
         {/* Band 3: Dedicated People & On-Body Fit */}
         {peopleItems.length > 0 && (
-          <section className="border-t border-slate-200 bg-white py-28 lg:py-44">
+          <section className="border-t border-slate-200 bg-white py-28 lg:py-40">
             <div className="mx-auto max-w-7xl px-6">
-              <div className="flex items-end justify-between gap-4 mb-14">
-                <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
-                  On-Body{" "}
-                  <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
-                    Showcase
-                  </span>
-                </h2>
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+                <div>
+                  <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
+                    On-Body{" "}
+                    <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
+                      Showcase
+                    </span>
+                  </h2>
+                  <p className="mt-3 max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                    See how our uniforms and gear wear in practice—balanced fit,
+                    clean lines, and practical coverage for active personnel.
+                  </p>
+                </div>
                 <Link
                   href="/sectors"
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-700 hover:text-emerald-800"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-700 hover:text-emerald-800 shrink-0"
                 >
                   <span>Sectors</span>
                   <ArrowRight className="h-4 w-4" />
@@ -382,17 +486,22 @@ export default function HomePage() {
         <section className="border-t border-slate-200 bg-slate-50/50 py-28 lg:py-44">
           <div className="mx-auto max-w-7xl px-6 space-y-36 lg:space-y-48">
             {lookbookBands.map((band) => (
-              <div key={band.key} className="space-y-12">
-                <div className="flex items-baseline justify-between gap-4 border-b border-slate-200 pb-6">
-                  <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
-                    {band.lead}{" "}
-                    <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
-                      {band.accent}
-                    </span>
-                  </h2>
+              <div key={band.key} className="space-y-10">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 border-b border-slate-200 pb-6">
+                  <div className="space-y-2">
+                    <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
+                      {band.lead}{" "}
+                      <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
+                        {band.accent}
+                      </span>
+                    </h2>
+                    <p className="max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                      {band.caption}
+                    </p>
+                  </div>
                   <Link
                     href="/quote"
-                    className="hidden sm:inline-flex items-center gap-1.5 text-sm font-bold text-slate-700 hover:text-emerald-700"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-700 hover:text-emerald-700 shrink-0"
                   >
                     <span>Order Spec</span>
                     <ArrowRight className="h-4 w-4" />
@@ -448,7 +557,7 @@ export default function HomePage() {
                 className="h-full w-full object-cover opacity-55"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-transparent" />
-              <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-14 max-w-2xl space-y-6">
+              <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-14 max-w-2xl space-y-5">
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-300">
                   Direct Workshop
                 </p>
@@ -458,7 +567,11 @@ export default function HomePage() {
                     Custom Batch
                   </span>
                 </h2>
-                <div>
+                <p className="text-sm sm:text-base text-slate-200/90 max-w-lg leading-relaxed">
+                  Share your uniform quantities, branding preferences, or sector
+                  needs and get a clear workshop quote without middleman delays.
+                </p>
+                <div className="pt-1">
                   <Link
                     href="/quote"
                     className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white hover:bg-emerald-500 transition-colors"
