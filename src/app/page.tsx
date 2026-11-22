@@ -1,6 +1,5 @@
 "use client";
-
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, Ruler, Sparkles, Truck } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -121,7 +120,60 @@ function cleanDisplayTitle(rawTitle: string, index: number): string {
   return fallbackTitles[index % fallbackTitles.length];
 }
 
+
+const WORLD_CLASS_SLIDES = [
+  {
+    kicker: "Workshop Lookbook",
+    tabLabel: "Tactical & Patrol",
+    lead: "Security",
+    accent: "Uniforms",
+    tail: "& Tactical Kits",
+    summary:
+      "Built for daily field wear with durable patrol sets, tactical vests, reinforced belts, and sharp custom cresting crafted straight from our workshop.",
+    image: "/images/tactical-vest.jpeg",
+    ctaHref: "/catalog",
+    ctaLabel: "Explore Catalog",
+  },
+  {
+    kicker: "Direct Production",
+    tabLabel: "Custom Cresting",
+    lead: "Custom",
+    accent: "Cresting",
+    tail: "& Duty Wear",
+    summary:
+      "Put your organization identity front and center with clean embroidery, woven badges, and branded caps tailored to your exact brand colors.",
+    image: "/images/work-shirt.jpeg",
+    ctaHref: "/production",
+    ctaLabel: "Workshop & QC",
+  },
+  {
+    kicker: "Institutional Supply",
+    tabLabel: "Batch Runs",
+    lead: "Tailored",
+    accent: "Batch Runs",
+    tail: "Ready to Issue",
+    summary:
+      "From new security intakes and estates to school and corporate teams, order full batches with saved size records for effortless reorders.",
+    image: "/images/guard-set.jpeg",
+    ctaHref: "/quote",
+    ctaLabel: "Request a Quote",
+  },
+];
+
 export default function HomePage() {
+  const [heroIdx, setHeroIdx] = useState(0);
+  const [heroPaused, setHeroPaused] = useState(false);
+
+  useEffect(() => {
+    if (heroPaused) return;
+    const id = setInterval(() => {
+      setHeroIdx((prev) => (prev + 1) % WORLD_CLASS_SLIDES.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [heroPaused]);
+
+  const currentHero = WORLD_CLASS_SLIDES[heroIdx] ?? WORLD_CLASS_SLIDES[0];
+
   const [activeSlide, setActiveSlide] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -205,66 +257,99 @@ export default function HomePage() {
 
       <main className="flex-1">
 
-      <section aria-label="Featured Hero" className="w-full bg-white border-b border-slate-200 py-12 sm:py-16 lg:py-20">
+      <section
+        aria-label="Hero Carousel"
+        onMouseEnter={() => setHeroPaused(true)}
+        onMouseLeave={() => setHeroPaused(false)}
+        className="w-full bg-white border-b border-slate-200 py-12 sm:py-16 lg:py-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#EEF4FC] border border-[#BFD3EE] px-4 py-1.5 text-sm font-semibold text-[#134E9E]">
-              <span>Direct Workshop Supply &amp; Custom Cresting</span>
+            <div className="flex flex-wrap items-center gap-2">
+              {WORLD_CLASS_SLIDES.map((item, idx) => {
+                const active = idx === heroIdx;
+                return (
+                  <button
+                    key={item.tabLabel}
+                    type="button"
+                    onClick={() => setHeroIdx(idx)}
+                    className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-all cursor-pointer ${
+                      active
+                        ? "bg-[#0B1F4C] text-white shadow-sm"
+                        : "bg-[#EEF4FC] text-[#134E9E] border border-[#BFD3EE] hover:bg-[#DCE8FA]"
+                    }`}
+                  >
+                    {item.tabLabel}
+                  </button>
+                );
+              })}
             </div>
 
+            <p className="text-sm font-bold uppercase tracking-wider text-[#134E9E]">
+              {currentHero.kicker}
+            </p>
+
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B1F4C] leading-[1.06]">
-              Uniforms, Tactical Gear &amp; Branded Kits
-              <span className="block font-serif italic font-normal text-3xl sm:text-4xl lg:text-5xl text-[#134E9E] mt-2">
-                Built to Command Confidence
-              </span>
+              {currentHero.lead}{" "}
+              <span className="font-serif italic font-normal text-[#134E9E]">
+                {currentHero.accent}
+              </span>{" "}
+              <span className="block mt-1">{currentHero.tail}</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl">
-              Precision tailored duty wear, tactical vests, caps, and batch uniform runs crafted for security agencies, corporate teams, schools, and organizations that value consistency and sharp presentation.
+              {currentHero.summary}
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-1">
               <a
-                href="/quote"
+                href={currentHero.ctaHref}
                 className="inline-flex items-center justify-center rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] text-white font-semibold text-base px-6 py-3.5 transition-colors shadow-sm"
               >
-                Request a Quote
+                {currentHero.ctaLabel}
               </a>
               <a
-                href="/catalog"
+                href="/sectors"
                 className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white hover:border-[#0B1F4C] text-[#0B1F4C] font-semibold text-base px-6 py-3.5 transition-colors"
               >
-                Explore Catalog
+                Explore Sectors
               </a>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-slate-200 max-w-lg">
-              <div>
-                <p className="text-xl sm:text-2xl font-extrabold text-[#0B1F4C]">Batch &amp; Single</p>
-                <p className="text-sm text-slate-600 mt-0.5">Flexible order runs</p>
-              </div>
-              <div>
-                <p className="text-xl sm:text-2xl font-extrabold text-[#0B1F4C]">Saved Sizing</p>
-                <p className="text-sm text-slate-600 mt-0.5">Easy team reorders</p>
-              </div>
-              <div>
-                <p className="text-xl sm:text-2xl font-extrabold text-[#0B1F4C]">Custom Crests</p>
-                <p className="text-sm text-slate-600 mt-0.5">Clean brand finish</p>
-              </div>
+            <div className="flex items-center gap-3 pt-2">
+              {WORLD_CLASS_SLIDES.map((item, idx) => (
+                <button
+                  key={item.kicker}
+                  type="button"
+                  aria-label={`Slide ${idx + 1}: ${item.tabLabel}`}
+                  onClick={() => setHeroIdx(idx)}
+                  className={`h-2.5 rounded-full transition-all cursor-pointer ${
+                    idx === heroIdx ? "w-10 bg-[#0B1F4C]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                  }`}
+                />
+              ))}
             </div>
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
-              <img
-                src="/images/tactical-vest.jpeg"
-                alt="Custom uniforms, tactical vest, and branded gear from Exceptional Kits and Wears"
-                className="w-full h-[360px] sm:h-[440px] lg:h-[480px] object-cover object-center"
-              />
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm h-[360px] sm:h-[440px] lg:h-[480px]">
+              {WORLD_CLASS_SLIDES.map((item, idx) => (
+                <img
+                  key={item.tabLabel}
+                  src={item.image}
+                  alt={`${item.lead} ${item.accent} ${item.tail}`}
+                  className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${
+                    idx === heroIdx ? "opacity-100" : "opacity-0 pointer-events-none"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
       </section>
+
+
+      
 
         {/* Band 1: Motion Spotlight Hero Stage */}
         <section
