@@ -49,8 +49,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`text-sm font-semibold transition-colors whitespace-nowrap ${
                   active
-                    ? "rounded-full bg-emerald-600 px-4 py-1.5 text-white shadow-xs"
-                    : "text-slate-700 hover:text-emerald-700"
+                    ? "rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-4 py-1.5 text-white shadow-xs"
+                    : "text-slate-700 hover:text-[#134E9E]"
                 }`}
               >
                 {link.label}
@@ -62,15 +62,15 @@ export default function Navbar() {
         <div className="flex items-center gap-2.5 shrink-0">
           <Link
             href="/quote"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs sm:text-sm font-bold text-slate-900 hover:border-emerald-600 hover:text-emerald-700 transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs sm:text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colors whitespace-nowrap"
           >
-            <FileText className="h-4 w-4 text-emerald-700" />
+            <FileText className="h-4 w-4 text-[#134E9E]" />
             <span>Get Quote</span>
           </Link>
 
           <a
             href="tel:08032392875"
-            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-2 text-xs sm:text-sm font-bold text-white hover:bg-emerald-700 transition-colors whitespace-nowrap"
+            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-4 py-2 text-xs sm:text-sm font-bold text-white hover:bg-[#0B1F4C] hover:bg-[#134E9E] transition-colors whitespace-nowrap"
           >
             <Phone className="h-4 w-4" />
             <span>0803 239 2875</span>

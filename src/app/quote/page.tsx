@@ -47,12 +47,12 @@ export default function QuotePage() {
       <main className="flex-1 py-16 lg:py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-12 max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-700">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#134E9E]">
               Direct Workshop Desk
             </p>
             <h1 className="mt-3 text-5xl sm:text-6xl font-extrabold text-slate-950 leading-[0.96]">
               Request a{" "}
-              <span className="font-editorial text-emerald-700 text-6xl sm:text-7xl">
+              <span className="font-editorial text-[#134E9E] text-6xl sm:text-7xl">
                 Custom
               </span>{" "}
               Batch Quote
@@ -74,14 +74,14 @@ export default function QuotePage() {
                         key={option}
                         type="button"
                         onClick={() => toggleLine(option)}
-                        className={`rounded-full px-4 py-2 text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                          active
-                            ? "bg-emerald-600 text-white"
-                            : "border border-slate-200 bg-slate-50 text-slate-700 hover:border-emerald-500"
-                        }`}
-                      >
-                        {option}
-                      </button>
+ className={`rounded full px 4 py 2 text xs sm:text sm font bold transition all cursor pointer ${
+ active
+ ? "bg-[#0B1F4C] hover:bg-[#134E9E] text white"
+ : "border border slate 200 bg slate 50 text slate 700 hover:border-[#BFD3EE]"
+ }`}
+ >
+ {option}
+ </button>
                     );
                   })}
                 </div>
@@ -96,10 +96,10 @@ export default function QuotePage() {
                     type="text"
                     value={organization}
                     onChange={(e) => setOrganization(e.target.value)}
-                    placeholder="e.g. Avid Security Services"
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
-                  />
-                </div>
+ placeholder="e.g. Avid Security Services"
+ className="w full rounded xl border border slate 300 px 4 py 3 text sm focus:border-[#BFD3EE] focus:outline none"
+ />
+ </div>
 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
@@ -109,10 +109,10 @@ export default function QuotePage() {
                     type="text"
                     value={contactName}
                     onChange={(e) => setContactName(e.target.value)}
-                    placeholder="Your name"
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
-                  />
-                </div>
+ placeholder="Your name"
+ className="w full rounded xl border border slate 300 px 4 py 3 text sm focus:border-[#BFD3EE] focus:outline none"
+ />
+ </div>
 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
@@ -122,10 +122,10 @@ export default function QuotePage() {
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="0803 000 0000"
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
-                  />
-                </div>
+ placeholder="0803 000 0000"
+ className="w full rounded xl border border slate 300 px 4 py 3 text sm focus:border-[#BFD3EE] focus:outline none"
+ />
+ </div>
 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
@@ -134,11 +134,11 @@ export default function QuotePage() {
                   <select
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
-                    className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
-                  >
-                    <option>10–24 Sets (Starter Batch)</option>
-                    <option>25–50 Sets</option>
-                    <option>51–150 Sets</option>
+ className="w full rounded xl border border slate 300 bg white px 4 py 3 text sm focus:border-[#BFD3EE] focus:outline none"
+ >
+ <option>10, 24 Sets (Starter Batch)</option>
+                    <option>25, 50 Sets</option>
+                    <option>51, 150 Sets</option>
                     <option>150+ Sets (Institutional Rollout)</option>
                     <option>Single / Restock Pieces</option>
                   </select>
@@ -153,17 +153,17 @@ export default function QuotePage() {
                   rows={4}
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  placeholder="Share preferred colors, chest/sleeve embroidery, reflective strips, or delivery timeline..."
-                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-emerald-600 focus:outline-none"
-                />
-              </div>
+ placeholder="Share preferred colors, chest/sleeve embroidery, reflective strips, or delivery timeline..."
+ className="w full rounded xl border border slate 300 px 4 py 3 text sm focus:border-[#BFD3EE] focus:outline none"
+ />
+ </div>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <a
                   href={`https://wa.me/2348032392875?text=${whatsappSummary}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white hover:bg-emerald-700 transition-colors"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#0B1F4C] hover:bg-[#134E9E] transition-colors"
                 >
                   <WhatsAppIcon className="h-4 w-4" />
                   <span>Send Quote via WhatsApp</span>
@@ -171,9 +171,9 @@ export default function QuotePage() {
 
                 <a
                   href="tel:+2348032392875"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3.5 text-sm font-bold text-slate-900 hover:border-emerald-600"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3.5 text-sm font-bold text-slate-900 hover:border-[#BFD3EE]"
                 >
-                  <PhoneCall className="h-4 w-4 text-emerald-600" />
+                  <PhoneCall className="h-4 w-4 text-[#134E9E]" />
                   <span>Call 0803 239 2875</span>
                 </a>
               </div>
@@ -214,15 +214,15 @@ export default function QuotePage() {
 
               <div className="space-y-2.5 border-t border-white/15 pt-5 text-xs text-slate-300">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-[#1D4ED8] shrink-0" />
                   <span>Custom embroidery &amp; woven badge sampling</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                  <span>Size-run confirmation prior to bulk cutting</span>
+                  <CheckCircle2 className="h-4 w-4 text-[#1D4ED8] shrink-0" />
+                  <span>Size run confirmation prior to bulk cutting</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Send className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <Send className="h-4 w-4 text-[#1D4ED8] shrink-0" />
                   <span>Direct workshop coordination in Abuja &amp; nationwide</span>
                 </div>
               </div>

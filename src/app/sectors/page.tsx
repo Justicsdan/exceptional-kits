@@ -19,12 +19,12 @@ export default function SectorsPage() {
       <main className="flex-1">
         <section className="border-b border-slate-200 bg-slate-50/70 py-16 lg:py-24">
           <div className="mx-auto max-w-4xl px-6 text-center space-y-4">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-700">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#134E9E]">
               Client Sectors
             </p>
             <h1 className="text-5xl sm:text-7xl font-extrabold text-slate-950 leading-[0.95]">
               Sectors We{" "}
-              <span className="font-editorial text-emerald-700 text-6xl sm:text-8xl">
+              <span className="font-editorial text-[#134E9E] text-6xl sm:text-8xl">
                 Outfit
               </span>
             </h1>
@@ -67,13 +67,13 @@ export default function SectorsPage() {
                     <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                       {sector.solution}
                     </p>
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-800">
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#134E9E]">
                       {sector.recommendedKit}
                     </p>
                     <div className="pt-2">
                       <Link
                         href="/quote"
-                        className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-700 transition-colors"
+                        className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white hover:bg-[#0B1F4C] hover:bg-[#134E9E] transition-colors"
                       >
                         <span>Request Quote</span>
                         <ArrowRight className="h-4 w-4" />

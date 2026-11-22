@@ -39,8 +39,8 @@ export default function ProductionPage() {
           />
           <div className="relative mx-auto max-w-7xl px-6">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-300">
-              In-House Workshop
-            </p>
+ In House Workshop
+ </p>
             <h1 className="mt-4 text-5xl sm:text-7xl font-extrabold leading-[0.95] max-w-4xl">
               Workshop{" "}
               <span className="font-editorial text-emerald-300 text-6xl sm:text-8xl">
@@ -51,7 +51,7 @@ export default function ProductionPage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/quote"
-                className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white hover:bg-emerald-500 transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white hover:bg-emerald-500 transition-colors"
               >
                 <span>Start Batch Run</span>
                 <ArrowRight className="h-4 w-4" />
@@ -71,7 +71,7 @@ export default function ProductionPage() {
             <div className="border-b border-slate-200 pb-8 mb-14">
               <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
                 Production{" "}
-                <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
+                <span className="font-editorial text-[#134E9E] text-5xl sm:text-7xl">
                   Stages
                 </span>
               </h2>
@@ -103,7 +103,7 @@ export default function ProductionPage() {
           <div className="mx-auto max-w-7xl px-6">
             <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950 mb-14">
               Quality{" "}
-              <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
+              <span className="font-editorial text-[#134E9E] text-5xl sm:text-7xl">
                 Inspection
               </span>
             </h2>
@@ -119,7 +119,7 @@ export default function ProductionPage() {
                     />
                   </div>
                   <div className="px-1">
-                    <p className="text-xs font-bold uppercase tracking-wider text-emerald-700">
+                    <p className="text-xs font-bold uppercase tracking-wider text-[#134E9E]">
                       {pillar.caption}
                     </p>
                     <h3 className="mt-0.5 text-xl font-bold text-slate-950">

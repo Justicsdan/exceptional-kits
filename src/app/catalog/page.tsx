@@ -38,7 +38,7 @@ export default function CatalogPage() {
               <div className="lg:col-span-5 space-y-6">
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 leading-[0.95]">
                   Uniforms,{" "}
-                  <span className="font-editorial text-emerald-700 text-6xl sm:text-7xl lg:text-8xl">
+                  <span className="font-editorial text-[#134E9E] text-6xl sm:text-7xl lg:text-8xl">
                     Tactical
                   </span>{" "}
                   Gear &amp; Kits
@@ -56,14 +56,14 @@ export default function CatalogPage() {
                         key={category}
                         type="button"
                         onClick={() => setSelectedCategory(category)}
-                        className={`rounded-full px-3.5 py-1.5 text-xs font-bold transition-all cursor-pointer ${
-                          active
-                            ? "bg-emerald-600 text-white"
-                            : "border border-slate-200 bg-white text-slate-700 hover:border-emerald-500 hover:text-emerald-700"
-                        }`}
-                      >
-                        {category}
-                      </button>
+ className={`rounded full px 3.5 py 1.5 text xs font bold transition all cursor pointer ${
+ active
+ ? "bg-[#0B1F4C] hover:bg-[#134E9E] text white"
+ : "border border slate 200 bg white text slate 700 hover:border-[#BFD3EE] hover:text-[#134E9E]"
+ }`}
+ >
+ {category}
+ </button>
                     );
                   })}
                 </div>
@@ -71,7 +71,7 @@ export default function CatalogPage() {
                 <div className="pt-1">
                   <Link
                     href="/quote"
-                    className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-700 transition-colors"
+                    className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white hover:bg-[#0B1F4C] hover:bg-[#134E9E] transition-colors"
                   >
                     <span>Get Quote</span>
                     <ArrowRight className="h-4 w-4" />
@@ -105,13 +105,13 @@ export default function CatalogPage() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="flex items-baseline justify-between gap-4 mb-12 border-b border-slate-200 pb-5">
               <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950">
-                <span className="font-editorial text-emerald-700 text-4xl sm:text-6xl">
+                <span className="font-editorial text-[#134E9E] text-4xl sm:text-6xl">
                   {selectedCategory}
                 </span>
               </h2>
               <Link
                 href="/quote"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-700 hover:text-emerald-800"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-[#134E9E] hover:text-[#134E9E]"
               >
                 <span>Quote</span>
                 <ArrowRight className="h-4 w-4" />

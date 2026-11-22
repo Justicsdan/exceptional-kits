@@ -18,15 +18,15 @@ export default function Footer() {
               <h3 className="text-lg font-extrabold text-white">
                 Exceptional Kits And Wears
               </h3>
-              <p className="mt-1 text-xs italic text-emerald-400">
+              <p className="mt-1 text-xs italic text-[#1D4ED8]">
                 ...Quality. Style. Professionalism.
               </p>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-              Direct workshop production of security uniforms, tactical vests,
-              branded caps, and duty accessories with saved company size charts
-              and single-piece replacement support.
-            </p>
+ Direct workshop production of security uniforms, tactical vests,
+ branded caps, and duty accessories with saved company size charts
+ and single piece replacement support.
+ </p>
           </div>
 
           <div className="space-y-4">
@@ -35,22 +35,22 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-400">
               <li>
-                <Link href="/catalog" className="hover:text-emerald-400 transition-colors">
+                <Link href="/catalog" className="hover:text-[#1D4ED8] transition-colors">
                   &gt; Uniforms &amp; Duty Gear
                 </Link>
               </li>
               <li>
-                <Link href="/production" className="hover:text-emerald-400 transition-colors">
+                <Link href="/production" className="hover:text-[#1D4ED8] transition-colors">
                   &gt; Workshop &amp; Size Charts
                 </Link>
               </li>
               <li>
-                <Link href="/sectors" className="hover:text-emerald-400 transition-colors">
+                <Link href="/sectors" className="hover:text-[#1D4ED8] transition-colors">
                   &gt; Security &amp; Estate Sectors
                 </Link>
               </li>
               <li>
-                <Link href="/quote" className="hover:text-emerald-400 transition-colors">
+                <Link href="/quote" className="hover:text-[#1D4ED8] transition-colors">
                   &gt; Order &amp; Reorder Quote
                 </Link>
               </li>
@@ -68,7 +68,7 @@ export default function Footer() {
               Tel / WhatsApp:{" "}
               <a
                 href="tel:08032392875"
-                className="font-semibold text-emerald-400 hover:underline"
+                className="font-semibold text-[#1D4ED8] hover:underline"
               >
                 0803 239 2875
               </a>
@@ -81,7 +81,7 @@ export default function Footer() {
                 href="https://wa.me/2348032392875"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white hover:bg-emerald-500 transition-colors"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] px-5 py-2.5 text-sm font-bold text-white hover:bg-emerald-500 transition-colors"
               >
                 <MessageCircle className="h-4 w-4" />
                 <span>Chat on WhatsApp</span>
