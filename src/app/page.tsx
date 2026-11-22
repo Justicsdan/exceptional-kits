@@ -30,7 +30,7 @@ const HERO_SLIDES = [
     tail: "& Duty Wear",
     summary:
       "Put your organization's identity front and center with clean embroidery, badges, and branded caps tailored to your exact brand colors.",
-    image: "/images/duty-shirt.png",
+    image: "/images/tactical-vest.jpeg",
     ctaHref: "/production",
     ctaLabel: "Workshop & QC",
   },
