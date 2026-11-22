@@ -304,127 +304,7 @@ export default function HomePage() {
           </div>
         </section>
 
-                {/* Band 1.5: Long Editorial Client Value & Workshop Standard Showcase */}
-        <section className="border-t border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-white py-32 lg:py-44">
-          <div className="mx-auto max-w-7xl px-6 space-y-24 lg:space-y-28">
-            <div className="grid gap-8 lg:grid-cols-12 lg:items-end border-b border-slate-200 pb-10">
-              <div className="lg:col-span-7 space-y-3">
-                <p className="text-xs font-bold uppercase tracking-[0.26em] text-emerald-700">
-                  Why Organizations Partner With Us
-                </p>
-                <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950 leading-[1.05]">
-                  Dependable Supply{" "}
-                  <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
-                    Made Simple
-                  </span>
-                </h2>
-              </div>
-              <p className="lg:col-span-5 text-sm sm:text-base text-slate-600 leading-relaxed">
-                Designed for security agencies, estates, schools, and growing
-                teams that need consistent fit, clean branding, and reliable
-                follow-through from first batch to future reorders.
-              </p>
-            </div>
-
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-              {CLIENT_PILLARS.map((pillar, idx) => {
-                const Icon = pillar.icon;
-                return (
-                  <article
-                    key={pillar.title}
-                    className="group relative flex flex-col justify-between border-t-2 border-slate-900 pt-6 space-y-6 transition-colors duration-300 hover:border-emerald-600"
-                  >
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-extrabold tracking-[0.22em] text-slate-400 group-hover:text-emerald-700 transition-colors">
-                          0{idx + 1}
-                        </span>
-                        <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-emerald-200/80 bg-emerald-50/70 text-emerald-700 shadow-2xs group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
-                          <Icon className="h-5 w-5" />
-                        </div>
-                      </div>
-
-                      <h3 className="text-xl font-extrabold text-slate-950 tracking-tight">
-                        {pillar.title}
-                      </h3>
-
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        {pillar.text}
-                      </p>
-                    </div>
-
-                    <div className="pt-2">
-                      <span className="inline-block h-1 w-10 rounded-full bg-slate-200 group-hover:w-20 group-hover:bg-emerald-600 transition-all duration-300" />
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-
-            {/* Long-form Split Editorial Feature: Clean Photo Separate From Structured Specs */}
-            <div className="grid gap-10 lg:grid-cols-12 lg:items-center pt-4">
-              <div className="lg:col-span-7">
-                <div className="h-[24rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg">
-                  <img
-                    src="/images/stitch-work.jpeg"
-                    alt="Precision workshop stitching and uniform finishing"
-                    onError={(e) => {
-                      const el = e.currentTarget;
-                      if (!el.dataset.fb) {
-                        el.dataset.fb = "1";
-                        el.src = FALLBACK_PHOTO;
-                      }
-                    }}
-                    className="h-full w-full object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-              </div>
-
-              <div className="lg:col-span-5 rounded-3xl bg-slate-950 p-8 sm:p-10 text-white shadow-xl space-y-6">
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-400">
-                  Workshop Advantage
-                </p>
-                <h3 className="text-3xl sm:text-4xl font-extrabold leading-tight">
-                  Built to Scale With{" "}
-                  <span className="font-editorial text-emerald-300 text-4xl sm:text-5xl">
-                    Your Team
-                  </span>
-                </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  Every intake brings new recruits, size adjustments, and
-                  replacement needs. Because we produce directly and keep your
-                  specifications organized, expanding or re-kitting stays
-                  straightforward.
-                </p>
-                <ul className="space-y-3 border-t border-slate-800 pt-5 text-sm text-slate-200">
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-emerald-400 shrink-0" />
-                    <span>Consistent cut and finish across full batch runs</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-emerald-400 shrink-0" />
-                    <span>Company-specific sizing archived for rapid reorders</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-emerald-400 shrink-0" />
-                    <span>Single-piece replacements supported without full-batch minimums</span>
-                  </li>
-                </ul>
-                <div className="pt-2">
-                  <Link
-                    href="/production"
-                    className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-sm font-bold text-slate-950 hover:bg-emerald-400 transition-colors"
-                  >
-                    <span>Explore Workshop Process</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Band 2: Signature Lines */}
+                {/* Band 2: Signature Lines */}
         <section className="border-t border-slate-200 bg-slate-50/70 py-28 lg:py-36">
           <div className="mx-auto max-w-7xl px-6">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
@@ -548,7 +428,7 @@ export default function HomePage() {
           </section>
         )}
 
-        {/* Band 4: Spaced Editorial Lookbook Chapters */}
+        {/* Band 5: Spaced Editorial Lookbook Chapters */}
         <section className="border-t border-slate-200 bg-slate-50/50 py-28 lg:py-44">
           <div className="mx-auto max-w-7xl px-6 space-y-36 lg:space-y-48">
             {lookbookBands.map((band) => (
@@ -606,7 +486,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Band 5: Full-Width Visual Closing Banner */}
+        {/* Band 6: Full-Width Visual Closing Banner */}
         <section className="border-t border-slate-200 bg-white py-28 lg:py-40">
           <div className="mx-auto max-w-7xl px-6">
             <div className="relative h-[26rem] sm:h-[32rem] overflow-hidden rounded-3xl bg-slate-950">
@@ -650,6 +530,126 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        {/* Band 4: Long Editorial Client Value & Workshop Standard Showcase */}
+        <section className="border-t border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-white py-32 lg:py-44">
+          <div className="mx-auto max-w-7xl px-6 space-y-24 lg:space-y-28">
+            <div className="grid gap-8 lg:grid-cols-12 lg:items-end border-b border-slate-200 pb-10">
+              <div className="lg:col-span-7 space-y-3">
+                <p className="text-xs font-bold uppercase tracking-[0.26em] text-emerald-700">
+                  Why Organizations Partner With Us
+                </p>
+                <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950 leading-[1.05]">
+                  Dependable Supply{" "}
+                  <span className="font-editorial text-emerald-700 text-5xl sm:text-7xl">
+                    Made Simple
+                  </span>
+                </h2>
+              </div>
+              <p className="lg:col-span-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                Designed for security agencies, estates, schools, and growing
+                teams that need consistent fit, clean branding, and reliable
+                follow-through from first batch to future reorders.
+              </p>
+            </div>
+
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+              {CLIENT_PILLARS.map((pillar, idx) => {
+                const Icon = pillar.icon;
+                return (
+                  <article
+                    key={pillar.title}
+                    className="group relative flex flex-col justify-between border-t-2 border-slate-900 pt-6 space-y-6 transition-colors duration-300 hover:border-emerald-600"
+                  >
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-extrabold tracking-[0.22em] text-slate-400 group-hover:text-emerald-700 transition-colors">
+                          0{idx + 1}
+                        </span>
+                        <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-emerald-200/80 bg-emerald-50/70 text-emerald-700 shadow-2xs group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                      </div>
+
+                      <h3 className="text-xl font-extrabold text-slate-950 tracking-tight">
+                        {pillar.title}
+                      </h3>
+
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        {pillar.text}
+                      </p>
+                    </div>
+
+                    <div className="pt-2">
+                      <span className="inline-block h-1 w-10 rounded-full bg-slate-200 group-hover:w-20 group-hover:bg-emerald-600 transition-all duration-300" />
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+
+            {/* Long-form Split Editorial Feature: Clean Photo Separate From Structured Specs */}
+            <div className="grid gap-10 lg:grid-cols-12 lg:items-center pt-4">
+              <div className="lg:col-span-7">
+                <div className="h-[24rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg">
+                  <img
+                    src="/images/stitch-work.jpeg"
+                    alt="Precision workshop stitching and uniform finishing"
+                    onError={(e) => {
+                      const el = e.currentTarget;
+                      if (!el.dataset.fb) {
+                        el.dataset.fb = "1";
+                        el.src = FALLBACK_PHOTO;
+                      }
+                    }}
+                    className="h-full w-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 rounded-3xl bg-slate-950 p-8 sm:p-10 text-white shadow-xl space-y-6">
+                <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-400">
+                  Workshop Advantage
+                </p>
+                <h3 className="text-3xl sm:text-4xl font-extrabold leading-tight">
+                  Built to Scale With{" "}
+                  <span className="font-editorial text-emerald-300 text-4xl sm:text-5xl">
+                    Your Team
+                  </span>
+                </h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Every intake brings new recruits, size adjustments, and
+                  replacement needs. Because we produce directly and keep your
+                  specifications organized, expanding or re-kitting stays
+                  straightforward.
+                </p>
+                <ul className="space-y-3 border-t border-slate-800 pt-5 text-sm text-slate-200">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-emerald-400 shrink-0" />
+                    <span>Consistent cut and finish across full batch runs</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-emerald-400 shrink-0" />
+                    <span>Company-specific sizing archived for rapid reorders</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-emerald-400 shrink-0" />
+                    <span>Single-piece replacements supported without full-batch minimums</span>
+                  </li>
+                </ul>
+                <div className="pt-2">
+                  <Link
+                    href="/production"
+                    className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-sm font-bold text-slate-950 hover:bg-emerald-400 transition-colors"
+                  >
+                    <span>Explore Workshop Process</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <Footer />
