@@ -207,25 +207,68 @@ export default function HomePage() {
       <Navbar />
 
       <main className="flex-1">
+
+      <section aria-label="Hero" className="w-full bg-white border-b border-slate-200 py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-6 space-y-5">
+            <p className="text-sm sm:text-base font-bold uppercase tracking-wider text-[#134E9E]">
+              Uniforms, Tactical Gear &amp; Cresting
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-[#0B1F4C] leading-[1.05]">
+              DEPENDABLE SUPPLY
+              <span className="block font-serif italic font-normal normal-case text-3xl sm:text-4xl lg:text-5xl text-[#134E9E] mt-2">
+                Made Simple
+              </span>
+            </h1>
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl">
+              Designed for security agencies, estates, schools, and growing teams that need consistent fit, clean branding, and reliable follow through from first batch to future reorders.
+            </p>
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href="/quote"
+                className="inline-flex items-center justify-center rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] text-white font-semibold text-base px-6 py-3 transition-colors"
+              >
+                Request a Quote
+              </a>
+              <a
+                href="/catalog"
+                className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white hover:border-[#0B1F4C] text-[#0B1F4C] font-semibold text-base px-6 py-3 transition-colors"
+              >
+                Browse Catalog
+              </a>
+            </div>
+          </div>
+          <div className="lg:col-span-6">
+            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+              <img
+                src="/images/kit-bundle.jpeg"
+                alt="Uniforms, duty gear, and custom crests from Exceptional Kits and Wears"
+                className="w-full h-[320px] sm:h-[400px] object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
         {/* Band 1: Motion Spotlight Hero Stage */}
         <section
           onMouseEnter={() => setPaused(true)}
  onMouseLeave={() => setPaused(false)}
- className="relative py 14 lg:py 24 bg gradient to b from slate 50/90 via white to white overflow hidden"
+ className="relative py-14-lg:py-24-bg gradient to b from slate-50/90-via white to white overflow-hidden"
  >
- <div className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
+ <div className="pointer-events-none absolute -top-24-right-0-h-96-w-96-rounded-full bg-emerald-500/10-blur-3xl" />
 
           <div className="relative mx-auto max-w-7xl px-6">
-            <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-              <div className="lg:col-span-5 space-y-6">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#BFD3EE] bg-[#EEF4FC]/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-[#134E9E]">
-                  <span className="h-2 w-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] animate-pulse" />
+            <div className="grid gap-12-lg:grid-cols-12-lg:items-center">
+              <div className="lg:col-span-5-space-y-6">
+                <div className="inline-flex items-center gap-2-rounded-full border border-[#BFD3EE] bg-[#EEF4FC]/90-px-4-py-1.5-text-xs font-bold uppercase tracking-[0.22em] text-[#134E9E]">
+                  <span className="h-2-w-2-rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] animate-pulse" />
                   <span>{slide.kicker}</span>
                 </div>
 
                 <h1
                   key={slide.accent}
-                  className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 transition-all duration-500"
+                  className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950-transition-all duration-500"
                 >
                   {slide.lead}{" "}
                   <span className="font-editorial text-[#134E9E] text-6xl sm:text-7xl lg:text-8xl">
@@ -234,28 +277,28 @@ export default function HomePage() {
                   {slide.tail}
                 </h1>
 
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-md">
+                <p className="text-sm sm:text-base text-slate-600-leading-relaxed max-w-md">
                   {slide.summary}
                 </p>
 
-                <div className="flex flex-wrap items-center gap-4 pt-1">
+                <div className="flex flex-wrap items-center gap-4-pt-1">
                   <Link
                     href={slide.ctaHref}
-                    className="group inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#0B1F4C] hover:bg-[#134E9E] hover:shadow-md transition-all"
+                    className="group inline-flex items-center gap-2-rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7-py-3.5-text-sm font-bold text-white shadow-sm hover:bg-[#0B1F4C] hover:bg-[#134E9E] hover:shadow-md transition-all"
                   >
                     <span>{slide.ctaLabel}</span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-4-w-4-group-hover:translate-x-1-transition-transform" />
                   </Link>
 
                   <Link
                     href="/sectors"
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colors"
+                    className="inline-flex items-center gap-2-rounded-full border border-slate-300-bg-white px-7-py-3.5-text-sm font-bold text-slate-900-hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colors"
                   >
                     <span>Sectors</span>
                   </Link>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-2.5 pt-2">
+                <div className="flex flex-wrap items-center gap-2.5-pt-2">
                   {HERO_SLIDES.map((s, idx) => {
                     const active = activeSlide === idx;
                     return (
@@ -263,10 +306,10 @@ export default function HomePage() {
                         key={s.tabLabel}
                         type="button"
                         onClick={() => setActiveSlide(idx)}
- className={`rounded full px 4 py 1.5 text xs font bold uppercase tracking wider transition all cursor pointer ${
+ className={`rounded-full px-4-py-1.5-text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
  active
- ? "bg slate 950 text white shadow xs"
- : "border border slate 200 bg white text slate 600 hover:border-[#BFD3EE] hover:text-[#134E9E]"
+ ? "bg-slate-950-text-white shadow xs"
+ : "border border-slate-200-bg-white text-slate-600-hover:border-[#BFD3EE] hover:text-[#134E9E]"
  }`}
  >
  {s.tabLabel}
@@ -277,7 +320,7 @@ export default function HomePage() {
               </div>
 
               <div className="lg:col-span-7">
-                <div className="relative h-[27rem] sm:h-[35rem] overflow-hidden rounded-3xl border border-slate-200/90 bg-slate-950 shadow-2xl">
+                <div className="relative h-[27rem] sm:h-[35rem] overflow-hidden rounded-3xl border border-slate-200/90-bg-slate-950-shadow-2xl">
                   {HERO_SLIDES.map((s, idx) => (
                     <img
                       key={s.image}
@@ -290,10 +333,10 @@ export default function HomePage() {
  el.src = FALLBACK_PHOTO;
  }
  }}
- className={`absolute inset 0 h full w full object cover animate slow zoom transition all duration 700 ease out ${
+ className={`absolute inset-0-h-full w-full object cover animate slow zoom transition-all duration-700-ease out ${
  activeSlide === idx
- ? "opacity 100 scale 100"
- : "opacity 0 scale 105 pointer events none"
+ ? "opacity-100-scale-100"
+ : "opacity-0-scale-105-pointer events none"
  }`}
  />
  ))}
@@ -305,9 +348,9 @@ export default function HomePage() {
         </section>
 
                 {/* Band 2: Signature Lines */}
-        <section className="border-t border-slate-200 bg-slate-50/70 py-28 lg:py-36">
+        <section className="border-t border-slate-200-bg-slate-50/70-py-28-lg:py-36">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4-mb-6">
               <div>
                 <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
                   Core{" "}
@@ -315,26 +358,26 @@ export default function HomePage() {
                     Collections
                   </span>
                 </h2>
-                <p className="mt-3 max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                <p className="mt-3-max-w-xl text-sm sm:text-base text-slate-600-leading-relaxed">
  Explore our core uniform and gear categories, each configurable
  with your company branding and batch requirements.
  </p>
               </div>
               <Link
                 href="/catalog"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-[#134E9E] hover:text-[#134E9E] shrink-0"
+                className="inline-flex items-center gap-1.5-text-sm font-bold text-[#134E9E] hover:text-[#134E9E] shrink-0"
               >
                 <span>Catalog</span>
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4-w-4" />
               </Link>
             </div>
 
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-10">
+            <div className="grid gap-8-sm:grid-cols-2-lg:grid-cols-4-mt-10">
               {SIGNATURE_LINES.map((line) => (
                 <div key={line.title} className="space-y-3">
                   <Link
                     href={line.href}
-                    className="group block h-[24rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-2xl transition-all duration-500"
+                    className="group block h-[24rem] overflow-hidden rounded-3xl border border-slate-200-bg-white shadow-sm hover:shadow-2xl transition-all duration-500"
                   >
                     <img
                       src={line.image}
@@ -346,17 +389,17 @@ export default function HomePage() {
  el.src = FALLBACK_PHOTO;
  }
  }}
- className="h full w full object cover group hover:scale 105 transition transform duration 700"
+ className="h-full w-full object cover group hover:scale-105-transition transform duration-700"
  />
  </Link>
-                  <div className="px-1 pt-1 space-y-1.5">
+                  <div className="px-1-pt-1-space-y-1.5">
                     <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#134E9E]">
                       {line.tag}
                     </p>
                     <h3 className="text-xl font-bold text-slate-950">
                       {line.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600-leading-relaxed">
                       {line.note}
                     </p>
                   </div>
@@ -368,9 +411,9 @@ export default function HomePage() {
 
  {/* Band 3: Dedicated People & On Body Fit */}
  {peopleItems.length > 0 && (
- <section className="border-t border-slate-200 bg-white py-28 lg:py-40">
+ <section className="border-t border-slate-200-bg-white py-28-lg:py-40">
             <div className="mx-auto max-w-7xl px-6">
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4-mb-12">
                 <div>
                   <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
  On Body{" "}
@@ -378,28 +421,28 @@ export default function HomePage() {
                       Showcase
                     </span>
                   </h2>
-                  <p className="mt-3 max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                  <p className="mt-3-max-w-xl text-sm sm:text-base text-slate-600-leading-relaxed">
  See how our uniforms and gear wear in practice, balanced fit,
  clean lines, and practical coverage for active personnel.
  </p>
                 </div>
                 <Link
                   href="/sectors"
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#134E9E] hover:text-[#134E9E] shrink-0"
+                  className="inline-flex items-center gap-1.5-text-sm font-bold text-[#134E9E] hover:text-[#134E9E] shrink-0"
                 >
                   <span>Sectors</span>
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4-w-4" />
                 </Link>
               </div>
 
-              <div className="grid gap-10 md:grid-cols-2">
+              <div className="grid gap-10-md:grid-cols-2">
                 {peopleItems.map((person) => (
                   <Link
                     key={`${person.code}-${person.image}`}
                     href="/sectors"
                     className="group block space-y-4"
                   >
-                    <div className="h-[28rem] sm:h-[34rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md hover:shadow-2xl transition-all duration-500">
+                    <div className="h-[28rem] sm:h-[34rem] overflow-hidden rounded-3xl border border-slate-200-bg-white shadow-md hover:shadow-2xl transition-all duration-500">
                       <img
                         src={person.image}
                         alt={person.displayTitle}
@@ -410,10 +453,10 @@ export default function HomePage() {
  el.src = FALLBACK_PHOTO;
  }
  }}
- className="h full w full object cover group hover:scale 105 transition transform duration 700"
+ className="h-full w-full object cover group hover:scale-105-transition transform duration-700"
  />
  </div>
-                    <div className="px-1 space-y-1">
+                    <div className="px-1-space-y-1">
                       <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#134E9E]">
                         {person.category}
                       </p>
@@ -429,11 +472,11 @@ export default function HomePage() {
         )}
 
         {/* Band 5: Spaced Editorial Lookbook Chapters */}
-        <section className="border-t border-slate-200 bg-slate-50/50 py-28 lg:py-44">
-          <div className="mx-auto max-w-7xl px-6 space-y-36 lg:space-y-48">
+        <section className="border-t border-slate-200-bg-slate-50/50-py-28-lg:py-44">
+          <div className="mx-auto max-w-7xl px-6-space-y-36-lg:space-y-48">
             {lookbookBands.map((band) => (
               <div key={band.key} className="space-y-10">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 border-b border-slate-200 pb-6">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4-border-b border-slate-200-pb-6">
                   <div className="space-y-2">
                     <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
                       {band.lead}{" "}
@@ -441,27 +484,27 @@ export default function HomePage() {
                         {band.accent}
                       </span>
                     </h2>
-                    <p className="max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                    <p className="max-w-xl text-sm sm:text-base text-slate-600-leading-relaxed">
                       {band.caption}
                     </p>
                   </div>
                   <Link
                     href="/quote"
-                    className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-700 hover:text-[#134E9E] shrink-0"
+                    className="inline-flex items-center gap-1.5-text-sm font-bold text-slate-700-hover:text-[#134E9E] shrink-0"
                   >
                     <span>Order Spec</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4-w-4" />
                   </Link>
                 </div>
 
-                <div className="grid gap-10 md:grid-cols-3">
+                <div className="grid gap-10-md:grid-cols-3">
                   {band.items.map((item) => (
                     <Link
                       key={`${item.code}-${item.image}`}
                       href="/catalog"
                       className="group space-y-4"
                     >
-                      <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-xs group-hover:shadow-2xl transition-all duration-500">
+                      <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-white border border-slate-200-shadow-xs group-hover:shadow-2xl transition-all duration-500">
                         <img
                           src={item.image}
                           alt={item.displayTitle}
@@ -472,10 +515,10 @@ export default function HomePage() {
  el.src = FALLBACK_PHOTO;
  }
  }}
- className="h full w full object cover group hover:scale 105 transition transform duration 700"
+ className="h-full w-full object cover group hover:scale-105-transition transform duration-700"
  />
  </div>
-                      <h3 className="px-1 text-base font-bold text-slate-950">
+                      <h3 className="px-1-text-base font-bold text-slate-950">
                         {item.displayTitle}
                       </h3>
                     </Link>
@@ -487,7 +530,7 @@ export default function HomePage() {
         </section>
 
  {/* Band 6: Full Width Visual Closing Banner */}
- <section className="border-t border-slate-200 bg-white py-28 lg:py-40">
+ <section className="border-t border-slate-200-bg-white py-28-lg:py-40">
           <div className="mx-auto max-w-7xl px-6">
             <div className="relative h-[26rem] sm:h-[32rem] overflow-hidden rounded-3xl bg-slate-950">
               <img
@@ -500,30 +543,30 @@ export default function HomePage() {
  el.src = FALLBACK_PHOTO;
  }
  }}
- className="h full w full object cover opacity 55"
+ className="h-full w-full object cover opacity-55"
  />
- <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-transparent" />
-              <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-14 max-w-2xl space-y-5">
+ <div className="absolute inset-0-bg-gradient-to-r from-slate-950/90-via-slate-950/60-to-transparent" />
+              <div className="absolute inset-0-flex flex-col justify-center px-8-sm:px-14-max-w-2xl space-y-5">
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-300">
                   Direct Workshop
                 </p>
                 <h2 className="text-4xl sm:text-6xl font-extrabold text-white">
                   Ready for Your{" "}
-                  <span className="font-editorial text-emerald-300 text-5xl sm:text-7xl">
+                  <span className="font-editorial text-emerald-300-text-5xl sm:text-7xl">
                     Custom Batch
                   </span>
                 </h2>
-                <p className="text-sm sm:text-base text-slate-200/90 max-w-lg leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-200/90-max-w-lg leading-relaxed">
                   Share your uniform quantities, branding preferences, or sector
                   needs and get a clear workshop quote without middleman delays.
                 </p>
                 <div className="pt-1">
                   <Link
                     href="/quote"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white hover:bg-emerald-500 transition-colors"
+                    className="inline-flex items-center gap-2-rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7-py-3.5-text-sm font-bold text-white hover:bg-emerald-500-transition-colors"
                   >
                     <span>Start Quote</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4-w-4" />
                   </Link>
                 </div>
               </div>
@@ -531,56 +574,56 @@ export default function HomePage() {
           </div>
         </section>
         {/* Band 4: Long Editorial Client Value & Workshop Standard Showcase */}
-        <section className="border-t border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-white py-32 lg:py-44">
-          <div className="mx-auto max-w-7xl px-6 space-y-24 lg:space-y-28">
-            <div className="grid gap-8 lg:grid-cols-12 lg:items-end border-b border-slate-200 pb-10">
-              <div className="lg:col-span-7 space-y-3">
+        <section className="border-t border-slate-200-bg-gradient-to-b from-white via-slate-50/50-to-white py-32-lg:py-44">
+          <div className="mx-auto max-w-7xl px-6-space-y-24-lg:space-y-28">
+            <div className="grid gap-8-lg:grid-cols-12-lg:items-end border-b border-slate-200-pb-10">
+              <div className="lg:col-span-7-space-y-3">
                 <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#134E9E]">
                   Why Organizations Partner With Us
                 </p>
-                <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950 leading-[1.05]">
+                <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950-leading-[1.05]">
                   Dependable Supply{" "}
                   <span className="font-editorial text-[#134E9E] text-5xl sm:text-7xl">
                     Made Simple
                   </span>
                 </h2>
               </div>
-              <p className="lg:col-span-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="lg:col-span-5-text-sm sm:text-base text-slate-600-leading-relaxed">
  Designed for security agencies, estates, schools, and growing
  teams that need consistent fit, clean branding, and reliable
  follow through from first batch to future reorders.
  </p>
             </div>
 
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-10-sm:grid-cols-2-lg:grid-cols-4">
               {CLIENT_PILLARS.map((pillar, idx) => {
                 const Icon = pillar.icon;
                 return (
                   <article
                     key={pillar.title}
-                    className="group relative flex flex-col justify-between border-t-2 border-slate-900 pt-6 space-y-6 transition-colors duration-300 hover:border-[#BFD3EE]"
+                    className="group relative flex flex-col justify-between border-t-2-border-slate-900-pt-6-space-y-6-transition-colors duration-300-hover:border-[#BFD3EE]"
                   >
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs font-extrabold tracking-[0.22em] text-slate-400 group-hover:text-[#134E9E] transition-colors">
+                        <span className="text-xs font-extrabold tracking-[0.22em] text-slate-400-group-hover:text-[#134E9E] transition-colors">
                           0{idx + 1}
                         </span>
-                        <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[#BFD3EE]/80 bg-[#EEF4FC]/70 text-[#134E9E] shadow-2xs group-hover:bg-[#0B1F4C] hover:bg-[#134E9E] group-hover:text-white transition-all duration-300">
-                          <Icon className="h-5 w-5" />
+                        <div className="inline-flex h-11-w-11-items-center justify-center rounded-2xl border border-[#BFD3EE]/80-bg-[#EEF4FC]/70-text-[#134E9E] shadow-2xs group-hover:bg-[#0B1F4C] hover:bg-[#134E9E] group-hover:text-white transition-all duration-300">
+                          <Icon className="h-5-w-5" />
                         </div>
                       </div>
 
-                      <h3 className="text-xl font-extrabold text-slate-950 tracking-tight">
+                      <h3 className="text-xl font-extrabold text-slate-950-tracking-tight">
                         {pillar.title}
                       </h3>
 
-                      <p className="text-sm text-slate-600 leading-relaxed">
+                      <p className="text-sm text-slate-600-leading-relaxed">
                         {pillar.text}
                       </p>
                     </div>
 
                     <div className="pt-2">
-                      <span className="inline-block h-1 w-10 rounded-full bg-slate-200 group-hover:w-20 group-hover:bg-[#0B1F4C] hover:bg-[#134E9E] transition-all duration-300" />
+                      <span className="inline-block h-1-w-10-rounded-full bg-slate-200-group-hover:w-20-group-hover:bg-[#0B1F4C] hover:bg-[#134E9E] transition-all duration-300" />
                     </div>
                   </article>
                 );
@@ -588,9 +631,9 @@ export default function HomePage() {
             </div>
 
  {/* Long form Split Editorial Feature: Clean Photo Separate From Structured Specs */}
- <div className="grid gap-10 lg:grid-cols-12 lg:items-center pt-4">
+ <div className="grid gap-10-lg:grid-cols-12-lg:items-center pt-4">
               <div className="lg:col-span-7">
-                <div className="h-[24rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg">
+                <div className="h-[24rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200-bg-white shadow-lg">
                   <img
                     src="/images/stitch-work.jpeg"
                     alt="Precision workshop stitching and uniform finishing"
@@ -601,48 +644,48 @@ export default function HomePage() {
  el.src = FALLBACK_PHOTO;
  }
  }}
- className="h full w full object cover hover:scale 105 transition transform duration 700"
+ className="h-full w-full object cover hover:scale-105-transition transform duration-700"
  />
  </div>
               </div>
 
-              <div className="lg:col-span-5 rounded-3xl bg-slate-950 p-8 sm:p-10 text-white shadow-xl space-y-6">
+              <div className="lg:col-span-5-rounded-3xl bg-slate-950-p-8-sm:p-10-text-white shadow-xl space-y-6">
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#1D4ED8]">
                   Workshop Advantage
                 </p>
                 <h3 className="text-3xl sm:text-4xl font-extrabold leading-tight">
                   Built to Scale With{" "}
-                  <span className="font-editorial text-emerald-300 text-4xl sm:text-5xl">
+                  <span className="font-editorial text-emerald-300-text-4xl sm:text-5xl">
                     Your Team
                   </span>
                 </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">
+                <p className="text-sm text-slate-300-leading-relaxed">
  Every intake brings new recruits, size adjustments, and
  replacement needs. Because we produce directly and keep your
  specifications organized, expanding or re kitting stays
  straightforward.
  </p>
-                <ul className="space-y-3 border-t border-slate-800 pt-5 text-sm text-slate-200">
+                <ul className="space-y-3-border-t border-slate-800-pt-5-text-sm text-slate-200">
                   <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-emerald-400 shrink-0" />
+                    <span className="mt-1.5-h-2-w-2-rounded-full bg-emerald-400-shrink-0" />
                     <span>Consistent cut and finish across full batch runs</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-emerald-400 shrink-0" />
+                    <span className="mt-1.5-h-2-w-2-rounded-full bg-emerald-400-shrink-0" />
                     <span>Company specific sizing archived for rapid reorders</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-emerald-400 shrink-0" />
+                    <span className="mt-1.5-h-2-w-2-rounded-full bg-emerald-400-shrink-0" />
                     <span>Single piece replacements supported without full batch minimums</span>
                   </li>
                 </ul>
                 <div className="pt-2">
                   <Link
                     href="/production"
-                    className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-sm font-bold text-slate-950 hover:bg-emerald-400 transition-colors"
+                    className="inline-flex items-center gap-2-rounded-full bg-emerald-500-px-6-py-3-text-sm font-bold text-slate-950-hover:bg-emerald-400-transition-colors"
                   >
                     <span>Explore Workshop Process</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4-w-4" />
                   </Link>
                 </div>
               </div>
