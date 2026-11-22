@@ -204,6 +204,68 @@ export default function HomePage() {
       <Navbar />
 
       <main className="flex-1">
+
+      <section aria-label="Featured Hero" className="w-full bg-white border-b border-slate-200 py-12 sm:py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="lg:col-span-6 space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#EEF4FC] border border-[#BFD3EE] px-4 py-1.5 text-sm font-semibold text-[#134E9E]">
+              <span>Direct Workshop Supply &amp; Custom Cresting</span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B1F4C] leading-[1.06]">
+              Uniforms, Tactical Gear &amp; Branded Kits
+              <span className="block font-serif italic font-normal text-3xl sm:text-4xl lg:text-5xl text-[#134E9E] mt-2">
+                Built to Command Confidence
+              </span>
+            </h1>
+
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl">
+              Precision tailored duty wear, tactical vests, caps, and batch uniform runs crafted for security agencies, corporate teams, schools, and organizations that value consistency and sharp presentation.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4 pt-1">
+              <a
+                href="/quote"
+                className="inline-flex items-center justify-center rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] text-white font-semibold text-base px-6 py-3.5 transition-colors shadow-sm"
+              >
+                Request a Quote
+              </a>
+              <a
+                href="/catalog"
+                className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white hover:border-[#0B1F4C] text-[#0B1F4C] font-semibold text-base px-6 py-3.5 transition-colors"
+              >
+                Explore Catalog
+              </a>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-slate-200 max-w-lg">
+              <div>
+                <p className="text-xl sm:text-2xl font-extrabold text-[#0B1F4C]">Batch &amp; Single</p>
+                <p className="text-sm text-slate-600 mt-0.5">Flexible order runs</p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl font-extrabold text-[#0B1F4C]">Saved Sizing</p>
+                <p className="text-sm text-slate-600 mt-0.5">Easy team reorders</p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl font-extrabold text-[#0B1F4C]">Custom Crests</p>
+                <p className="text-sm text-slate-600 mt-0.5">Clean brand finish</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-6">
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
+              <img
+                src="/images/tactical-vest.jpeg"
+                alt="Custom uniforms, tactical vest, and branded gear from Exceptional Kits and Wears"
+                className="w-full h-[360px] sm:h-[440px] lg:h-[480px] object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
         {/* Band 1: Motion Spotlight Hero Stage */}
         <section
           onMouseEnter={() => setPaused(true)}
