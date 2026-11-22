@@ -53,7 +53,7 @@ const SIGNATURE_LINES = [
     title: "Uniform Sets",
     tag: "Duty",
     note: "Structured shirts and trousers built for all-day presence and movement.",
-    image: "/images/duty-shirt.png",
+    image: "/images/guard-set.jpeg",
     href: "/catalog",
   },
   {
@@ -67,7 +67,7 @@ const SIGNATURE_LINES = [
     title: "Branded Caps",
     tag: "Cresting",
     note: "Clean headwear and crests that keep teams looking unified and sharp.",
-    image: "/images/branded-cap.png",
+    image: "/images/cap-line.jpeg",
     href: "/catalog",
   },
   {
@@ -298,22 +298,7 @@ export default function HomePage() {
                     />
                   ))}
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/15 to-transparent" />
-
-                  <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
-                    <div>
-                      <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-emerald-300">
-                        {slide.tabLabel}
-                      </p>
-                      <p className="mt-1 font-editorial text-3xl sm:text-4xl text-white">
-                        {slide.accent}
-                      </p>
-                    </div>
-                    <span className="rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold text-white backdrop-blur-md">
-                      Direct Workshop
-                    </span>
                   </div>
-                </div>
               </div>
             </div>
           </div>
@@ -388,7 +373,7 @@ export default function HomePage() {
                 <div key={line.title} className="space-y-3">
                   <Link
                     href={line.href}
-                    className="group relative block h-[24rem] overflow-hidden rounded-3xl bg-slate-950 shadow-sm hover:shadow-2xl transition-all duration-500"
+                    className="group block h-[24rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-2xl transition-all duration-500"
                   >
                     <img
                       src={line.image}
@@ -402,19 +387,18 @@ export default function HomePage() {
                       }}
                       className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
-                    <div className="absolute bottom-5 left-5 right-5">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-300">
-                        {line.tag}
-                      </p>
-                      <h3 className="mt-1 text-2xl font-bold text-white">
-                        {line.title}
-                      </h3>
-                    </div>
                   </Link>
-                  <p className="px-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {line.note}
-                  </p>
+                  <div className="px-1 pt-1 space-y-1.5">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">
+                      {line.tag}
+                    </p>
+                    <h3 className="text-xl font-bold text-slate-950">
+                      {line.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      {line.note}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -452,26 +436,27 @@ export default function HomePage() {
                   <Link
                     key={`${person.code}-${person.image}`}
                     href="/sectors"
-                    className="group relative h-[28rem] sm:h-[34rem] overflow-hidden rounded-3xl bg-slate-950 shadow-md hover:shadow-2xl transition-all duration-500"
+                    className="group block space-y-4"
                   >
-                    <img
-                      src={person.image}
-                      alt={person.displayTitle}
-                      onError={(e) => {
-                        const el = e.currentTarget;
-                        if (!el.dataset.fb) {
-                          el.dataset.fb = "1";
-                          el.src = FALLBACK_PHOTO;
-                        }
-                      }}
-                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
-                    <div className="absolute bottom-8 left-8 right-8">
-                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-300">
+                    <div className="h-[28rem] sm:h-[34rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md hover:shadow-2xl transition-all duration-500">
+                      <img
+                        src={person.image}
+                        alt={person.displayTitle}
+                        onError={(e) => {
+                          const el = e.currentTarget;
+                          if (!el.dataset.fb) {
+                            el.dataset.fb = "1";
+                            el.src = FALLBACK_PHOTO;
+                          }
+                        }}
+                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="px-1 space-y-1">
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">
                         {person.category}
                       </p>
-                      <h3 className="mt-1 text-2xl sm:text-3xl font-bold text-white">
+                      <h3 className="text-2xl font-bold text-slate-950">
                         {person.displayTitle}
                       </h3>
                     </div>
