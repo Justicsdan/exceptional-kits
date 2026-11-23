@@ -98,7 +98,37 @@ const CLIENT_PILLARS = [
   },
 ];
 
-const IMAGE_TITLE_MAP: Record<string, string> = ;
+const IMAGE_TITLE_MAP: Record<string, string> = {
+  "/images/review-13-4eb26e.jpeg": "Tactical Utility Vest",
+  "/images/review-09-4e0868.jpeg": "Heavy-Duty Duty Belt",
+  "/images/review-14-1b968e.jpeg": "Packaged Uniform Batch",
+  "/images/review-01-58cbbd.jpeg": "Academy Batch Packs",
+  "/images/review-05-1d3205.jpeg": "Patrol Shirt & Trouser Kit",
+  "/images/review-11-332315.jpeg": "Guard Uniform Set",
+  "/images/review-07-938787.jpeg": "Uniform & Duty Belt Set",
+  "/images/review-18-046a5a.jpeg": "Crested Duty Shirt & Lanyard",
+  "/images/black-knee-elbow-pads.jpeg": "Protective Knee & Elbow Pads",
+  "/images/review-02-504304.jpeg": "Duty Cord, Lanyard & Trim",
+  "/images/review-06-25fc05.jpeg": "Embroidered Crest & Trim",
+  "/images/bagged-uniform-batch.jpeg": "Structured Duty Shirt",
+  "/images/yellow-cord-white-trim.jpeg": "Braided Cord & Fabric Trim",
+  "/images/review-28-93fd58.jpeg": "Workshop Garment Batch",
+  "/images/review-08-96de4b.jpeg": "Duty Uniform Set",
+  "/images/review-29-ee60b9.jpeg": "Field Gear & Accessories",
+  "/images/review-04-c206e0.jpeg": "Tailored Uniform Kit",
+  "/images/review-31-4a1a55.jpeg": "Workshop Uniform Sample",
+  "/images/plaid-school-pinafore.jpeg": "Plaid School Pinafore",
+  "/images/review-33-eb498f.jpeg": "Security Uniform Set",
+  "/images/review-34-7763f8.jpeg": "Field Kit & Accessories",
+  "/images/review-35-6f71c0.jpeg": "Tailored Garment Batch",
+  "/images/review-36-6a0f9e.jpeg": "Duty Wear & Trim",
+  "/images/review-37-32cbe6.jpeg": "Uniform Batch Pack",
+  "/images/review-38-271124.jpeg": "Workshop Kit Finish",
+  "/images/review-12-5e50d6.jpeg": "Academy Uniform Detail",
+  "/images/review-15-a6308d.jpeg": "Duty Shirt & Kit Set",
+  "/images/review-16-d9ba20.jpeg": "Complete Uniform Set",
+  "/images/review-17-51baac.jpeg": "Crested Shirt & Belt Set",
+};
 
 function cleanDisplayTitle(rawTitle: string, index: number, imagePath?: string): string {
   if (imagePath && IMAGE_TITLE_MAP[imagePath]) {
