@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#061224] text-slate-300">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-          <div className="space-y-3">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12 lg:gap-14">
+          <div className="min-w-0 space-y-3">
             <BrandLogo variant="dark" />
             <p className="text-xs italic text-sky-400">
               ...Quality. Style. Professionalism.
@@ -19,7 +19,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="space-y-3">
+          <div className="min-w-0 space-y-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-white">
               OUR SERVICES
             </h3>
@@ -47,7 +47,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-3">
+          <div className="min-w-0 space-y-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-white">
               CONTACT US
             </h3>
@@ -63,7 +63,7 @@ export default function Footer() {
                 0803 239 2875
               </a>
             </p>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs leading-relaxed text-slate-400 break-words">
               Uniform Production &bull; Security Kits &bull; Branding Services
             </p>
             <div className="pt-2">
