@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, FileText, Menu, X } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 
 const NAV_LINKS = [
   { href: "/", label: "Overview" },
@@ -22,24 +23,9 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={() => setMobileOpen(false)}
-          className="group flex items-center gap-3 sm:gap-4 shrink-0"
+          className="group shrink-0 transition-transform duration-300 hover:-translate-y-0.5"
         >
-          <div className="relative flex h-12 w-20 sm:h-16 sm:w-28 items-center justify-center rounded-2xl border border-sky-200/90 bg-gradient-to-b from-white to-sky-50/40 px-2 py-1.5 shadow-sm ring-1 ring-slate-900/5 group-hover:border-sky-400 group-hover:shadow-md group-hover:-translate-y-0.5 transition-all duration-300">
-            <img
-              src="/images/logo.png?v=4"
-              alt="EKW — Exceptional Kits and Wears"
-              className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-
-          <div className="hidden sm:block">
-            <span className="block text-base lg:text-lg font-extrabold tracking-tight text-slate-950 leading-none">
-              EXCEPTIONAL KITS AND WEARS
-            </span>
-            <span className="mt-1.5 block text-sm font-bold uppercase tracking-[0.24em] text-sky-700">
-              Uniforms • Tactical • Cresting
-            </span>
-          </div>
+          <BrandLogo variant="light" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">

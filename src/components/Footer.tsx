@@ -1,5 +1,6 @@
 import Link from "next/link";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function Footer() {
   return (
@@ -7,16 +8,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div className="space-y-3">
-            <div className="inline-flex rounded-xl bg-white p-2">
-              <img
-                src="/images/logo.png"
-                alt="Exceptional Kits And Wears"
-                className="h-12 w-auto object-contain"
-              />
-            </div>
-            <h2 className="text-base font-bold text-white">
-              Exceptional Kits And Wears
-            </h2>
+            <BrandLogo variant="dark" />
             <p className="text-xs italic text-sky-400">
               ...Quality. Style. Professionalism.
             </p>
