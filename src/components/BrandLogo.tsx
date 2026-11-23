@@ -8,9 +8,9 @@ export default function BrandLogo({
   const isDark = variant === "dark";
 
   return (
-    <div className="inline-flex items-center gap-3.5 select-none">
-      {/* Custom Precision Crest SVG */}
-      <div className="relative flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center">
+    <div className="inline-flex items-center gap-4 select-none">
+      {/* Larger Custom Precision Crest SVG */}
+      <div className="relative flex h-14 w-14 sm:h-16 sm:w-16 lg:h-[68px] lg:w-[68px] shrink-0 items-center justify-center">
         <svg
           viewBox="0 0 80 80"
           fill="none"
@@ -36,7 +36,6 @@ export default function BrandLogo({
             </linearGradient>
           </defs>
 
-          {/* Outer Shield */}
           <path
             d="M40 6L66 16.5V37.5C66 55.2 54.9 68.4 40 74C25.1 68.4 14 55.2 14 37.5V16.5L40 6Z"
             fill="url(#ekwShieldGrad)"
@@ -44,7 +43,6 @@ export default function BrandLogo({
             strokeWidth="2.5"
           />
 
-          {/* Inner Tailored Stitch Line */}
           <path
             d="M40 11.5L60.5 19.8V37.2C60.5 52.1 51.4 63.3 40 68.2C28.6 63.3 19.5 52.1 19.5 37.2V19.8L40 11.5Z"
             stroke="#93C5FD"
@@ -53,7 +51,6 @@ export default function BrandLogo({
             strokeDasharray="2.5 2"
           />
 
-          {/* Top Chevron Accent */}
           <path
             d="M31 23.5L40 19.5L49 23.5"
             stroke="#7DD3FC"
@@ -62,7 +59,6 @@ export default function BrandLogo({
             strokeLinejoin="round"
           />
 
-          {/* Orbital Dynamic Arc */}
           <path
             d="M9 47.5C15.5 56.5 48.5 56.5 71 31.5"
             stroke="url(#ekwSwooshGrad)"
@@ -70,7 +66,6 @@ export default function BrandLogo({
             strokeLinecap="round"
           />
 
-          {/* Crisp EKW Monogram */}
           <text
             x="40"
             y="45.5"
@@ -84,7 +79,6 @@ export default function BrandLogo({
             EKW
           </text>
 
-          {/* Bottom Rank Star / Diamond */}
           <path
             d="M40 53.5L42.2 56L40 58.5L37.8 56L40 53.5Z"
             fill="#38BDF8"
@@ -92,18 +86,18 @@ export default function BrandLogo({
         </svg>
       </div>
 
-      {/* Editorial Wordmark */}
+      {/* Larger Editorial Wordmark */}
       {showWordmark && (
         <div className={isDark ? "block" : "hidden sm:block"}>
           <span
-            className={`block text-sm sm:text-base lg:text-lg font-extrabold tracking-tight leading-none ${
+            className={`block text-base sm:text-lg lg:text-xl font-extrabold tracking-tight leading-none ${
               isDark ? "text-white" : "text-slate-950"
             }`}
           >
             EXCEPTIONAL KITS AND WEARS
           </span>
           <span
-            className={`mt-1.5 block text-[11px] sm:text-xs font-bold uppercase tracking-[0.22em] ${
+            className={`mt-1.5 block text-xs sm:text-[13px] font-bold uppercase tracking-[0.22em] ${
               isDark ? "text-sky-400" : "text-sky-700"
             }`}
           >

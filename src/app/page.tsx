@@ -421,7 +421,7 @@ export default function HomePage() {
                     key={item.badge}
                     type="button"
                     onClick={() => setSlideIdx(idx)}
-                    className={`rounded-full px-3.5 py-1.5 text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                    className={`rounded-full px-5 py-2.5 text-sm sm:text-[15px] font-semibold transition-all duration-200 cursor-pointer ${
                       isCurrent
                         ? "bg-[#0B1F4C] text-white shadow-sm scale-105"
                         : "bg-[#EEF4FC] text-[#134E9E] border border-[#BFD3EE] hover:bg-[#DCE8FA]"
@@ -601,7 +601,7 @@ export default function HomePage() {
                         key={s.tabLabel}
                         type="button"
                         onClick={() => setActiveSlide(idx)}
-                        className={`rounded-full px-4 py-1.5 text-sm font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                        className={`rounded-full px-5 py-2.5 text-sm sm:text-[15px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
                           active
                             ? "bg-slate-950 text-white shadow-xs"
                             : "border border-slate-200 bg-white text-slate-600 hover:border-[#BFD3EE] hover:text-[#134E9E]"
