@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { WORKSHOP_GALLERY } from "@/data/siteData";
 
-const FALLBACK_PHOTO = "/images/tactical-vest.jpeg";
+const FALLBACK_PHOTO = "/images/review-13-4eb26e.jpeg";
 
 const HERO_SLIDES = [
   {
@@ -16,7 +16,7 @@ const HERO_SLIDES = [
     accent: "Uniforms",
     tail: "& Tactical Kits",
     summary: "Built for daily field wear, durable patrol sets, tactical vests, reinforced belts, and sharp custom cresting made straight from our workshop.",
-    image: "/images/tactical-vest.jpeg",
+    image: "/images/review-13-4eb26e.jpeg",
     ctaHref: "/catalog",
     ctaLabel: "View Catalog",
   },
@@ -27,7 +27,7 @@ const HERO_SLIDES = [
     accent: "Cresting",
     tail: "& Duty Wear",
     summary: "Put your organization's identity front and center with clean embroidery, badges, and branded caps tailored to your exact brand colors.",
-    image: "/images/tactical-vest.jpeg",
+    image: "/images/review-13-4eb26e.jpeg",
     ctaHref: "/production",
     ctaLabel: "Workshop & QC",
   },
@@ -38,7 +38,7 @@ const HERO_SLIDES = [
     accent: "Batch Runs",
     tail: "Ready to Issue",
     summary: "From new security intakes and estates to school and corporate teams, order full batches with saved size records for effortless reorders.",
-    image: "/images/guard-set.jpeg",
+    image: "/images/review-11-332315.jpeg",
     ctaHref: "/quote",
     ctaLabel: "Request Quote",
   },
@@ -49,28 +49,28 @@ const SIGNATURE_LINES = [
     title: "Uniform Sets",
     tag: "Duty",
     note: "Structured shirts and trousers built for all day presence and movement.",
-    image: "/images/work-shirt.jpeg",
+    image: "/images/bagged-uniform-batch.jpeg",
     href: "/catalog",
   },
   {
     title: "Tactical Vests",
     tag: "Field",
     note: "Utility and tactical layers designed for practical gear carry and durability.",
-    image: "/images/tactical-vest.jpeg",
+    image: "/images/review-13-4eb26e.jpeg",
     href: "/catalog",
   },
   {
     title: "Branded Caps",
     tag: "Cresting",
     note: "Clean headwear and crests that keep teams looking unified and sharp.",
-    image: "/images/visor-cap.jpeg",
+    image: "/images/black-knee-elbow-pads.jpeg",
     href: "/catalog",
   },
   {
     title: "Field Gear",
     tag: "Utility",
     note: "Heavy duty belts, pouches, and accessories ready for active shifts.",
-    image: "/images/field-belt.jpeg",
+    image: "/images/review-09-4e0868.jpeg",
     href: "/catalog",
   },
 ];
@@ -98,7 +98,44 @@ const CLIENT_PILLARS = [
   },
 ];
 
-function cleanDisplayTitle(rawTitle: string, index: number): string {
+const IMAGE_TITLE_MAP: Record<string, string> = {
+  "/images/review-13-4eb26e.jpeg": "Tactical Utility Vest",
+  "/images/review-09-4e0868.jpeg": "Heavy-Duty Duty Belt",
+  "/images/review-14-1b968e.jpeg": "Packaged Uniform Batch",
+  "/images/review-01-58cbbd.jpeg": "Academy Batch Packs",
+  "/images/review-05-1d3205.jpeg": "Patrol Shirt & Trouser Kit",
+  "/images/review-11-332315.jpeg": "Guard Uniform Set",
+  "/images/review-07-938787.jpeg": "Uniform & Duty Belt Set",
+  "/images/review-18-046a5a.jpeg": "Crested Duty Shirt & Lanyard",
+  "/images/black-knee-elbow-pads.jpeg": "Protective Knee & Elbow Pads",
+  "/images/dor-bagged-duty-garments.jpeg": "Bagged Duty Garments",
+  "/images/review-02-504304.jpeg": "Duty Cord, Lanyard & Trim",
+  "/images/review-06-25fc05.jpeg": "Embroidered Crest & Trim",
+  "/images/bagged-uniform-batch.jpeg": "Structured Duty Shirt",
+  "/images/yellow-cord-white-trim.jpeg": "Braided Cord & Fabric Trim",
+  "/images/review-28-93fd58.jpeg": "Workshop Garment Batch",
+  "/images/review-08-96de4b.jpeg": "Duty Uniform Set",
+  "/images/review-29-ee60b9.jpeg": "Field Gear & Accessories",
+  "/images/review-04-c206e0.jpeg": "Tailored Uniform Kit",
+  "/images/review-31-4a1a55.jpeg": "Workshop Uniform Sample",
+  "/images/plaid-school-pinafore.jpeg": "Plaid School Pinafore",
+  "/images/review-33-eb498f.jpeg": "Security Uniform Set",
+  "/images/review-34-7763f8.jpeg": "Field Kit & Accessories",
+  "/images/review-35-6f71c0.jpeg": "Tailored Garment Batch",
+  "/images/review-36-6a0f9e.jpeg": "Duty Wear & Trim",
+  "/images/review-37-32cbe6.jpeg": "Uniform Batch Pack",
+  "/images/review-38-271124.jpeg": "Workshop Kit Finish",
+  "/images/review-12-5e50d6.jpeg": "Academy Uniform Detail",
+  "/images/review-15-a6308d.jpeg": "Duty Shirt & Kit Set",
+  "/images/review-16-d9ba20.jpeg": "Complete Uniform Set",
+  "/images/review-17-51baac.jpeg": "Crested Shirt & Belt Set",
+};
+
+function cleanDisplayTitle(rawTitle: string, index: number, imagePath?: string): string {
+  if (imagePath && IMAGE_TITLE_MAP[imagePath]) {
+    return IMAGE_TITLE_MAP[imagePath];
+  }
+
   const cleaned = rawTitle
     .replace(/^workshop\s*sample\s*\d+\s*[-–:]?\s*/i, "")
     .replace(/\b(kit|sample)\s*[-#]?\s*\d+\b/gi, "")
@@ -111,10 +148,8 @@ function cleanDisplayTitle(rawTitle: string, index: number): string {
     "Patrol Duty Kit",
     "Tactical Utility Vest",
     "Crested Agency Cap",
-    "Reinforced Duty Belt",
-    "Cargo Field Trousers",
-    "Guard Shirt & Trouser Set",
-    "Institutional Uniform",
+    "Tailored Uniform Set",
+    "School Uniform Kit",
     "Workshop Batch Run",
   ];
   return fallbackTitles[index % fallbackTitles.length];
@@ -130,7 +165,7 @@ const WORLD_CLASS_SLIDES = [
     tail: "& Tactical Kits",
     summary:
       "Built for daily field wear with durable patrol sets, tactical vests, reinforced belts, and sharp custom cresting crafted straight from our workshop.",
-    image: "/images/tactical-vest.jpeg",
+    image: "/images/review-13-4eb26e.jpeg",
     ctaHref: "/catalog",
     ctaLabel: "Explore Catalog",
   },
@@ -142,7 +177,7 @@ const WORLD_CLASS_SLIDES = [
     tail: "& Duty Wear",
     summary:
       "Put your organization identity front and center with clean embroidery, woven badges, and branded caps tailored to your exact brand colors.",
-    image: "/images/work-shirt.jpeg",
+    image: "/images/bagged-uniform-batch.jpeg",
     ctaHref: "/production",
     ctaLabel: "Workshop & QC",
   },
@@ -154,7 +189,7 @@ const WORLD_CLASS_SLIDES = [
     tail: "Ready to Issue",
     summary:
       "From new security intakes and estates to school and corporate teams, order full batches with saved size records for effortless reorders.",
-    image: "/images/guard-set.jpeg",
+    image: "/images/review-11-332315.jpeg",
     ctaHref: "/quote",
     ctaLabel: "Request a Quote",
   },
@@ -165,57 +200,76 @@ const MOTION_HERO_SLIDES = [
   {
     badge: "Tactical & Patrol",
     kicker: "Workshop Lookbook",
-    lead: "Security",
-    accent: "Uniforms",
-    tail: "& Tactical Kits",
-    summary:
-      "Built for daily field wear with durable patrol sets, tactical vests, reinforced belts, and sharp custom cresting crafted straight from our workshop.",
-    image: "/images/tactical-vest.jpeg",
-    caption: "Field Tested Duty Sets & Tactical Vests",
+    lead: "Tactical",
+    accent: "Utility Vests",
+    tail: "& Field Gear",
+    summary: "Front and back tactical utility vest construction with reinforced pouches, MOLLE webbing, and field-ready durability.",
+    image: "/images/review-08-96de4b.jpeg",
+    caption: "Tactical Vest Front & Back View",
     ctaHref: "/catalog",
     ctaLabel: "Explore Catalog",
   },
   {
     badge: "Duty Shirts",
-    kicker: "Precision Tailoring",
-    lead: "Sharp",
+    kicker: "Direct Workshop Finish",
+    lead: "Tailored",
     accent: "Duty Shirts",
-    tail: "& Tailored Wear",
-    summary:
-      "Clean structured cuts, reinforced seams, and consistent sizing that keep security personnel, corporate teams, and staff looking authoritative every shift.",
-    image: "/images/duty-shirt.png",
-    caption: "Crisp Duty Shirts & Structured Fit",
+    tail: "& Belts",
+    summary: "Structured navy duty shirts with crisp collar and cuff detailing, custom crests, duty belts, and lanyards finished on our table.",
+    image: "/images/review-37-32cbe6.jpeg",
+    caption: "Folded Duty Shirt, Crest, Belt & Lanyard",
     ctaHref: "/production",
     ctaLabel: "Workshop & QC",
   },
   {
-    badge: "Custom Cresting",
-    kicker: "Brand Identity",
-    lead: "Custom",
-    accent: "Cresting",
+    badge: "Uniform Kits",
+    kicker: "Complete Turnout Sets",
+    lead: "Full",
+    accent: "Uniform Kits",
+    tail: "From the Line",
+    summary: "Coordinated shirt, trouser, belt, beret, and lanyard sets crafted right beside our industrial sewing line.",
+    image: "/images/review-36-6a0f9e.jpeg",
+    caption: "Complete Uniform Set on Workshop Table",
+    ctaHref: "/production",
+    ctaLabel: "See Production",
+  },
+  {
+    badge: "Security & Guard",
+    kicker: "Active Duty Presentation",
+    lead: "Sharp",
+    accent: "Security Kits",
     tail: "& Branded Caps",
-    summary:
-      "Put your organization identity front and center with clean embroidery, woven crests, and branded caps tailored to your exact brand colors.",
-    image: "/images/branded-cap.png",
-    caption: "Embroidery, Badges & Branded Headwear",
+    summary: "Uniformed guard shirts, arm badges, duty belts, boots, and branded caps built for confident presence on post.",
+    image: "/images/review-13-4eb26e.jpeg",
+    caption: "Uniformed Security & Branded Headwear",
     ctaHref: "/sectors",
     ctaLabel: "View Sectors",
   },
   {
-    badge: "Batch Supply",
-    kicker: "Institutional Orders",
-    lead: "Tailored",
-    accent: "Batch Runs",
-    tail: "Ready to Issue",
-    summary:
-      "From new security intakes and estates to schools and enterprises, order full batches with saved size records for effortless reorders.",
-    image: "/images/batch-pack.jpeg",
-    caption: "Full Batch Production & Saved Size Charts",
+    badge: "School Uniforms",
+    kicker: "Institutional & Academy",
+    lead: "Academy",
+    accent: "School Kits",
+    tail: "& Crested Shirts",
+    summary: "Clean collared shirts, embroidered school crests, and tailored plaid sets made for schools and academies.",
+    image: "/images/review-23-cacef7.jpeg",
+    caption: "Academy Uniforms & Embroidered Crests",
+    ctaHref: "/sectors",
+    ctaLabel: "Explore Sectors",
+  },
+  {
+    badge: "Pinafore & Batch",
+    kicker: "Batch Tailoring",
+    lead: "Custom",
+    accent: "Pinafores",
+    tail: "& Batch Runs",
+    summary: "Structured plaid pinafores paired with crisp collared shirts, tailored in repeatable batches for schools and organizations.",
+    image: "/images/review-24-56ce73.jpeg",
+    caption: "Plaid Pinafore & Shirt Batch Tailoring",
     ctaHref: "/quote",
     ctaLabel: "Request a Quote",
   },
 ];
-
 export default function HomePage() {
   const [slideIdx, setSlideIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -224,7 +278,7 @@ export default function HomePage() {
     if (isPaused) return;
     const timer = setInterval(() => {
       setSlideIdx((prev) => (prev + 1) % MOTION_HERO_SLIDES.length);
-    }, 5000);
+    }, 3200);
     return () => clearInterval(timer);
   }, [isPaused]);
 
@@ -239,7 +293,7 @@ export default function HomePage() {
     if (heroPaused) return;
     const id = setInterval(() => {
       setHeroIdx((prev) => (prev + 1) % WORLD_CLASS_SLIDES.length);
-    }, 5000);
+    }, 3200);
     return () => clearInterval(id);
   }, [heroPaused]);
 
@@ -260,24 +314,47 @@ export default function HomePage() {
 
   const normalizedGallery = WORKSHOP_GALLERY.map((item, idx) => ({
     ...item,
-    displayTitle: cleanDisplayTitle(item.title, idx),
+    displayTitle: cleanDisplayTitle(item.title, idx, item.image),
   }));
 
-  const peopleItems = normalizedGallery
-    .filter((item) =>
-      /guard|pair|student|uniform|academy|school|officer|team|person|human/i.test(
-        `${item.displayTitle} ${item.category}`
-      )
-    )
-    .slice(0, 2);
+  const schoolShowcaseItem = {
+    code: "SCH-01",
+    title: "Academy School Uniform Kit",
+    displayTitle: "Academy School Uniform Kit",
+    category: "School & Institutional",
+    image: "/images/review-24-56ce73.jpeg",
+  };
 
-  const galleryItems = normalizedGallery.filter(
+  const peopleItems = [
+    schoolShowcaseItem,
+    ...normalizedGallery.filter(
+      (item) =>
+        item.image !== "/images/review-24-56ce73.jpeg" &&
+        /guard|pair|student|uniform|academy|school|officer|team|person|human/i.test(
+          `${item.displayTitle} ${item.category}`
+        )
+    ),
+  ].slice(0, 2);
+
+  const baseGalleryItems = normalizedGallery.filter(
     (item) =>
       !peopleItems.some((p) => p.image === item.image) &&
       !/(logo|brand|mark|icon|badge|crest)/i.test(
         `${item.image} ${item.displayTitle}`
       )
   );
+
+  const pinaforeEntry = {
+    code: "SCH-PINAFORE",
+    title: "Plaid School Pinafore",
+    displayTitle: "Plaid School Pinafore",
+    category: "School & Institutional",
+    image: "/images/plaid-school-pinafore.jpeg",
+  };
+
+  const galleryItems = baseGalleryItems.some((i) => i.image === "/images/plaid-school-pinafore.jpeg")
+    ? baseGalleryItems
+    : [pinaforeEntry, ...baseGalleryItems];
 
   const lookbookBands = [
     {
@@ -335,7 +412,7 @@ export default function HomePage() {
         className="w-full bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-10 sm:py-14 lg:py-16"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          <div className="lg:col-span-6 space-y-5">
+          <div key={`copy-${slideIdx}`} className="lg:col-span-6 space-y-5 ekw-copy-enter">
             <div className="flex flex-wrap items-center gap-2">
               {MOTION_HERO_SLIDES.map((item, idx) => {
                 const isCurrent = idx === slideIdx;
@@ -344,9 +421,9 @@ export default function HomePage() {
                     key={item.badge}
                     type="button"
                     onClick={() => setSlideIdx(idx)}
-                    className={`rounded-full px-3.5 py-1.5 text-sm font-semibold transition-all cursor-pointer ${
+                    className={`rounded-full px-3.5 py-1.5 text-sm font-semibold transition-all duration-200 cursor-pointer ${
                       isCurrent
-                        ? "bg-[#0B1F4C] text-white shadow-sm scale-[1.02]"
+                        ? "bg-[#0B1F4C] text-white shadow-sm scale-105"
                         : "bg-[#EEF4FC] text-[#134E9E] border border-[#BFD3EE] hover:bg-[#DCE8FA]"
                     }`}
                   >
@@ -375,7 +452,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
                 href={activeHero.ctaHref}
-                className="inline-flex items-center justify-center rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] text-white font-semibold text-base px-6 py-3.5 transition-colors shadow-sm"
+                className="inline-flex items-center justify-center rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] text-white font-semibold text-base px-6 py-3.5 transition-transform duration-200 hover:-translate-y-0.5 shadow-sm"
               >
                 {activeHero.ctaLabel}
               </a>
@@ -388,17 +465,23 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center justify-between max-w-md pt-3">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-1 pr-4">
                 {MOTION_HERO_SLIDES.map((item, idx) => (
                   <button
                     key={item.badge}
                     type="button"
                     aria-label={`Go to slide ${idx + 1}: ${item.badge}`}
                     onClick={() => setSlideIdx(idx)}
-                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      idx === slideIdx ? "w-10 bg-[#0B1F4C]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
-                    }`}
-                  />
+                    className="relative h-2.5 flex-1 max-w-[56px] rounded-full bg-slate-200 overflow-hidden cursor-pointer"
+                  >
+                    {idx === slideIdx ? (
+                      <span
+                        key={`bar-${slideIdx}-${isPaused}`}
+                        style={{ animationPlayState: isPaused ? "paused" : "running" }}
+                        className="block h-full w-full bg-[#0B1F4C] ekw-bar-fill"
+                      />
+                    ) : null}
+                  </button>
                 ))}
               </div>
               <div className="flex items-center gap-2">
@@ -429,17 +512,18 @@ export default function HomePage() {
                 return (
                   <div
                     key={item.badge}
-                    className={`absolute inset-0 transition-all duration-700 ease-out ${
+                    className={`absolute inset-0 transition-all duration-500 ease-out ${
                       current
-                        ? "opacity-100 scale-100"
-                        : "opacity-0 scale-105 pointer-events-none"
+                        ? "opacity-100 translate-x-0 scale-100"
+                        : "opacity-0 translate-x-6 scale-105 pointer-events-none"
                     }`}
                   >
                     <img
                       src={item.image}
                       alt={item.caption}
+                      style={{ animationPlayState: isPaused ? "paused" : "running" }}
                       className={`w-full h-full object-cover object-center ${
-                        current ? "ekw-motion-photo" : ""
+                        current ? "ekw-photo-drift" : ""
                       }`}
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B1F4C]/85 via-[#0B1F4C]/35 to-transparent p-5">
@@ -740,12 +824,104 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Band 6: Full-Width Visual Closing Banner */}
+                {/* Dedicated Band: Academy & School Uniforms */}
+        <section className="border-t border-slate-200 bg-white py-24 lg:py-32">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+              <div className="lg:col-span-5 space-y-6">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#134E9E]">
+                  School &amp; Academy Tailoring
+                </p>
+                <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950">
+                  Academy &amp; School Uniforms Built for Daily Wear
+                </h2>
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                  Clean collared shirts, custom embroidered crests, and tailored plaid sets crafted for schools and academies with consistent sizing across every class and term.
+                </p>
+                <ul className="space-y-3 text-sm text-slate-700">
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-2 w-2 rounded-full bg-[#134E9E]" />
+                    <span>Crisp shirts, plaid sets, and pinafores tailored to spec</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-2 w-2 rounded-full bg-[#134E9E]" />
+                    <span>Embroidered school crests &amp; uniform trim consistency</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-2 w-2 rounded-full bg-[#134E9E]" />
+                    <span>Saved size charts for smooth new-intake &amp; term reorders</span>
+                  </li>
+                </ul>
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <Link
+                    href="/quote"
+                    className="group inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-6 py-3 text-sm font-bold text-white transition-colors"
+                  >
+                    <span>Request School Quote</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link
+                    href="/sectors"
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colors"
+                  >
+                    <span>View Sectors</span>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7 grid gap-6 sm:grid-cols-12 items-center">
+                <div className="sm:col-span-7 h-[25rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md">
+                  <img
+                    src="/images/review-24-56ce73.jpeg"
+                    alt="Academy students in collared shirts, crests, and plaid uniforms"
+                    className="h-full w-full object-cover object-top"
+                    onError={(e) => {
+                      const el = e.currentTarget;
+                      if (!el.dataset.fb) {
+                        el.dataset.fb = "1";
+                        el.src = FALLBACK_PHOTO;
+                      }
+                    }}
+                  />
+                </div>
+                <div className="sm:col-span-5 space-y-6">
+                  <div className="h-[15rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+                    <img
+                      src="/images/review-01-58cbbd.jpeg"
+                      alt="Academy uniform tailoring and fabric finish"
+                      className="h-full w-full object-cover object-center"
+                      onError={(e) => {
+                        const el = e.currentTarget;
+                        if (!el.dataset.fb) {
+                          el.dataset.fb = "1";
+                          el.src = FALLBACK_PHOTO;
+                        }
+                      }}
+                    />
+                  </div>
+                  <div className="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-5 space-y-1.5">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#134E9E]">
+                      Batch Ready
+                    </p>
+                    <p className="text-sm font-semibold text-slate-900">
+                      Pupil &amp; Student Batch Runs
+                    </p>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Produced in repeatable runs with clear delivery schedules for schools.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+{/* Band 6: Full-Width Visual Closing Banner */}
         <section className="border-t border-slate-200 bg-white py-28 lg:py-40">
           <div className="mx-auto max-w-7xl px-6">
             <div className="relative h-[26rem] sm:h-[32rem] overflow-hidden rounded-3xl bg-slate-950">
               <img
-                src="/images/workshop-view.jpeg"
+                src="/images/review-29-ee60b9.jpeg"
                 alt="Exceptional Kits workshop"
                 onError={(e) => {
                   const el = e.currentTarget;
@@ -846,7 +1022,7 @@ export default function HomePage() {
               <div className="lg:col-span-7">
                 <div className="h-[24rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg">
                   <img
-                    src="/images/stitch-work.jpeg"
+                    src="/images/review-09-4e0868.jpeg"
                     alt="Precision workshop stitching and uniform finishing"
                     onError={(e) => {
                       const el = e.currentTarget;

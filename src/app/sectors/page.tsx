@@ -5,10 +5,10 @@ import Footer from "@/components/Footer";
 import { SECTORS } from "@/data/siteData";
 
 const SECTOR_VISUALS = [
-  "/images/academy-wear.jpeg",
-  "/images/batch-pack.jpeg",
-  "/images/branded-cap.png",
-  "/images/cap-line.jpeg",
+  "/images/plaid-school-pinafore.jpeg",
+  "/images/bagged-uniform-batch.jpeg",
+  "/images/bagged-uniform-batch.jpeg",
+  "/images/black-knee-elbow-pads.jpeg",
 ];
 
 export default function SectorsPage() {

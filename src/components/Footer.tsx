@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="inline-flex h-20 w-32 items-center justify-center rounded-2xl border border-slate-700/80 bg-white p-2 shadow-md">
               <img
-                src="/images/logo.png?v=3"
+                src="/images/logo.png?v=4"
                 alt="EKW — Exceptional Kits and Wears"
                 className="h-full w-full object-contain"
               />

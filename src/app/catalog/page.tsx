@@ -1,11 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { WORKSHOP_GALLERY } from "@/data/siteData";
+import { CATALOG_ITEMS, type ProductItem } from "@/data/siteData";
 
 const CATEGORIES = [
   "All Lines",
@@ -15,129 +14,121 @@ const CATEGORIES = [
   "Field Accessories",
 ] as const;
 
-type Category = (typeof CATEGORIES)[number];
+type CategoryFilter = (typeof CATEGORIES)[number];
 
 export default function CatalogPage() {
-  const [selectedCategory, setSelectedCategory] = useState<Category>("All Lines");
+  const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>("All Lines");
 
-  const filteredItems =
-    selectedCategory === "All Lines"
-      ? WORKSHOP_GALLERY
-      : WORKSHOP_GALLERY.filter((item) => item.category === selectedCategory);
-
-  const leadItem = filteredItems[0] ?? WORKSHOP_GALLERY[0];
+  const filteredItems = useMemo<ProductItem[]>(() => {
+    if (selectedCategory === "All Lines") {
+      return CATALOG_ITEMS;
+    }
+    return CATALOG_ITEMS.filter((item) => item.category === selectedCategory);
+  }, [selectedCategory]);
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900">
       <Navbar />
 
-      <main className="flex-1">
-        <section className="border-b border-slate-200 bg-slate-50/70 py-14 lg:py-20">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
-              <div className="lg:col-span-5 space-y-6">
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 leading-[0.95]">
-                  Uniforms,{" "}
-                  <span className="font-editorial text-[#134E9E] text-6xl sm:text-7xl lg:text-8xl">
-                    Tactical
-                  </span>{" "}
-                  Gear &amp; Kits
-                </h1>
+      <main className="flex-1 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 pb-6 border-b border-slate-200">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Batch &amp; Custom Supply
+            </p>
+            <h1 className="mt-1 text-3xl sm:text-4xl font-extrabold tracking-tight text-[#061224]">
+              Product Catalog
+            </h1>
+            <p className="mt-1.5 text-sm text-slate-600 max-w-2xl">
+              Browse uniforms, tactical gear, crests, and accessories available for custom batch runs and restocks.
+            </p>
+          </div>
 
-                <p className="text-sm font-semibold text-slate-600">
-                  Custom crests • Batch runs • Direct restocks
-                </p>
+          <Link
+            href="/quote"
+            className="inline-flex items-center justify-center rounded-full bg-[#061224] px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 transition shrink-0"
+          >
+            Request Batch Quote →
+          </Link>
+        </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {CATEGORIES.map((category) => {
-                    const active = selectedCategory === category;
-                    return (
-                      <button
-                        key={category}
-                        type="button"
-                        onClick={() => setSelectedCategory(category)}
-                        className={`rounded-full px-3.5 py-1.5 text-sm font-bold transition-all cursor-pointer ${
-                          active
-                            ? "bg-[#0B1F4C] hover:bg-[#134E9E] text-white"
-                            : "border border-slate-200 bg-white text-slate-700 hover:border-[#BFD3EE] hover:text-[#134E9E]"
-                        }`}
-                      >
-                        {category}
-                      </button>
-                    );
-                  })}
+        <div className="mt-6 flex flex-wrap items-center gap-2">
+          {CATEGORIES.map((cat) => {
+            const active = selectedCategory === cat;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setSelectedCategory(cat)}
+                className={`rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition cursor-pointer ${
+                  active
+                    ? "bg-[#061224] text-white"
+                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                }`}
+              >
+                {cat}
+              </button>
+            );
+          })}
+          <span className="ml-auto text-xs text-slate-500">
+            {filteredItems.length} {filteredItems.length === 1 ? "item" : "items"}
+          </span>
+        </div>
+
+        <section
+          aria-label="Catalog items"
+          className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {filteredItems.map((item) => (
+            <article
+              key={item.id}
+              className="group rounded-2xl border border-slate-200 bg-white overflow-hidden flex flex-col hover:border-slate-300 transition"
+            >
+              <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="h-full w-full object-cover group-hover:scale-[1.02] transition duration-300"
+                />
+              </div>
+
+              <div className="p-4 flex-1 flex flex-col justify-between gap-3">
+                <div>
+                  <div className="flex items-center justify-between gap-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                    <span>{item.category}</span>
+                    {item.badge ? (
+                      <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[10px] text-slate-700">
+                        {item.badge}
+                      </span>
+                    ) : null}
+                  </div>
+                  <h2 className="mt-1.5 text-base font-bold text-[#061224] leading-snug">
+                    {item.name}
+                  </h2>
+                  <p className="mt-1 text-xs sm:text-sm text-slate-600 line-clamp-2">
+                    {item.description}
+                  </p>
+                  {item.fabricSpec ? (
+                    <p className="mt-2 text-[11px] text-slate-500 line-clamp-1">
+                      {item.fabricSpec}
+                    </p>
+                  ) : null}
                 </div>
 
-                <div className="pt-1">
+                <div className="pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span className="font-medium text-slate-700">
+                    {item.minOrder || item.priceLabel || "Quote on Request"}
+                  </span>
                   <Link
-                    href="/quote"
-                    className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white hover:bg-[#0B1F4C] hover:bg-[#134E9E] transition-colors"
+                    href={`/quote?item=${encodeURIComponent(item.name)}`}
+                    className="font-semibold text-[#061224] hover:underline"
                   >
-                    <span>Get Quote</span>
-                    <ArrowRight className="h-4 w-4" />
+                    Quote →
                   </Link>
                 </div>
               </div>
-
-              <div className="lg:col-span-7">
-                <div className="group relative h-80 sm:h-[29rem] overflow-hidden rounded-3xl border border-slate-200 bg-slate-950 shadow-lg">
-                  <img
-                    src={leadItem?.image || "/images/patrol-kit.jpeg"}
-                    alt={leadItem?.title || "Tactical Duty & Uniform Line"}
-                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-300">
-                      {selectedCategory}
-                    </p>
-                    <h2 className="mt-1 text-2xl sm:text-3xl font-extrabold text-white">
-                      {leadItem?.title || "Tactical Duty & Uniform Line"}
-                    </h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20 lg:py-28">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="flex items-baseline justify-between gap-4 mb-12 border-b border-slate-200 pb-5">
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950">
-                <span className="font-editorial text-[#134E9E] text-4xl sm:text-6xl">
-                  {selectedCategory}
-                </span>
-              </h2>
-              <Link
-                href="/quote"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-[#134E9E] hover:text-[#134E9E]"
-              >
-                <span>Quote</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-
-            <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {filteredItems.map((item) => (
-                <article
-                  key={`${item.code}-${item.image}`}
-                  className="group space-y-3"
-                >
-                  <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-xs group-hover:shadow-xl transition-all duration-300">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <h3 className="px-1 text-sm font-bold text-slate-950 line-clamp-1">
-                    {item.title}
-                  </h3>
-                </article>
-              ))}
-            </div>
-          </div>
+            </article>
+          ))}
         </section>
       </main>
 

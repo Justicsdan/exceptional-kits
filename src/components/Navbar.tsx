@@ -20,7 +20,7 @@ export default function Navbar() {
         <Link href="/" className="group flex items-center gap-4 shrink-0">
           <div className="relative flex h-14 w-24 sm:h-16 sm:w-28 items-center justify-center rounded-2xl border border-sky-200/90 bg-gradient-to-b from-white to-sky-50/40 px-2.5 py-1.5 shadow-sm ring-1 ring-slate-900/5 group-hover:border-sky-400 group-hover:shadow-md group-hover:-translate-y-0.5 transition-all duration-300">
             <img
-              src="/images/logo.png?v=3"
+              src="/images/logo.png?v=4"
               alt="EKW — Exceptional Kits and Wears"
               className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300"
             />

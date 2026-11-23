@@ -9,19 +9,19 @@ const QC_PILLARS = [
     key: "seam",
     title: "Seam & Stress Check",
     caption: "Reinforced stitching & fabric check",
-    image: "/images/work-shirt.jpeg",
+    image: "/images/dor-bagged-duty-garments.jpeg",
   },
   {
     key: "crest",
     title: "Crest & Badge Finish",
     caption: "Crisp embroidery & emblem alignment",
-    image: "/images/visor-cap.jpeg",
+    image: "/images/review-13-4eb26e.jpeg",
   },
   {
     key: "pack",
     title: "Batch Sizing & Pack",
     caption: "Sorted, pressed & ready for dispatch",
-    image: "/images/field-belt.jpeg",
+    image: "/images/yellow-cord-white-trim.jpeg",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function ProductionPage() {
       <main className="flex-1">
         <section className="relative bg-slate-950 text-white py-24 lg:py-32 overflow-hidden">
           <img
-            src="/images/workshop-view.jpeg"
+            src="/images/review-11-332315.jpeg"
             alt="Exceptional Kits production floor"
             className="absolute inset-0 h-full w-full object-cover opacity-35"
           />

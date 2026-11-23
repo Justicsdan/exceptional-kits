@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  icons: { icon: "/images/logo.png?v=3", apple: "/images/logo.png?v=3" },
+  icons: { icon: "/images/logo.png?v=4", apple: "/images/logo.png?v=4" },
   title: "Exceptional Kits And Wears",
   description:
     "Direct workshop production of security uniforms, tactical vests, branded caps, and field accessories.",

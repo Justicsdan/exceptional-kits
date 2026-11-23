@@ -66,3 +66,30 @@
   animation: ekwKenBurns 6.5s ease-in-out infinite alternate;
   will-change: transform;
 }
+
+/* EKW MOTION START */
+@keyframes ekwMotionDrift {
+  0% { transform: scale(1.02) translate3d(0%, 0%, 0); }
+  50% { transform: scale(1.11) translate3d(-2%, -1.5%, 0); }
+  100% { transform: scale(1.06) translate3d(1.5%, -1%, 0); }
+}
+@keyframes ekwCopyEnter {
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes ekwBarFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.ekw-photo-drift {
+  animation: ekwMotionDrift 4.2s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.ekw-copy-enter {
+  animation: ekwCopyEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.ekw-bar-fill {
+  transform-origin: left center;
+  animation: ekwBarFill 3.2s linear forwards;
+}
+/* EKW MOTION END */
