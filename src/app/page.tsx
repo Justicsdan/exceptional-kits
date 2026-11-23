@@ -570,7 +570,7 @@ export default function HomePage() {
                   {slide.tail}
                 </h1>
 
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-md">
+                <p className="text-sm sm:text-base text-slate-800 font-medium leading-relaxed max-w-md">
                   {slide.summary}
                 </p>
 
@@ -602,7 +602,7 @@ export default function HomePage() {
                         className={`rounded-full px-5 py-2.5 text-sm sm:text-[15px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
                           active
                             ? "bg-slate-950 text-white shadow-xs"
-                            : "border border-slate-200 bg-white text-slate-600 hover:border-[#BFD3EE] hover:text-[#134E9E]"
+                            : "border border-slate-200 bg-white text-slate-800 font-medium hover:border-[#BFD3EE] hover:text-[#134E9E]"
                         }`}
                       >
                         {s.tabLabel}
@@ -651,7 +651,7 @@ export default function HomePage() {
                     Collections
                   </span>
                 </h2>
-                <p className="mt-3 max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                <p className="mt-3 max-w-xl text-sm sm:text-base text-slate-800 font-medium leading-relaxed">
  Explore our core uniform and gear categories, each configurable
  with your company branding and batch requirements.
  </p>
@@ -692,7 +692,7 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-slate-950">
                       {line.title}
                     </h3>
-                    <p className="text-sm sm:text-sm text-slate-600 leading-relaxed">
+                    <p className="text-sm sm:text-sm text-slate-800 font-medium leading-relaxed">
                       {line.note}
                     </p>
                   </div>
@@ -714,7 +714,7 @@ export default function HomePage() {
                       Showcase
                     </span>
                   </h2>
-                  <p className="mt-3 max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                  <p className="mt-3 max-w-xl text-sm sm:text-base text-slate-800 font-medium leading-relaxed">
  See how our uniforms and gear wear in practice, balanced fit,
  clean lines, and practical coverage for active personnel.
  </p>
@@ -777,7 +777,7 @@ export default function HomePage() {
                         {band.accent}
                       </span>
                     </h2>
-                    <p className="max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                    <p className="max-w-xl text-sm sm:text-base text-slate-800 font-medium leading-relaxed">
                       {band.caption}
                     </p>
                   </div>
@@ -833,7 +833,7 @@ export default function HomePage() {
                 <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-950">
                   Academy &amp; School Uniforms Built for Daily Wear
                 </h2>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-800 font-medium leading-relaxed">
                   Clean collared shirts, custom embroidered crests, and tailored plaid sets crafted for schools and academies with consistent sizing across every class and term.
                 </p>
                 <ul className="space-y-3 text-sm text-slate-700">
@@ -904,7 +904,7 @@ export default function HomePage() {
                     <p className="text-sm font-semibold text-slate-900">
                       Pupil &amp; Student Batch Runs
                     </p>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="text-xs text-slate-800 font-medium leading-relaxed">
                       Produced in repeatable runs with clear delivery schedules for schools.
                     </p>
                   </div>
@@ -973,7 +973,7 @@ export default function HomePage() {
                   </span>
                 </h2>
               </div>
-              <p className="lg:col-span-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="lg:col-span-5 text-sm sm:text-base text-slate-800 font-medium leading-relaxed">
  Designed for security agencies, estates, schools, and growing
  teams that need consistent fit, clean branding, and reliable
  follow through from first batch to future reorders.
@@ -1002,7 +1002,7 @@ export default function HomePage() {
                         {pillar.title}
                       </h3>
 
-                      <p className="text-sm text-slate-600 leading-relaxed">
+                      <p className="text-sm text-slate-800 font-medium leading-relaxed">
                         {pillar.text}
                       </p>
                     </div>
