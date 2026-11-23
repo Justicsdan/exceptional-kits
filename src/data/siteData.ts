@@ -63,19 +63,6 @@ export const CATALOG_ITEMS: ProductItem[] = [
     minOrder: "1 Piece",
   },
   {
-    id: "single-duty-trouser",
-    name: "Single Replacement Duty Trousers",
-    category: "Uniforms & Sets",
-    priceLabel: "Single-Piece Restock",
-    unitPrice: 6000,
-    fabricSpec: "Heavy-Duty Abrasion-Resistant Twill • Deep Pocket Bags",
-    stitchingSpec: "Heavy-duty brass/nylon zipper, wide belt loops for tactical duty belts, triple-stitched seat",
-    description: "Built to withstand daily sitting, kneeling, and patrol movement without seam splits or premature knee fade.",
-    image: "/images/dor-bagged-duty-garments.jpeg",
-    badge: "Single-Piece Restock",
-    minOrder: "1 Piece",
-  },
-  {
     id: "tactical-duty-vest",
     name: "Black Multi-Pouch Tactical Duty Vest",
     category: "Tactical & Duty Gear",
@@ -179,12 +166,6 @@ export const WORKSHOP_GALLERY = [
     title: "Workshop Sample 08",
     category: "Uniforms & Sets",
     image: "/images/black-knee-elbow-pads.jpeg",
-  },
-{
-    code: "KIT-09",
-    title: "Workshop Sample 09",
-    category: "Uniforms & Sets",
-    image: "/images/dor-bagged-duty-garments.jpeg",
   },
 {
     code: "KIT-10",

@@ -6,12 +6,6 @@ import { PRODUCTION_STAGES } from "@/data/siteData";
 
 const QC_PILLARS = [
   {
-    key: "seam",
-    title: "Seam & Stress Check",
-    caption: "Reinforced stitching & fabric check",
-    image: "/images/dor-bagged-duty-garments.jpeg",
-  },
-  {
     key: "crest",
     title: "Crest & Badge Finish",
     caption: "Crisp embroidery & emblem alignment",
