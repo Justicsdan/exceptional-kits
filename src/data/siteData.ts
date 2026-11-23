@@ -132,12 +132,6 @@ export const WORKSHOP_GALLERY = [
     image: "/images/review-14-1b968e.jpeg",
   },
 {
-    code: "KIT-03",
-    title: "Workshop Sample 03",
-    category: "Uniforms & Sets",
-    image: "/images/review-01-58cbbd.jpeg",
-  },
-{
     code: "KIT-04",
     title: "Workshop Sample 04",
     category: "Uniforms & Sets",

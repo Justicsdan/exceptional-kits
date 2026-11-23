@@ -102,7 +102,6 @@ const IMAGE_TITLE_MAP: Record<string, string> = {
   "/images/review-13-4eb26e.jpeg": "Tactical Utility Vest",
   "/images/review-09-4e0868.jpeg": "Heavy-Duty Duty Belt",
   "/images/review-14-1b968e.jpeg": "Packaged Uniform Batch",
-  "/images/review-01-58cbbd.jpeg": "Academy Batch Packs",
   "/images/review-05-1d3205.jpeg": "Patrol Shirt & Trouser Kit",
   "/images/review-11-332315.jpeg": "Guard Uniform Set",
   "/images/review-07-938787.jpeg": "Uniform & Duty Belt Set",
@@ -886,7 +885,7 @@ export default function HomePage() {
                 <div className="sm:col-span-5 space-y-6">
                   <div className="h-[15rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
                     <img
-                      src="/images/review-01-58cbbd.jpeg"
+                      src="/images/review-11-332315.jpeg"
                       alt="Academy uniform tailoring and fabric finish"
                       className="h-full w-full object-cover object-center"
                       onError={(e) => {
