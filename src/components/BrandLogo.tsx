@@ -9,19 +9,19 @@ export default function BrandLogo({
 
   return (
     <div className="group inline-flex items-center gap-3.5 sm:gap-4 min-w-0 select-none">
-      {/* Crest Mark Matched to Logo.png */}
+      {/* Matching Crest Card Frame for Both Header & Footer */}
       <div
-        className={`relative flex h-16 w-22 sm:h-[70px] sm:w-[98px] lg:h-[74px] lg:w-[106px] shrink-0 items-center justify-center rounded-2xl transition-all duration-300 ease-out group-hover:-translate-y-0.5 ${
+        className={`relative flex h-16 w-22 sm:h-[70px] sm:w-[98px] lg:h-[74px] lg:w-[106px] shrink-0 items-center justify-center rounded-2xl border p-1.5 transition-all duration-300 ease-out group-hover:-translate-y-0.5 ${
           isDark
-            ? "bg-white/95 p-1.5 shadow-md ring-1 ring-sky-300/40 group-hover:bg-white"
-            : "bg-transparent group-hover:scale-[1.02]"
+            ? "border-sky-300/60 bg-white shadow-md shadow-sky-950/50 ring-1 ring-sky-400/25 group-hover:border-sky-200 group-hover:shadow-lg"
+            : "border-sky-200/90 bg-white shadow-sm ring-1 ring-slate-900/5 group-hover:border-sky-400 group-hover:shadow-md"
         }`}
       >
         <svg
           viewBox="0 0 140 96"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-full w-full overflow-visible"
+          className="h-full w-full overflow-visible transition-transform duration-300 ease-out group-hover:scale-[1.02]"
           aria-hidden="true"
         >
           <defs>
@@ -35,10 +35,6 @@ export default function BrandLogo({
               <stop offset="55%" stopColor="#0EA5E9" />
               <stop offset="100%" stopColor="#0284C7" />
             </linearGradient>
-
-            <clipPath id="ekwEkwCutoutClip">
-              <rect x="0" y="0" width="140" height="96" />
-            </clipPath>
           </defs>
 
           {/* Outer Thick Navy Shield (Open Center) */}
@@ -69,7 +65,7 @@ export default function BrandLogo({
             fill="url(#ekwRefCyan)"
           />
 
-          {/* Clean White / Light Padding Behind Slanted EKW */}
+          {/* Clean White Padding Behind Slanted EKW */}
           <text
             x="83"
             y="61"
