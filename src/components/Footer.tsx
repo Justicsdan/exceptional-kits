@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { MessageCircle } from "lucide-react";
 
 export default function Footer() {
@@ -83,7 +84,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] px-5 py-2.5 text-sm font-bold text-white hover:bg-emerald-500 transition-colors"
               >
-                <MessageCircle className="h-4 w-4" />
+                <WhatsAppIcon className="h-4 w-4" />
                 <span>Chat on WhatsApp</span>
               </a>
             </div>
