@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   icons: { icon: "/images/logo.png?v=4", apple: "/images/logo.png?v=4" },
@@ -29,6 +30,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white text-slate-900">
         {children}
+              <FloatingWhatsApp />
       </body>
     </html>
   );
