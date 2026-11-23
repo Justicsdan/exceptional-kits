@@ -8,101 +8,112 @@ export default function BrandLogo({
   const isDark = variant === "dark";
 
   return (
-    <div className="group inline-flex items-center gap-4 select-none">
-      {/* Crest Badge Card with Bold Monogram, Arrow & Graceful Accents */}
+    <div className="group inline-flex items-center gap-3.5 sm:gap-4 select-none">
+      {/* Crest Card with Sweeping Crescent, Shield & Bold Slanted EKW */}
       <div
-        className={`relative flex h-16 w-20 sm:h-[70px] sm:w-[88px] lg:h-[74px] lg:w-[92px] shrink-0 items-center justify-center rounded-2xl border transition-all duration-300 group-hover:-translate-y-0.5 ${
+        className={`relative flex h-15 w-22 sm:h-[68px] sm:w-[96px] lg:h-[74px] lg:w-[104px] shrink-0 items-center justify-center rounded-2xl border transition-all duration-300 group-hover:-translate-y-0.5 ${
           isDark
-            ? "border-sky-400/35 bg-[#0A1B38]/95 shadow-lg shadow-sky-950/50 group-hover:border-sky-300/70"
-            : "border-sky-200/90 bg-gradient-to-br from-white via-sky-50/50 to-indigo-50/40 shadow-sm ring-1 ring-slate-900/5 group-hover:border-sky-400 group-hover:shadow-md"
+            ? "border-sky-400/35 bg-[#0A1B38]/95 shadow-lg shadow-sky-950/50 group-hover:border-sky-300/75"
+            : "border-sky-200/90 bg-gradient-to-br from-white via-sky-50/45 to-blue-50/35 shadow-sm ring-1 ring-slate-900/5 group-hover:border-sky-400 group-hover:shadow-md"
         }`}
       >
         <svg
-          viewBox="0 0 96 76"
+          viewBox="0 0 120 84"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-[92%] w-[92%] overflow-visible transition-transform duration-300 group-hover:scale-[1.03]"
+          className="h-[92%] w-[94%] overflow-visible transition-transform duration-300 group-hover:scale-[1.03]"
           aria-hidden="true"
         >
           <defs>
-            <linearGradient id="ekwCardShield" x1="22" y1="6" x2="74" y2="70" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#1D4ED8" />
-              <stop offset="50%" stopColor="#0C2352" />
-              <stop offset="100%" stopColor="#061224" />
+            <linearGradient id="ekwNavyGrad" x1="36" y1="6" x2="94" y2="78" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#123E8A" />
+              <stop offset="55%" stopColor="#081C47" />
+              <stop offset="100%" stopColor="#040E24" />
             </linearGradient>
 
-            <linearGradient id="ekwTrimGoldSky" x1="18" y1="8" x2="78" y2="68" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#FDE68A" />
-              <stop offset="35%" stopColor="#7DD3FC" />
-              <stop offset="75%" stopColor="#38BDF8" />
-              <stop offset="100%" stopColor="#F59E0B" />
-            </linearGradient>
-
-            <linearGradient id="ekwArrowFlow" x1="8" y1="54" x2="88" y2="20" gradientUnits="userSpaceOnUse">
+            <linearGradient id="ekwBrightBlue" x1="12" y1="14" x2="102" y2="70" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#38BDF8" />
-              <stop offset="55%" stopColor="#E0F2FE" />
-              <stop offset="100%" stopColor="#FBBF24" />
+              <stop offset="50%" stopColor="#0EA5E9" />
+              <stop offset="100%" stopColor="#1D4ED8" />
+            </linearGradient>
+
+            <linearGradient id="ekwCrescentGrad" x1="10" y1="42" x2="88" y2="56" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#0284C7" />
+              <stop offset="35%" stopColor="#38BDF8" />
+              <stop offset="72%" stopColor="#0B2354" />
+              <stop offset="100%" stopColor="#134E9E" />
+            </linearGradient>
+
+            <linearGradient id="ekwTextGrad" x1="34" y1="26" x2="98" y2="58" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor={isDark ? "#FFFFFF" : "#0A2254"} />
+              <stop offset="60%" stopColor={isDark ? "#E0F2FE" : "#07193E"} />
+              <stop offset="100%" stopColor={isDark ? "#7DD3FC" : "#134E9E"} />
             </linearGradient>
           </defs>
 
-          {/* Graceful outer curve accent */}
+          {/* Outer Shield Frame */}
           <path
-            d="M14 58C28 65 62 63 82 34"
-            stroke="url(#ekwTrimGoldSky)"
-            strokeOpacity="0.45"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-
-          {/* Main Shield Body */}
-          <path
-            d="M48 6L72 15.5V36.5C72 52.8 61.6 64.8 48 70C34.4 64.8 24 52.8 24 36.5V15.5L48 6Z"
-            fill="url(#ekwCardShield)"
-            stroke="url(#ekwTrimGoldSky)"
-            strokeWidth="2.4"
-          />
-
-          {/* Delicate inner contour line */}
-          <path
-            d="M48 10.5L67.5 18.2V36C67.5 50.1 58.6 60.5 48 65C37.4 60.5 28.5 50.1 28.5 36V18.2L48 10.5Z"
-            stroke="#BAE6FD"
-            strokeOpacity="0.32"
-            strokeWidth="1"
-          />
-
-          {/* Forward Arrow / Chevron */}
-          <path
-            d="M10 49C26 52 54 44 79 23"
-            stroke="url(#ekwArrowFlow)"
-            strokeWidth="2.6"
-            strokeLinecap="round"
-          />
-          <path
-            d="M72 22.5L80.5 21.8L78.2 30"
-            stroke="#FDE68A"
-            strokeWidth="2.4"
-            strokeLinecap="round"
+            d="M66 5L98 17.5V39C98 58.5 84.5 72.5 66 79C47.5 72.5 34 58.5 34 39V17.5L66 5Z"
+            stroke="url(#ekwNavyGrad)"
+            strokeWidth="4.5"
             strokeLinejoin="round"
+            fill={isDark ? "rgba(8, 28, 71, 0.55)" : "rgba(255, 255, 255, 0.72)"}
           />
 
-          {/* Big, Bold EKW Lettering */}
+          {/* Inner Sky/Cobalt Shield Accent */}
+          <path
+            d="M66 11.5L91.5 21.5V38.5C91.5 54.2 80.7 65.5 66 71C51.3 65.5 40.5 54.2 40.5 38.5V21.5L66 11.5Z"
+            stroke="url(#ekwBrightBlue)"
+            strokeWidth="2.4"
+            strokeLinejoin="round"
+            fill="none"
+          />
+
+          {/* Sweeping Crescent / Arc Beside & Under EKW */}
+          <path
+            d="M49 26.5C27.5 27.5 14 38.5 14 50.5C14 63.5 33.5 70 67.5 56.5C45 62.5 23.5 58 23.5 46.5C23.5 38.5 34 31.5 51.5 29.5L49 26.5Z"
+            fill="url(#ekwCrescentGrad)"
+          />
+
+          {/* Crisp White/Light Cutout Halo Behind EKW for Legibility */}
           <text
-            x="48"
-            y="45.5"
+            x="66"
+            y="54.5"
             textAnchor="middle"
-            fill="#FFFFFF"
+            transform="skewX(-10)"
+            fill={isDark ? "#0A1B38" : "#FFFFFF"}
+            stroke={isDark ? "#0A1B38" : "#FFFFFF"}
+            strokeWidth="6.5"
+            strokeLinejoin="round"
             fontFamily="ui-sans-serif, system-ui, -apple-system, sans-serif"
+            fontStyle="italic"
             fontWeight="900"
-            fontSize="21"
-            letterSpacing="0.8"
+            fontSize="31"
+            letterSpacing="-0.5"
           >
             EKW
           </text>
 
-          {/* Delicate Star / Sparkle Accent */}
+          {/* Bold Slanted EKW Monogram */}
+          <text
+            x="66"
+            y="54.5"
+            textAnchor="middle"
+            transform="skewX(-10)"
+            fill="url(#ekwTextGrad)"
+            fontFamily="ui-sans-serif, system-ui, -apple-system, sans-serif"
+            fontStyle="italic"
+            fontWeight="900"
+            fontSize="31"
+            letterSpacing="-0.5"
+          >
+            EKW
+          </text>
+
+          {/* Forward Accent Tip on the Crescent */}
           <path
-            d="M48 51.5L49.1 54L51.8 54.3L49.8 56.1L50.3 58.8L48 57.4L45.7 58.8L46.2 56.1L44.2 54.3L46.9 54L48 51.5Z"
-            fill="#FDE68A"
+            d="M65 57.5L78 52.2L67.5 54.2Z"
+            fill="#38BDF8"
           />
         </svg>
       </div>
