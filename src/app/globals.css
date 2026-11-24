@@ -69,9 +69,8 @@
 
 /* EKW MOTION START */
 @keyframes ekwMotionDrift {
-  0% { transform: scale(1.02) translate3d(0%, 0%, 0); }
-  50% { transform: scale(1.11) translate3d(-2%, -1.5%, 0); }
-  100% { transform: scale(1.06) translate3d(1.5%, -1%, 0); }
+  0% { transform: scale(1) translate3d(0%, 0%, 0); }
+  100% { transform: scale(1.05) translate3d(0%, -1%, 0); }
 }
 @keyframes ekwCopyEnter {
   0% { opacity: 0; transform: translateY(14px); }
@@ -83,6 +82,7 @@
 }
 .ekw-photo-drift {
   animation: ekwMotionDrift 4.2s ease-in-out infinite alternate;
+  transform-origin: left center;
   will-change: transform;
 }
 .ekw-copy-enter {
