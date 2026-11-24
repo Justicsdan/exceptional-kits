@@ -285,19 +285,6 @@ export default function HomePage() {
   const goPrev = () => setSlideIdx((prev) => (prev - 1 + MOTION_HERO_SLIDES.length) % MOTION_HERO_SLIDES.length);
   const goNext = () => setSlideIdx((prev) => (prev + 1) % MOTION_HERO_SLIDES.length);
 
-  const [heroIdx, setHeroIdx] = useState(0);
-  const [heroPaused, setHeroPaused] = useState(false);
-
-  useEffect(() => {
-    if (heroPaused) return;
-    const id = setInterval(() => {
-      setHeroIdx((prev) => (prev + 1) % WORLD_CLASS_SLIDES.length);
-    }, 3200);
-    return () => clearInterval(id);
-  }, [heroPaused]);
-
-  const currentHero = WORLD_CLASS_SLIDES[heroIdx] ?? WORLD_CLASS_SLIDES[0];
-
   const [activeSlide, setActiveSlide] = useState(0);
   const [paused, setPaused] = useState(false);
 
