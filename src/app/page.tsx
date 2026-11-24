@@ -408,10 +408,10 @@ export default function HomePage() {
         aria-label="Motion Hero Showcase"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="ekw-hero-bg w-full bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-10 sm:py-14 lg:py-16"
+        className="ekw-hero-bg w-full bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-8 sm:py-10 lg:py-9"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          <div key={`copy-${slideIdx}`} className="lg:col-span-6 space-y-5 ekw-copy-enter">
+          <div key={`copy-${slideIdx}`} className="lg:col-span-6 space-y-4 ekw-copy-enter">
             <div className="flex flex-wrap items-center gap-2">
               {MOTION_HERO_SLIDES.map((item, idx) => {
                 const isCurrent = idx === slideIdx;
@@ -420,7 +420,7 @@ export default function HomePage() {
                     key={item.badge}
                     type="button"
                     onClick={() => setSlideIdx(idx)}
-                    className={`rounded-full px-5 py-2.5 text-sm sm:text-[15px] font-semibold transition-all duration-200 cursor-pointer ${
+                    className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
                       isCurrent
                         ? "bg-[#0B1F4C] text-white shadow-sm scale-105"
                         : "bg-[#EEF4FC] text-[#134E9E] border border-[#BFD3EE] hover:bg-[#DCE8FA]"
@@ -436,7 +436,7 @@ export default function HomePage() {
               {activeHero.kicker}
             </p>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-[#0B1F4C] leading-[1.06] lg:min-h-[3.2em]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B1F4C] leading-[1.06] lg:min-h-[3.2em]">
               {activeHero.lead}{" "}
               <span className="font-serif italic font-normal text-[#134E9E] whitespace-nowrap">
                 {activeHero.accent}
@@ -505,7 +505,7 @@ export default function HomePage() {
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-slate-100 ring-1 ring-[#0B1F4C]/10 shadow-[0_30px_80px_-20px_rgba(11,31,76,0.45)] h-[380px] sm:h-[450px] lg:h-[560px]">
+            <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-slate-100 ring-1 ring-[#0B1F4C]/10 shadow-[0_30px_80px_-20px_rgba(11,31,76,0.45)] h-[380px] sm:h-[450px] lg:h-[500px]">
               {MOTION_HERO_SLIDES.map((item, idx) => {
                 const current = idx === slideIdx;
                 return (
