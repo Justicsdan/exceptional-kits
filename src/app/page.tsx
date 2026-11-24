@@ -543,7 +543,7 @@ export default function HomePage() {
       </section>
 
       <section aria-label="Why choose us" className="bg-[#0B1F4C] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-3">
           {[
             "Made direct in our workshop",
             "Custom crests & embroidery",
