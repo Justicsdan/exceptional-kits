@@ -435,30 +435,30 @@ export default function HomePage() {
               {activeHero.kicker}
             </p>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B1F4C] leading-[1.06]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B1F4C] leading-[1.06] lg:min-h-[3.2em]">
               {activeHero.lead}{" "}
-              <span className="font-serif italic font-normal text-[#134E9E]">
+              <span className="font-serif italic font-normal text-[#134E9E] whitespace-nowrap">
                 {activeHero.accent}
               </span>{" "}
               <span className="block mt-1">{activeHero.tail}</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl lg:min-h-[4.9em]">
               {activeHero.summary}
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href={activeHero.ctaHref}
+                href="/quote"
                 className="inline-flex items-center justify-center rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] text-white font-semibold text-base px-6 py-3.5 transition-transform duration-200 hover:-translate-y-0.5 shadow-sm"
               >
-                {activeHero.ctaLabel}
+                Get Custom Quote
               </a>
               <a
-                href="/quote"
+                href={activeHero.ctaHref}
                 className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white hover:border-[#0B1F4C] text-[#0B1F4C] font-semibold text-base px-6 py-3.5 transition-colors"
               >
-                Get Custom Quote
+                {activeHero.ctaLabel}
               </a>
             </div>
 
