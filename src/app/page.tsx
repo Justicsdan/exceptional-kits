@@ -448,7 +448,7 @@ export default function HomePage() {
               {activeHero.summary}
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center gap-3 pt-1 pb-14 sm:pb-0">
               <a
                 href="/quote"
                 className="inline-flex items-center justify-center rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] text-white font-semibold text-base px-6 py-3.5 transition-transform duration-200 hover:-translate-y-0.5 shadow-sm"

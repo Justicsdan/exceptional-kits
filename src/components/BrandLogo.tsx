@@ -104,7 +104,7 @@ export default function BrandLogo({
 
       {/* Editorial Wordmark */}
       {showWordmark && (
-        <div className="min-w-0">
+        <div className="min-w-0 overflow-visible">
           <span
             className={`block text-xs sm:text-base lg:text-lg font-black tracking-tight leading-tight sm:leading-snug transition-colors duration-300 ${
               isDark
@@ -115,7 +115,7 @@ export default function BrandLogo({
             EXCEPTIONAL KITS AND WEARS
           </span>
           <span
-            className={`mt-1 flex flex-wrap items-center gap-1.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.14em] ${
+            className={`mt-1 hidden sm:flex flex-wrap items-center gap-1.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.14em] ${
               isDark ? "text-sky-400" : "text-sky-700"
             }`}
           >
