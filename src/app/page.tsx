@@ -408,7 +408,7 @@ export default function HomePage() {
         aria-label="Motion Hero Showcase"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="w-full bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-10 sm:py-14 lg:py-16"
+        className="ekw-hero-bg w-full bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-10 sm:py-14 lg:py-16"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div key={`copy-${slideIdx}`} className="lg:col-span-6 space-y-5 ekw-copy-enter">
@@ -436,7 +436,7 @@ export default function HomePage() {
               {activeHero.kicker}
             </p>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B1F4C] leading-[1.06] lg:min-h-[3.2em]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-[#0B1F4C] leading-[1.06] lg:min-h-[3.2em]">
               {activeHero.lead}{" "}
               <span className="font-serif italic font-normal text-[#134E9E] whitespace-nowrap">
                 {activeHero.accent}
@@ -505,7 +505,7 @@ export default function HomePage() {
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-md h-[380px] sm:h-[450px] lg:h-[500px]">
+            <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-slate-100 ring-1 ring-[#0B1F4C]/10 shadow-[0_30px_80px_-20px_rgba(11,31,76,0.45)] h-[380px] sm:h-[450px] lg:h-[560px]">
               {MOTION_HERO_SLIDES.map((item, idx) => {
                 const current = idx === slideIdx;
                 return (
@@ -539,6 +539,24 @@ export default function HomePage() {
               })}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section aria-label="Why choose us" className="bg-[#0B1F4C] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
+          {[
+            "Made direct in our workshop",
+            "Custom crests & embroidery",
+            "Batches with saved size records",
+            "Serving Abuja & nationwide",
+          ].map((t) => (
+            <div key={t} className="flex items-center gap-3 text-sm sm:text-[15px] font-semibold tracking-wide">
+              <svg viewBox="0 0 20 20" className="h-5 w-5 shrink-0 text-sky-300" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M4 10.5l4 4 8-9" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span>{t}</span>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -93,3 +93,19 @@
   animation: ekwBarFill 3.2s linear forwards;
 }
 /* EKW MOTION END */
+
+/* EKW PREMIUM HERO */
+.ekw-hero-bg { position: relative; overflow: hidden; isolation: isolate; }
+.ekw-hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 500px at 85% 10%, rgba(19, 78, 158, 0.16), transparent 60%),
+    radial-gradient(700px 400px at 0% 100%, rgba(11, 31, 76, 0.08), transparent 60%),
+    radial-gradient(rgba(11, 31, 76, 0.10) 1px, transparent 1.5px) 0 0 / 22px 22px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 100%);
+}
