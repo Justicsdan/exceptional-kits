@@ -616,7 +616,7 @@ export default function HomePage() {
                 <div className="relative h-[27rem] sm:h-[35rem] overflow-hidden rounded-3xl border border-slate-200/90 bg-slate-950 shadow-2xl">
                   {HERO_SLIDES.map((s, idx) => (
                     <img
-                      key={s.image}
+                      key={`${s.tabLabel}-${s.image}`}
                       src={s.image}
                       alt={`${s.lead} ${s.accent}`}
                       onError={(e) => {
