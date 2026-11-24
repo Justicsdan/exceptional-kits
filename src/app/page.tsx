@@ -408,9 +408,9 @@ export default function HomePage() {
         aria-label="Motion Hero Showcase"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="ekw-hero-bg w-full overflow-x-hidden bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-8 sm:py-10 lg:py-9"
+        className="ekw-hero-bg w-full overflow-x-hidden bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-5 sm:py-10 lg:py-9"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12 items-center">
           <div key={`copy-${slideIdx}`} className="min-w-0 lg:col-span-6 space-y-4 ekw-copy-enter">
             <div className="flex flex-wrap items-center gap-2">
               {MOTION_HERO_SLIDES.map((item, idx) => {
@@ -504,8 +504,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="lg:col-span-6">
-            <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-slate-100 ring-1 ring-[#0B1F4C]/10 shadow-[0_30px_80px_-20px_rgba(11,31,76,0.45)] h-[380px] sm:h-[450px] lg:h-[500px]">
+          <div className="order-first lg:order-last min-w-0 lg:col-span-6">
+            <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-slate-100 ring-1 ring-[#0B1F4C]/10 shadow-[0_30px_80px_-20px_rgba(11,31,76,0.45)] h-[240px] sm:h-[450px] lg:h-[500px]">
               {MOTION_HERO_SLIDES.map((item, idx) => {
                 const current = idx === slideIdx;
                 return (
