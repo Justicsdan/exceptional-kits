@@ -38,7 +38,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-slate-900">
+      <body className="min-h-full flex flex-col overflow-x-hidden bg-white text-slate-900">
         {children}
               <FloatingWhatsApp />
       </body>

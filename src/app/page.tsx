@@ -408,10 +408,10 @@ export default function HomePage() {
         aria-label="Motion Hero Showcase"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="ekw-hero-bg w-full bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-8 sm:py-10 lg:py-9"
+        className="ekw-hero-bg w-full overflow-x-hidden bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-8 sm:py-10 lg:py-9"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          <div key={`copy-${slideIdx}`} className="lg:col-span-6 space-y-4 ekw-copy-enter">
+          <div key={`copy-${slideIdx}`} className="min-w-0 lg:col-span-6 space-y-4 ekw-copy-enter">
             <div className="flex flex-wrap items-center gap-2">
               {MOTION_HERO_SLIDES.map((item, idx) => {
                 const isCurrent = idx === slideIdx;
