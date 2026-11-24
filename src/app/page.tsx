@@ -664,11 +664,11 @@ export default function HomePage() {
         </section>
 
                 {/* Band 2: Signature Lines */}
-        <section className="border-t border-slate-200 bg-slate-50/70 py-28 lg:py-36">
+        <section className="border-t border-slate-200 bg-slate-50/70 py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
               <div>
-                <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
+                <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950">
                   Core{" "}
                   <span className="font-editorial text-[#134E9E] text-5xl sm:text-7xl">
                     Collections
@@ -727,11 +727,11 @@ export default function HomePage() {
 
         {/* Band 3: Dedicated People & On-Body Fit */}
         {peopleItems.length > 0 && (
-          <section className="border-t border-slate-200 bg-white py-28 lg:py-40">
+          <section className="border-t border-slate-200 bg-white py-16 lg:py-24">
             <div className="mx-auto max-w-7xl px-6">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
                 <div>
-                  <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
+                  <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950">
                     On-Body{" "}
                     <span className="font-editorial text-[#134E9E] text-5xl sm:text-7xl">
                       Showcase
@@ -788,13 +788,13 @@ export default function HomePage() {
         )}
 
         {/* Band 5: Spaced Editorial Lookbook Chapters */}
-        <section className="border-t border-slate-200 bg-slate-50/50 py-28 lg:py-44">
+        <section className="border-t border-slate-200 bg-slate-50/50 py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 space-y-36 lg:space-y-48">
             {lookbookBands.map((band) => (
               <div key={band.key} className="space-y-10">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 border-b border-slate-200 pb-6">
                   <div className="space-y-2">
-                    <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950">
                       {band.lead}{" "}
                       <span className="font-editorial text-[#134E9E] text-5xl sm:text-7xl">
                         {band.accent}
@@ -846,7 +846,7 @@ export default function HomePage() {
         </section>
 
                 {/* Dedicated Band: Academy & School Uniforms */}
-        <section className="border-t border-slate-200 bg-white py-24 lg:py-32">
+        <section className="border-t border-slate-200 bg-white py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
               <div className="lg:col-span-5 space-y-6">
@@ -938,7 +938,7 @@ export default function HomePage() {
         </section>
 
 {/* Band 6: Full-Width Visual Closing Banner */}
-        <section className="border-t border-slate-200 bg-white py-28 lg:py-40">
+        <section className="border-t border-slate-200 bg-white py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6">
             <div className="relative h-[26rem] sm:h-[32rem] overflow-hidden rounded-3xl bg-slate-950">
               <img
@@ -958,7 +958,7 @@ export default function HomePage() {
                 <p className="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">
                   Direct Workshop
                 </p>
-                <h2 className="text-4xl sm:text-6xl font-extrabold text-white">
+                <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
                   Ready for Your{" "}
                   <span className="font-editorial text-emerald-300 text-5xl sm:text-7xl">
                     Custom Batch
@@ -982,14 +982,39 @@ export default function HomePage() {
           </div>
         </section>
         {/* Band 4: Long Editorial Client Value & Workshop Standard Showcase */}
-        <section className="border-t border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-white py-32 lg:py-44">
+        <section aria-label="How it works" className="bg-[#0B1F4C] text-white py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-300">How it works</p>
+            <h2 className="mt-3 text-3xl sm:text-5xl font-extrabold tracking-tight">From brief to delivery</h2>
+            <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+              {[
+                ["Send your brief", "Tell us the item, quantity, colours and crest or logo."],
+                ["Approve a sample", "Check the cut, colour and embroidery before the batch starts."],
+                ["Batch production", "Your order is made in our workshop to the approved sample."],
+                ["Quality check", "Every piece is inspected for stitching, sizing and finish."],
+                ["Delivery", "Collect from us or have it delivered to your location."],
+              ].map(([title, text], i) => (
+                <li key={title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0B1F4C] font-extrabold">{i + 1}</span>
+                  <h3 className="mt-4 text-lg font-bold">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">{text}</p>
+                </li>
+              ))}
+            </ol>
+            <a href="/quote" className="mt-10 inline-flex items-center justify-center rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-[#0B1F4C] shadow-sm transition-transform duration-200 hover:-translate-y-0.5">
+              Start with a quote
+            </a>
+          </div>
+        </section>
+
+        <section className="border-t border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-white py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 space-y-24 lg:space-y-28">
             <div className="grid gap-8 lg:grid-cols-12 lg:items-end border-b border-slate-200 pb-10">
               <div className="lg:col-span-7 space-y-3">
                 <p className="text-sm font-bold uppercase tracking-[0.26em] text-[#134E9E]">
                   Why Organizations Partner With Us
                 </p>
-                <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950 leading-[1.05]">
+                <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 leading-[1.05]">
                   Dependable Supply{" "}
                   <span className="font-editorial text-[#134E9E] text-5xl sm:text-7xl">
                     Made Simple
