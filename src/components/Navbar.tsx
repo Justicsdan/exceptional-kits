@@ -23,10 +23,10 @@ setMobileOpen(false);
 
 return (
 <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
-  <div className="mx-auto flex h-22 sm:h-26 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
+  <div className="mx-auto flex h-20 sm:h-26 max-w-7xl items-center justify-between gap-2 sm:gap-4 px-3 sm:px-6">
     <Link
       href="/"
-      className="group shrink-0 transition-transform duration-300 hover:-translate-y-0.5"
+      className="group min-w-0 flex-1 md:flex-initial transition-transform duration-300 hover:-translate-y-0.5"
     >
       <BrandLogo variant="light" />
     </Link>
@@ -58,7 +58,7 @@ return (
     <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
       <Link
         href="/quote"
-        className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-slate-200 bg-white px-3.5 sm:px-4.5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colors whitespace-nowrap"
+        className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-slate-200 bg-white px-2.5 sm:px-4.5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colors whitespace-nowrap"
       >
         <FileText className="h-4 w-4 text-[#134E9E]" />
         <span>Get Quote</span>
