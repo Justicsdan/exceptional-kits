@@ -3,9 +3,20 @@ import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
-  title: "Exceptional Kits And Wears",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3001"),
+  title: {
+    default: "Exceptional Kits and Wears | Security Uniforms & Tactical Kits, Abuja",
+    template: "%s | Exceptional Kits and Wears",
+  },
   description:
-    "Direct workshop production of security uniforms, tactical vests, branded caps, and field accessories.",
+    "Direct workshop production of security uniforms, duty shirts, tactical vests, branded caps and crested school kits. Request a custom quote.",
+  openGraph: {
+    type: "website",
+    siteName: "Exceptional Kits and Wears",
+    locale: "en_NG",
+    title: "Exceptional Kits and Wears",
+    description: "Security uniforms, tactical kits and crested duty wear made direct from our workshop.",
+  },
 };
 
 export default function RootLayout({

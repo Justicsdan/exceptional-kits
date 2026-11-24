@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, Ruler, Sparkles, Truck } from "lucide-react";
@@ -516,9 +517,13 @@ export default function HomePage() {
                         : "opacity-0 translate-x-6 scale-105 pointer-events-none"
                     }`}
                   >
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.caption}
+                      fill
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      loading={idx === 0 ? "eager" : "lazy"}
+                      fetchPriority={idx === 0 ? "high" : "auto"}
                       style={{ animationPlayState: isPaused ? "paused" : "running" }}
                       className={`w-full h-full object-cover object-center ${
                         current ? "ekw-photo-drift" : ""
