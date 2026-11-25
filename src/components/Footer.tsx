@@ -18,45 +18,52 @@ const linkClass =
 
 export default function Footer() {
   return (
-    <footer className="bg-[#061224] text-slate-300">
-      <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-              Ready to kit out your team?
-            </h2>
-            <p className="mt-2 text-base text-slate-400">
-              Send your brief and request a custom quote.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/quote"
-              className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-[#0B1F4C] shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
-            >
-              Get a custom quote
-            </Link>
-            <a
-              href={WA_HREF}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-lg border border-white/25 px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              Chat on WhatsApp
-            </a>
+    <footer className="flow-root bg-[#061224] text-slate-300">
+      <div className="relative z-10 mx-auto -mt-12 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#134E9E] via-[#0F3A7D] to-[#0B1F4C] p-8 shadow-[0_30px_80px_-20px_rgba(6,18,36,0.7)] ring-1 ring-white/10 sm:p-12">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_300px_at_90%_0%,rgba(125,211,252,0.28),transparent_60%)]"
+          />
+          <div className="relative flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
+                Ready to kit out{" "}
+                <span className="font-serif font-normal italic text-sky-200">your team?</span>
+              </h2>
+              <p className="mt-3 max-w-md text-base text-slate-200">
+                Send your brief and request a custom quote.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/quote"
+                className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-[#0B1F4C] shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                Get a custom quote
+              </Link>
+              <a
+                href={WA_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid gap-12 md:grid-cols-12">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 pb-14 pt-16 sm:px-6 md:grid-cols-12 lg:px-8">
         <div className="md:col-span-5">
           <div className="flex items-center gap-4">
             <img
               src="/icon.png"
               alt="EKW logo"
-              width={56}
-              height={56}
-              className="h-14 w-14 rounded-xl bg-white p-1.5"
+              width={64}
+              height={64}
+              className="h-16 w-16 rounded-2xl bg-white p-1.5"
             />
             <div>
               <p className="text-lg font-extrabold tracking-tight text-white">
@@ -110,9 +117,14 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-sm text-slate-400 sm:flex sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Exceptional Kits and Wears. All rights reserved.</p>
-          <p className="mt-2 sm:mt-0">Made in our workshop. Delivered nationwide.</p>
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-6 gap-y-2 px-4 pb-24 pt-6 text-sm text-slate-400 sm:px-6 lg:px-8 lg:pb-6">
+          <p>
+            © {new Date().getFullYear()} Exceptional Kits and Wears · Made in our workshop,
+            delivered nationwide.
+          </p>
+          <a href="#" className="text-slate-300 transition-colors hover:text-white">
+            Back to top ↑
+          </a>
         </div>
       </div>
     </footer>
