@@ -99,6 +99,9 @@ export default function Footer() {
             Contact us
           </h3>
           <p className="mt-5 text-[15px] font-semibold text-white">
+            Walk-in &amp; Customer Service: 7A Adeniyi Ogunsanya, Ipaja, Lagos
+          </p>
+          <p className="mt-1.5 text-sm text-slate-300">
             Nigeria · Nationwide dispatch
           </p>
           <p className="mt-3 text-[15px]">
