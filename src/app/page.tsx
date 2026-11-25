@@ -973,21 +973,31 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-300">How it works</p>
             <h2 className="mt-3 text-3xl sm:text-5xl font-extrabold tracking-tight">From brief to delivery</h2>
-            <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-              {[
-                ["Send your brief", "Tell us the item, quantity, colours and crest or logo."],
-                ["Approve a sample", "Check the cut, colour and embroidery before the batch starts."],
-                ["Batch production", "Your order is made in our workshop to the approved sample."],
-                ["Quality check", "Every piece is inspected for stitching, sizing and finish."],
-                ["Delivery", "Collect from us or have it delivered to your location."],
-              ].map(([title, text], i) => (
-                <li key={title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0B1F4C] font-extrabold">{i + 1}</span>
-                  <h3 className="mt-4 text-lg font-bold">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-300">{text}</p>
-                </li>
-              ))}
-            </ol>
+            <div className="ekw-marquee-wrap mt-12 overflow-hidden">
+              <ol className="ekw-marquee-track gap-6 pr-6">
+                {(() => {
+                  const steps = [
+                    ["Send your brief", "Tell us the item, quantity, colours and crest or logo."],
+                    ["Approve a sample", "Check the cut, colour and embroidery before the batch starts."],
+                    ["Batch production", "Your order is made in our workshop to the approved sample."],
+                    ["Quality check", "Every piece is inspected for stitching, sizing and finish."],
+                    ["Delivery", "Collect from us or have it delivered to your location."],
+                  ];
+                  return [...steps, ...steps].map(([title, text], i) => (
+                    <li
+                      key={`${title}-${i}`}
+                      className="w-[260px] sm:w-[290px] shrink-0 rounded-2xl border border-white/10 bg-white/5 p-6"
+                    >
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0B1F4C] font-extrabold">
+                        {(i % 5) + 1}
+                      </span>
+                      <h3 className="mt-4 text-lg font-bold">{title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-300">{text}</p>
+                    </li>
+                  ));
+                })()}
+              </ol>
+            </div>
             <a href="/quote" className="mt-10 inline-flex items-center justify-center rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-[#0B1F4C] shadow-sm transition-transform duration-200 hover:-translate-y-0.5">
               Start with a quote
             </a>

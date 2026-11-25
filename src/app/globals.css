@@ -137,3 +137,29 @@
 @media (prefers-reduced-motion: reduce) {
   .ekw-wa-pulse { animation: none; }
 }
+
+@keyframes ekw-marquee-left {
+0% {
+transform: translate3d(0, 0, 0);
+}
+100% {
+transform: translate3d(-50%, 0, 0);
+}
+}
+
+.ekw-marquee-track {
+display: flex;
+width: max-content;
+animation: ekw-marquee-left 28s linear infinite;
+}
+
+.ekw-marquee-wrap:hover .ekw-marquee-track,
+.ekw-marquee-wrap:focus-within .ekw-marquee-track {
+animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+.ekw-marquee-track {
+animation: none;
+}
+}
