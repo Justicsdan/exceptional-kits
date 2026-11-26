@@ -423,15 +423,11 @@ export default function HomePage() {
               {activeHero.kicker}
             </p>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B1F4C] leading-[1.06] lg:min-h-[3.2em]">
-              {activeHero.lead}{" "}
-              <span className="font-serif italic font-normal text-[#134E9E] whitespace-nowrap">
-                {activeHero.accent}
-              </span>{" "}
-              <span className="block mt-1">{activeHero.tail}</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1F4C] leading-tight">
+              {activeHero.lead} {activeHero.accent} {activeHero.tail}
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl lg:min-h-[4.9em]">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-lg">
               {activeHero.summary}
             </p>
 

@@ -19,15 +19,19 @@ const linkClass =
 export default function Footer() {
   return (
     <footer className="flow-root bg-[#061224] text-slate-300">
-      <div className="relative z-10 mx-auto -mt-12 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#134E9E] via-[#0F3A7D] to-[#0B1F4C] p-8 shadow-[0_30px_80px_-20px_rgba(6,18,36,0.7)] ring-1 ring-white/10 sm:p-12">
+      <div className="ekw-cta-stage relative z-10 mx-auto -mt-12 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="ekw-cta-3d group overflow-hidden p-8 sm:p-12">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_300px_at_90%_0%,rgba(125,211,252,0.28),transparent_60%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(680px_340px_at_88%_0%,rgba(125,211,252,0.38),transparent_62%)]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"
           />
           <div className="relative flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
+              <h2 className="text-3xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_10px_rgba(4,12,28,0.45)] sm:text-5xl">
                 Ready to kit out{" "}
                 <span className="font-serif font-normal italic text-sky-200">your team?</span>
               </h2>
@@ -38,7 +42,7 @@ export default function Footer() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/quote"
-                className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-[#0B1F4C] shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-lg border-b-4 border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-[#0B1F4C] shadow-[0_10px_24px_-6px_rgba(4,12,28,0.55)] transition-all duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-2"
               >
                 Get a custom quote
               </Link>
@@ -46,7 +50,7 @@ export default function Footer() {
                 href={WA_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-lg border border-white/35 border-b-4 border-b-sky-950 bg-white/10 px-6 py-3.5 text-base font-semibold text-white shadow-[0_10px_24px_-6px_rgba(4,12,28,0.5)] backdrop-blur-xs transition-all duration-150 hover:-translate-y-0.5 hover:bg-white/15 active:translate-y-0.5 active:border-b-2"
               >
                 Chat on WhatsApp
               </a>
