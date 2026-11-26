@@ -14,11 +14,11 @@ const SERVICES = [
 ];
 
 const linkClass =
-  "text-slate-200 underline decoration-transparent underline-offset-4 transition-colors hover:text-white hover:decoration-sky-400";
+  "text-slate-100 underline decoration-transparent underline-offset-4 transition-colors hover:text-white hover:decoration-sky-400";
 
 export default function Footer() {
   return (
-    <footer className="flow-root bg-[#061224] text-slate-200">
+    <footer className="flow-root bg-[#061224] text-slate-100">
       <div className="ekw-cta-stage relative z-10 mx-auto -mt-12 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="ekw-cta-3d group overflow-hidden p-8 sm:p-12">
           <div
@@ -35,7 +35,7 @@ export default function Footer() {
                 Ready to kit out{" "}
                 <span className="font-serif font-normal italic text-sky-200">your team?</span>
               </h2>
-              <p className="mt-3 max-w-md text-base text-slate-200">
+              <p className="mt-3 max-w-md text-base text-slate-100">
                 Send your brief and request a custom quote.
               </p>
             </div>
@@ -70,7 +70,7 @@ export default function Footer() {
               className="h-16 w-16 rounded-2xl bg-white p-1.5"
             />
             <div>
-              <p className="text-lg font-extrabold tracking-tight text-white">
+              <p className="text-xl font-extrabold tracking-tight text-white">
                 Exceptional Kits and Wears
               </p>
               <p className="mt-0.5 text-sm font-medium text-sky-200">
@@ -78,10 +78,13 @@ export default function Footer() {
               </p>
             </div>
           </div>
-          <p className="mt-6 max-w-md text-[15px] leading-7 text-slate-200">
+          <p className="mt-6 max-w-md text-base leading-7 text-slate-200">
             Direct workshop production of security uniforms, tactical vests, branded caps and
-            duty accessories, with saved company size charts and single-piece replacement
+            duty accessories—with saved company size charts and single-piece replacement
             support.
+          </p>
+          <p className="mt-4 text-sm font-medium text-sky-200">
+            Made in our workshop · Delivered nationwide across Nigeria
           </p>
         </div>
 
@@ -89,7 +92,7 @@ export default function Footer() {
           <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-sky-300">
             Our services
           </h3>
-          <ul className="mt-5 space-y-3 text-[15px]">
+          <ul className="mt-5 space-y-3.5 text-base">
             {SERVICES.map((s) => (
               <li key={s.href}>
                 <Link href={s.href} className={linkClass}>
@@ -104,50 +107,44 @@ export default function Footer() {
           <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-sky-300">
             Contact us
           </h3>
-          <div className="mt-5 space-y-3 text-[15px] leading-6">
+          <div className="mt-5 space-y-4 text-base leading-6">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-sky-200">
                 Walk-in &amp; Customer Service
               </p>
-              <p className="mt-0.5 font-semibold text-white">
+              <p className="mt-1 font-semibold text-white">
                 7A Adeniyi Ogunsanya, Ipaja, Lagos
               </p>
-              <p className="mt-0.5 text-sm text-slate-300">
+              <p className="mt-0.5 text-sm text-slate-200">
                 Nigeria · Nationwide dispatch
               </p>
             </div>
             <p>
-              <span className="text-slate-300">Tel / WhatsApp: </span>
+              <span className="text-slate-200">Tel / WhatsApp: </span>
               <a
                 href={`tel:${PHONE_TEL}`}
-                className="font-semibold text-sky-300 underline decoration-sky-300/50 underline-offset-4 hover:text-white hover:decoration-white"
+                className="font-semibold text-sky-300 underline decoration-sky-300/60 underline-offset-4 hover:text-white hover:decoration-white"
               >
                 {PHONE_DISPLAY}
               </a>
             </p>
-            <p className="text-sm text-slate-300">
-              Uniform production · Security kits · Branding services
-            </p>
+            <div className="pt-1">
+              <a
+                href="#"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-300 transition-colors hover:text-white"
+              >
+                Back to top ↑
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="border-t border-white/15 bg-[#040d1b]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 pb-24 pt-6 text-sm text-slate-200 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8 lg:pb-6">
-          <div className="space-y-1">
-            <p className="font-medium text-white">
-              © {new Date().getFullYear()} Exceptional Kits and Wears. All rights reserved.
-            </p>
-            <p className="text-xs text-slate-300">
-              Made in our workshop · Delivered nationwide across Nigeria
-            </p>
-          </div>
-          <a
-            href="#"
-            className="inline-flex items-center font-medium text-sky-300 transition-colors hover:text-white"
-          >
-            Back to top ↑
-          </a>
+        <div className="mx-auto max-w-7xl px-4 pb-24 pt-6 text-center sm:px-6 lg:px-8 lg:pb-6">
+          <p className="text-sm font-medium tracking-wide text-slate-200">
+            © {new Date().getFullYear()} Exceptional Kits and Wears. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

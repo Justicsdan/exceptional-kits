@@ -33,8 +33,8 @@ export default function ProductionPage() {
           />
           <div className="relative mx-auto max-w-7xl px-6">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">
- In House Workshop
- </p>
+              In House Workshop
+            </p>
             <h1 className="mt-4 text-5xl sm:text-7xl font-extrabold leading-[0.95] max-w-4xl">
               Workshop{" "}
               <span className="font-editorial text-emerald-300 text-6xl sm:text-8xl">
@@ -45,7 +45,7 @@ export default function ProductionPage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/quote"
-                className="inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white hover:bg-emerald-500 transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-emerald-500 px-7 py-3.5 text-sm font-bold text-white transition-colors"
               >
                 <span>Start Batch Run</span>
                 <ArrowRight className="h-4 w-4" />
@@ -60,63 +60,75 @@ export default function ProductionPage() {
           </div>
         </section>
 
-        <section className="py-24 lg:py-36 bg-white">
+        <section className="py-20 lg:py-28 bg-white">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="border-b border-slate-200 pb-8 mb-14">
-              <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950">
+            <div className="border-b border-slate-200 pb-6 mb-10">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#134E9E]">
+                Step-by-Step Workflow
+              </p>
+              <h2 className="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950">
                 Production{" "}
-                <span className="font-editorial text-[#134E9E] text-5xl sm:text-7xl">
-                  Stages
-                </span>
+                <span className="font-editorial italic text-[#134E9E]">Stages</span>
               </h2>
             </div>
 
-            <div className="divide-y divide-slate-200 border-y border-slate-200">
+            <div className="space-y-5">
               {PRODUCTION_STAGES.map((stage) => (
-                <div
-                  key={stage.title}
-                  className="py-9 lg:py-12 grid gap-4 lg:grid-cols-12 lg:items-center"
+                <article
+                  key={stage.step}
+                  className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-7 shadow-2xs transition-colors hover:border-[#134E9E]/40 hover:bg-white"
                 >
-                  <div className="lg:col-span-5">
-                    <h3 className="text-2xl font-bold text-slate-950">
-                      {stage.title}
-                    </h3>
+                  <div className="grid gap-4 lg:grid-cols-12 lg:items-start">
+                    <div className="lg:col-span-5 flex items-start gap-4">
+                      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0B1F4C] text-sm font-extrabold tracking-wider text-white">
+                        {stage.step}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-bold leading-snug text-slate-950">
+                        {stage.title}
+                      </h3>
+                    </div>
+                    <div className="lg:col-span-7 lg:pl-4">
+                      <p className="text-base leading-7 text-slate-700">
+                        {stage.detail}
+                      </p>
+                    </div>
                   </div>
-                  <div className="lg:col-span-7">
-                    <p className="text-sm sm:text-base text-slate-600">
-                      {stage.detail}
-                    </p>
-                  </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="border-t border-slate-200 bg-slate-50/70 py-24 lg:py-36">
+        <section className="border-t border-slate-200 bg-slate-50/70 py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-4xl sm:text-6xl font-extrabold text-slate-950 mb-14">
-              Quality{" "}
-              <span className="font-editorial text-[#134E9E] text-5xl sm:text-7xl">
-                Inspection
-              </span>
-            </h2>
+            <div className="mb-12">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#134E9E]">
+                Final Verification
+              </p>
+              <h2 className="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-950">
+                Quality{" "}
+                <span className="font-editorial italic text-[#134E9E]">Inspection</span>
+              </h2>
+            </div>
 
-            <div className="grid gap-10 md:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-2">
               {QC_PILLARS.map((pillar) => (
-                <article key={pillar.key} className="group space-y-4">
-                  <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xs group-hover:shadow-xl transition-all duration-300">
+                <article
+                  key={pillar.key}
+                  className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xs transition-all duration-300 hover:shadow-lg"
+                >
+                  <div className="aspect-[4/3] overflow-hidden bg-slate-100">
                     <img
                       src={pillar.image}
                       alt={pillar.title}
                       className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="px-1">
-                    <p className="text-sm font-bold uppercase tracking-wider text-[#134E9E]">
+                  <div className="p-6">
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#134E9E]">
                       {pillar.caption}
                     </p>
-                    <h3 className="mt-0.5 text-xl font-bold text-slate-950">
+                    <h3 className="mt-1.5 text-xl font-bold text-slate-950">
                       {pillar.title}
                     </h3>
                   </div>
