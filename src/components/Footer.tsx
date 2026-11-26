@@ -14,11 +14,11 @@ const SERVICES = [
 ];
 
 const linkClass =
-  "text-slate-300 underline decoration-transparent underline-offset-4 transition-colors hover:text-white hover:decoration-sky-400";
+  "text-slate-200 underline decoration-transparent underline-offset-4 transition-colors hover:text-white hover:decoration-sky-400";
 
 export default function Footer() {
   return (
-    <footer className="flow-root bg-[#061224] text-slate-300">
+    <footer className="flow-root bg-[#061224] text-slate-200">
       <div className="ekw-cta-stage relative z-10 mx-auto -mt-12 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="ekw-cta-3d group overflow-hidden p-8 sm:p-12">
           <div
@@ -73,10 +73,12 @@ export default function Footer() {
               <p className="text-lg font-extrabold tracking-tight text-white">
                 Exceptional Kits and Wears
               </p>
-              <p className="text-sm text-slate-400">Quality. Style. Professionalism.</p>
+              <p className="mt-0.5 text-sm font-medium text-sky-200">
+                Quality. Style. Professionalism.
+              </p>
             </div>
           </div>
-          <p className="mt-6 max-w-md text-[15px] leading-7 text-slate-400">
+          <p className="mt-6 max-w-md text-[15px] leading-7 text-slate-200">
             Direct workshop production of security uniforms, tactical vests, branded caps and
             duty accessories, with saved company size charts and single-piece replacement
             support.
@@ -102,34 +104,48 @@ export default function Footer() {
           <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-sky-300">
             Contact us
           </h3>
-          <p className="mt-5 text-[15px] font-semibold text-white">
-            Walk-in &amp; Customer Service: 7A Adeniyi Ogunsanya, Ipaja, Lagos
-          </p>
-          <p className="mt-1.5 text-sm text-slate-300">
-            Nigeria · Nationwide dispatch
-          </p>
-          <p className="mt-3 text-[15px]">
-            Tel / WhatsApp:{" "}
-            <a
-              href={`tel:${PHONE_TEL}`}
-              className="font-semibold text-sky-300 underline decoration-sky-300/40 underline-offset-4 hover:decoration-sky-300"
-            >
-              {PHONE_DISPLAY}
-            </a>
-          </p>
-          <p className="mt-3 text-sm text-slate-400">
-            Uniform production · Security kits · Branding services
-          </p>
+          <div className="mt-5 space-y-3 text-[15px] leading-6">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-sky-200">
+                Walk-in &amp; Customer Service
+              </p>
+              <p className="mt-0.5 font-semibold text-white">
+                7A Adeniyi Ogunsanya, Ipaja, Lagos
+              </p>
+              <p className="mt-0.5 text-sm text-slate-300">
+                Nigeria · Nationwide dispatch
+              </p>
+            </div>
+            <p>
+              <span className="text-slate-300">Tel / WhatsApp: </span>
+              <a
+                href={`tel:${PHONE_TEL}`}
+                className="font-semibold text-sky-300 underline decoration-sky-300/50 underline-offset-4 hover:text-white hover:decoration-white"
+              >
+                {PHONE_DISPLAY}
+              </a>
+            </p>
+            <p className="text-sm text-slate-300">
+              Uniform production · Security kits · Branding services
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-6 gap-y-2 px-4 pb-24 pt-6 text-sm text-slate-400 sm:px-6 lg:px-8 lg:pb-6">
-          <p>
-            © {new Date().getFullYear()} Exceptional Kits and Wears · Made in our workshop,
-            delivered nationwide.
-          </p>
-          <a href="#" className="text-slate-300 transition-colors hover:text-white">
+      <div className="border-t border-white/15 bg-[#040d1b]">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 pb-24 pt-6 text-sm text-slate-200 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8 lg:pb-6">
+          <div className="space-y-1">
+            <p className="font-medium text-white">
+              © {new Date().getFullYear()} Exceptional Kits and Wears. All rights reserved.
+            </p>
+            <p className="text-xs text-slate-300">
+              Made in our workshop · Delivered nationwide across Nigeria
+            </p>
+          </div>
+          <a
+            href="#"
+            className="inline-flex items-center font-medium text-sky-300 transition-colors hover:text-white"
+          >
             Back to top ↑
           </a>
         </div>
