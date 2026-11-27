@@ -286,6 +286,7 @@ export default function HomePage() {
   const goNext = () => setSlideIdx((prev) => (prev + 1) % MOTION_HERO_SLIDES.length);
 
   const [activeSlide, setActiveSlide] = useState(0);
+  const [brokenSlides, setBrokenSlides] = useState<Record<number, boolean>>({});
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
@@ -531,7 +532,7 @@ export default function HomePage() {
             "Made direct in our workshop",
             "Custom crests & embroidery",
             "Batches with saved size records",
-            "Serving Abuja & nationwide",
+            "Serving Lagos & nationwide",
           ].map((t) => (
             <div key={t} className="flex items-center gap-3 text-sm sm:text-[15px] font-semibold tracking-wide">
               <svg viewBox="0 0 20 20" className="h-5 w-5 shrink-0 text-sky-300" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -620,27 +621,33 @@ export default function HomePage() {
 
               <div className="lg:col-span-7">
                 <div className="relative h-[27rem] sm:h-[35rem] overflow-hidden rounded-3xl border border-slate-200/90 bg-slate-950 shadow-2xl">
-                  {HERO_SLIDES.map((s, idx) => (
-                    <img
-                      key={`${s.tabLabel}-${s.image}`}
-                      src={s.image}
-                      alt={`${s.lead} ${s.accent}`}
-                      onError={(e) => {
-                        const el = e.currentTarget;
-                        if (!el.dataset.fb) {
-                          el.dataset.fb = "1";
-                          el.src = FALLBACK_PHOTO;
-                        }
-                      }}
-                      className={`absolute inset-0 h-full w-full object-cover animate-slow-zoom transition-all duration-700 ease-out ${
-                        activeSlide === idx
-                          ? "opacity-100 scale-100"
-                          : "opacity-0 scale-105 pointer-events-none"
-                      }`}
-                    />
-                  ))}
+                  {HERO_SLIDES.map((s, idx) => {
+                    const isActive = activeSlide === idx;
+                    const imgSrc = brokenSlides[idx] ? FALLBACK_PHOTO : s.image;
 
-                  </div>
+                    return (
+                      <Image
+                        key={`${s.tabLabel}-${s.image}`}
+                        src={imgSrc}
+                        alt={`${s.lead} ${s.accent}`}
+                        fill
+                        sizes="(min-width: 1024px) 58vw, 100vw"
+                        priority={idx === 0}
+                        loading={idx === 0 ? "eager" : "lazy"}
+                        onError={() => {
+                          setBrokenSlides((prev) =>
+                            prev[idx] ? prev : { ...prev, [idx]: true }
+                          );
+                        }}
+                        className={`object-cover transition-all duration-700 ease-out ${
+                          isActive
+                            ? "opacity-100 scale-100 animate-slow-zoom"
+                            : "opacity-0 scale-105 pointer-events-none"
+                        }`}
+                      />
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
