@@ -3,7 +3,7 @@ import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3001"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.ekwkits.com"),
   title: {
     default: "Exceptional Kits and Wears | Security Uniforms & Tactical Kits, Abuja",
     template: "%s | Exceptional Kits and Wears",
