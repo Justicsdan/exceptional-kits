@@ -294,13 +294,13 @@ export const PRODUCTION_STAGES = [
     step: "01",
     title: "Fabric Sourcing & Shade-Lock Verification",
     detail:
-      "We test fabric weight (GSM), weave tightness, and colorfastness before cutting—logging your organization's exact fabric shade so reorders 6–12 months later match seamlessly.",
+      "We check fabric weight (GSM), weave tightness, and colorfastness before cutting, and log your shade so reorders 6–12 months later match.",
   },
   {
     step: "02",
     title: "Digital & Physical Client Size Chart Archiving",
     detail:
-      "Every guard measurement or standard size breakdown (S–3XL) is saved under your company profile, eliminating re-measurement delays when onboarding new staff.",
+      "We save guard measurements and size breakdowns (S–3XL) under your company profile so onboarding new staff does not slow you down.",
   },
   {
     step: "03",

@@ -365,7 +365,7 @@ export default function HomePage() {
       lead: "Cresting &",
       accent: "Accessories",
       caption:
-        "Finishing details—caps, belts, and crests—that tie an entire uniform kit together.",
+        "Caps, belts, and crests that complete the uniform kit.",
       items: galleryItems.slice(6, 9),
     },
     {
