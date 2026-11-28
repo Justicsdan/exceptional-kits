@@ -8,7 +8,7 @@ import BrandLogo from "@/components/BrandLogo";
 
 const NAV_LINKS = [
   { href: "/", label: "Overview" },
-  { href: "/catalogue", label: "Catalogue" },
+  { href: "/catalog", label: "Catalogue" },
   { href: "/production", label: "Workshop & QC" },
   { href: "/sectors", label: "Sectors" },
 ];

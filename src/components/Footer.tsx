@@ -8,7 +8,7 @@ const WA_HREF = `https://wa.me/2348032392875?text=${encodeURIComponent(
 )}`;
 
 const SERVICES = [
-  { label: "Uniforms & Duty Gear", href: "/catalogue" },
+  { label: "Uniforms & Duty Gear", href: "/catalog" },
   { label: "Workshop & Size Charts", href: "/production" },
   { label: "Security & Estate Sectors", href: "/sectors" },
   { label: "Order & Reorder Quote", href: "/quote" },

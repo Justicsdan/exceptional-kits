@@ -198,7 +198,7 @@ const ROTATING_HERO_SLIDES = [
     fallbackSrc: "/images/review-06-25fc05.jpeg",
     alt: "Complete uniform kit laid out beside production line",
     objectPosition: "object-centre",
-    ctaHref: "/catalogue",
+    ctaHref: "/catalog",
     ctaLabel: "Explore Catalogue",
   },
 ];
