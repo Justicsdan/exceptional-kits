@@ -44,7 +44,7 @@ export default function QuotePage() {
 
   const whatsappSummary = encodeURIComponent(
     `Hello Exceptional Kits and Wears, I would like a quote.\n` +
-      `Organization: ${organization || "Not specified"}\n` +
+      `Organisation: ${organization || "Not specified"}\n` +
       `Contact: ${contactName || "Not specified"} (${phone || "No phone"})\n` +
       `Items: ${selectedLines.join(", ") || "General Uniform Inquiry"}\n` +
       `Estimated Quantity: ${quantity}\n` +
