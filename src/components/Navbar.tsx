@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 w-full">
-      <div className="ekw-header-card-3d flex h-24 sm:h-28 w-full items-centre justify-between gap-2 sm:gap-4 px-4 sm:px-8 backdrop-blur-md">
+      <div className="ekw-header-card-3d flex h-24 sm:h-28 w-full items-center justify-between gap-2 sm:gap-4 px-4 sm:px-8 backdrop-blur-md">
         <Link
           href="/"
           className="group min-w-0 flex-1 md:flex-initial transition-transform duration-300 hover:-translate-y-0.5"
@@ -31,7 +31,7 @@ export default function Navbar() {
           <BrandLogo variant="light" />
         </Link>
 
-        <nav aria-label="Primary navigation" className="hidden md:flex items-centre gap-3 lg:gap-4">
+        <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-3 lg:gap-4">
           {NAV_LINKS.map((link) => {
             const active =
               link.href === "/"
@@ -55,10 +55,10 @@ export default function Navbar() {
           })}
         </nav>
 
-        <div className="flex items-centre gap-2 sm:gap-2.5 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
           <Link
             href="/quote"
-            className="ekw-nav-pill-3d inline-flex items-centre gap-1.5 sm:gap-2 rounded-full border border-slate-200 bg-gradient-to-b from-white to-slate-100 px-2.5 sm:px-4.5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] whitespace-nowrap"
+            className="ekw-nav-pill-3d inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-slate-200 bg-gradient-to-b from-white to-slate-100 px-2.5 sm:px-4.5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] whitespace-nowrap"
           >
             <FileText className="h-4 w-4 text-[#134E9E]" />
             <span>Get Quote</span>
@@ -66,7 +66,7 @@ export default function Navbar() {
 
           <a
             href="tel:08032392875"
-            className="ekw-nav-active-3d hidden sm:inline-flex items-centre gap-2 rounded-full bg-gradient-to-b from-[#134E9E] to-[#0B1F4C] hover:from-[#1B64C4] hover:to-[#0F3A7D] px-4.5 py-2.5 text-xs sm:text-sm font-bold text-white whitespace-nowrap"
+            className="ekw-nav-active-3d hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-b from-[#134E9E] to-[#0B1F4C] hover:from-[#1B64C4] hover:to-[#0F3A7D] px-4.5 py-2.5 text-xs sm:text-sm font-bold text-white whitespace-nowrap"
           >
             <Phone className="h-4 w-4" />
             <span>0803 239 2875</span>
@@ -77,7 +77,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-expanded={mobileOpen}
             aria-label="Toggle navigation menu"
-            className="inline-flex md:hidden items-centre justify-centre rounded-xl border border-slate-200 bg-white p-2.5 text-slate-800 hover:bg-slate-50 hover:text-[#134E9E] transition-colours"
+            className="inline-flex md:hidden items-center justify-center rounded-xl border border-slate-200 bg-white p-2.5 text-slate-800 hover:bg-slate-50 hover:text-[#134E9E] transition-colors"
           >
             {mobileOpen ? (
               <X className="h-5 w-5" />
@@ -118,7 +118,7 @@ export default function Navbar() {
             <a
               href="tel:08032392875"
               onClick={() => setMobileOpen(false)}
-              className="flex w-full items-centre justify-centre gap-2 rounded-xl bg-[#0B1F4C] hover:bg-[#134E9E] px-4 py-3 text-sm font-bold text-white transition-colours"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0B1F4C] hover:bg-[#134E9E] px-4 py-3 text-sm font-bold text-white transition-colors"
             >
               <Phone className="h-4 w-4" />
               <span>Call 0803 239 2875</span>

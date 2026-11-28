@@ -8,7 +8,7 @@ export default function BrandLogo({
   const isDark = variant === "dark";
 
   return (
-    <div className="group inline-flex items-centre gap-2.5 sm:gap-4 min-w-0 select-none">
+    <div className="group inline-flex items-center gap-2.5 sm:gap-4 min-w-0 select-none">
       {/* Matching Crest Card Frame for Both Header & Footer */}
       <div
         className={`relative flex h-14 w-[72px] sm:h-[70px] sm:w-[98px] lg:h-[74px] lg:w-[106px] shrink-0 items-centre justify-centre rounded-2xl border p-1.5 transition-all duration-300 ease-out group-hover:-translate-y-0.5 ${

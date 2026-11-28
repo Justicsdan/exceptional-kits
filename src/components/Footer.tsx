@@ -30,7 +30,7 @@ export default function Footer() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"
           />
-          <div className="relative flex flex-col gap-8 md:flex-row md:items-centre md:justify-between">
+          <div className="relative flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-3xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_10px_rgba(4,12,28,0.45)] sm:text-5xl">
                 Ready to kit out{" "}
@@ -43,7 +43,7 @@ export default function Footer() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/quote"
-                className="inline-flex items-centre justify-centre rounded-lg border-b-4 border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-[#0B1F4C] shadow-[0_10px_24px_-6px_rgba(4,12,28,0.55)] transition-all duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-2"
+                className="inline-flex items-center justify-center rounded-lg border-b-4 border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-[#0B1F4C] shadow-[0_10px_24px_-6px_rgba(4,12,28,0.55)] transition-all duration-150 hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-2"
               >
                 Get a custom quote
               </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
                 href={WA_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-centre justify-centre rounded-lg border border-white/35 border-b-4 border-b-sky-950 bg-white/10 px-6 py-3.5 text-base font-semibold text-white shadow-[0_10px_24px_-6px_rgba(4,12,28,0.5)] backdrop-blur-xs transition-all duration-150 hover:-translate-y-0.5 hover:bg-white/15 active:translate-y-0.5 active:border-b-2"
+                className="inline-flex items-center justify-center rounded-lg border border-white/35 border-b-4 border-b-sky-950 bg-white/10 px-6 py-3.5 text-base font-semibold text-white shadow-[0_10px_24px_-6px_rgba(4,12,28,0.5)] backdrop-blur-xs transition-all duration-150 hover:-translate-y-0.5 hover:bg-white/15 active:translate-y-0.5 active:border-b-2"
               >
                 Chat on WhatsApp
               </a>
@@ -62,7 +62,7 @@ export default function Footer() {
 
       <div className="mx-auto grid max-w-7xl gap-12 px-4 pb-14 pt-16 sm:px-6 md:grid-cols-12 lg:px-8">
         <div className="md:col-span-5">
-          <div className="flex items-centre gap-4">
+          <div className="flex items-center gap-4">
             <Image src="/icon.png" alt="EKW logo" width={64} height={64} className="h-16 w-16 rounded-2xl bg-white p-1.5" />
             <div>
               <p className="text-xl font-extrabold tracking-tight text-white">
@@ -126,7 +126,7 @@ export default function Footer() {
             <div className="pt-1">
               <a
                 href="#"
-                className="inline-flex items-centre gap-1.5 text-sm font-semibold text-sky-300 transition-colours hover:text-white"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-300 transition-colors hover:text-white"
               >
                 Back to top ↑
               </a>
@@ -136,7 +136,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/15 bg-[#040d1b]">
-        <div className="mx-auto max-w-7xl px-4 pb-24 pt-6 text-centre sm:px-6 lg:px-8 lg:pb-6">
+        <div className="mx-auto max-w-7xl px-4 pb-24 pt-6 text-center sm:px-6 lg:px-8 lg:pb-6">
           <p className="text-sm font-medium tracking-wide text-slate-200">
             © {new Date().getFullYear()} Exceptional Kits and Wears. All rights reserved.
           </p>
