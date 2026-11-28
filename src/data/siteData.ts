@@ -55,7 +55,7 @@ export const CATALOG_ITEMS: ProductItem[] = [
     category: "Uniforms & Sets",
     priceLabel: "Single-Piece Restock",
     unitPrice: 4500,
-    fabricSpec: "Colour-Matched 220–240 GSM Twill • Saved Client Dye Lot",
+    fabricSpec: "Colour-Matched 220 to 240 GSM Twill • Saved Client Dye Lot",
     stitchingSpec: "Structured fused collar, reinforced shoulder straps, custom chest embroidery ready",
     description: "Order individual replacement shirts using your saved company size chart without waiting for a full team bulk run.",
     image: "/images/review-05-1d3205.jpeg",
@@ -91,9 +91,9 @@ export const CATALOG_ITEMS: ProductItem[] = [
     name: "Woven & Embroidered Agency Badges, Crests & Epaulettes",
     category: "Headwear & Branding",
     priceLabel: "Included / Add-On",
-    fabricSpec: "Colorfast Madeira/Polyester Embroidery Thread on Twill Backing",
+    fabricSpec: "Colourfast Madeira/Polyester Embroidery Thread on Twill Backing",
     stitchingSpec: "Merrowed overlock borders, sew-on or hook-and-loop backing, rank bars",
-    description: "Precision chest badges, shoulder flashes, and rank epaulettes digitized directly from your organization logo.",
+    description: "Precision chest badges, shoulder flashes, and rank epaulettes digitized directly from your organisation logo.",
     image: "/images/review-07-938787.jpeg",
     badge: "Brand Identity",
     minOrder: "10 Pieces",
@@ -294,13 +294,13 @@ export const PRODUCTION_STAGES = [
     step: "01",
     title: "Fabric Sourcing & Shade-Lock Verification",
     detail:
-      "We check fabric weight (GSM), weave tightness, and colorfastness before cutting, and log your shade so reorders 6–12 months later match.",
+      "We check fabric weight (GSM), weave tightness, and colourfastness before cutting, and log your shade so reorders 6 to 12 months later match.",
   },
   {
     step: "02",
     title: "Digital & Physical Client Size Chart Archiving",
     detail:
-      "We save guard measurements and size breakdowns (S–3XL) under your company profile so onboarding new staff does not slow you down.",
+      "We save guard measurements and size breakdowns (S to 3XL) under your company profile so onboarding new staff does not slow you down.",
   },
   {
     step: "03",
@@ -332,7 +332,7 @@ export const SECTORS = [
   },
   {
     title: "Gated Residential Estates & Facility Management",
-    challenge: "Estate boards require sharp, recognizable patrol officers and tactical visibility for night gates.",
+    challenge: "Estate boards require sharp, recognisable patrol officers and tactical visibility for night gates.",
     solution:
       "Tailored khaki or dark patrol sets paired with multi-pouch tactical vests, reflective lettering, and durable duty belts.",
     recommendedKit: "Patrol Uniform Set + Black Tactical Duty Vest + Branded Cap + Duty Belt",
