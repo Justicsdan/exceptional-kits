@@ -51,12 +51,12 @@ const CLIENT_PILLARS = [
   {
     icon: Ruler,
     title: "Saved Size Charts",
-    text: "We keep your organization's sizing on record so adding new recruits or re kitting teams stays fast.",
+    text: "We keep your organisation's sizing on record so adding new recruits or re kitting teams stays fast.",
   },
   {
     icon: Sparkles,
     title: "Sharp Brand Identity",
-    text: "Coordinated crests, patches, and uniform styling that help clients recognize your team on sight.",
+    text: "Coordinated crests, patches, and uniform styling that help clients recognise your team on sight.",
   },
   {
     icon: Truck,
@@ -141,7 +141,7 @@ const WORLD_CLASS_SLIDES = [
     accent: "Cresting",
     tail: "& Duty Wear",
     summary:
-      "Put your organization identity front and centre with clean embroidery, woven badges, and branded caps tailored to your exact brand colours.",
+      "Put your organisation identity front and centre with clean embroidery, woven badges, and branded caps tailored to your exact brand colours.",
     image: "/images/bagged-uniform-batch.jpeg",
     ctaHref: "/production",
     ctaLabel: "Workshop & QC",
