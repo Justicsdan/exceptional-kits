@@ -365,14 +365,40 @@ export default function HomePage() {
           <div className="order-first lg:order-last min-w-0 lg:col-span-6">
             <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-slate-100 ring-1 ring-[#0B1F4C]/10 shadow-[0_30px_80px_-20px_rgba(11,31,76,0.45)] h-[240px] sm:h-[450px] lg:h-[500px]">
               <FallbackImage
-                src="/images/hero-security-duo.jpeg"
-                fallbackSrc="/images/review-06-25fc05.jpeg"
-                alt="Uniformed security personnel in duty shirts, caps, belts, and boots"
+                key={activeSlide.id}
+                src={activeSlide.src}
+                fallbackSrc={activeSlide.fallbackSrc}
+                alt={activeSlide.alt}
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 priority
-                className="w-full h-full object-cover object-top"
+                className={`w-full h-full object-cover transition-all duration-500 ${activeSlide.objectPosition}`}
               />
+              <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between gap-3 rounded-2xl bg-slate-950/75 px-4 py-2.5 text-white backdrop-blur-xs">
+                <span className="text-xs font-medium tracking-wide text-slate-200">
+                  {activeSlide.title}
+                </span>
+                <div className="flex items-center gap-1.5" role="tablist" aria-label="Hero slides">
+                  {ROTATING_HERO_SLIDES.map((slideItem, idx) => {
+                    const isCurrent = idx === heroIdx;
+                    return (
+                      <button
+                        key={slideItem.id}
+                        type="button"
+                        role="tab"
+                        aria-selected={isCurrent}
+                        aria-label={`Show ${slideItem.title}`}
+                        onClick={() => setHeroIdx(idx)}
+                        className={`h-2.5 rounded-full transition-all cursor-pointer ${
+                          isCurrent
+                            ? "w-7 bg-white"
+                            : "w-2.5 bg-white/40 hover:bg-white/70"
+                        }`}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -453,14 +479,40 @@ export default function HomePage() {
               <div className="lg:col-span-7">
                 <div className="relative h-[27rem] sm:h-[35rem] overflow-hidden rounded-3xl border border-slate-200/90 bg-slate-950 shadow-2xl">
                   <FallbackImage
-                    src="/images/hero-security-duo.jpeg"
-                    fallbackSrc="/images/review-06-25fc05.jpeg"
-                    alt="Uniformed security personnel in duty shirts, caps, belts, and boots"
+                    key={activeSlide.id}
+                    src={activeSlide.src}
+                    fallbackSrc={activeSlide.fallbackSrc}
+                    alt={activeSlide.alt}
                     fill
-                    sizes="(min-width: 1024px) 58vw, 100vw"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     priority
-                    className="object-cover object-top"
+                    className={`w-full h-full object-cover transition-all duration-500 ${activeSlide.objectPosition}`}
                   />
+                  <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between gap-3 rounded-2xl bg-slate-950/75 px-4 py-2.5 text-white backdrop-blur-xs">
+                    <span className="text-xs font-medium tracking-wide text-slate-200">
+                      {activeSlide.title}
+                    </span>
+                    <div className="flex items-center gap-1.5" role="tablist" aria-label="Hero slides">
+                      {ROTATING_HERO_SLIDES.map((slideItem, idx) => {
+                        const isCurrent = idx === heroIdx;
+                        return (
+                          <button
+                            key={slideItem.id}
+                            type="button"
+                            role="tab"
+                            aria-selected={isCurrent}
+                            aria-label={`Show ${slideItem.title}`}
+                            onClick={() => setHeroIdx(idx)}
+                            className={`h-2.5 rounded-full transition-all cursor-pointer ${
+                              isCurrent
+                                ? "w-7 bg-white"
+                                : "w-2.5 bg-white/40 hover:bg-white/70"
+                            }`}
+                          />
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
