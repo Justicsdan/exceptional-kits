@@ -10,41 +10,6 @@ import { WORKSHOP_GALLERY } from "@/data/siteData";
 
 const FALLBACK_PHOTO = "/images/review-13-4eb26e.jpeg";
 
-const HERO_SLIDES = [
-  {
-    kicker: "Workshop Lookbook",
-    tabLabel: "Tactical",
-    lead: "Security",
-    accent: "Uniforms",
-    tail: "& Tactical Kits",
-    summary: "Built for daily field wear, durable patrol sets, tactical vests, reinforced belts, and sharp custom cresting made straight from our workshop.",
-    image: "/images/review-13-4eb26e.jpeg",
-    ctaHref: "/catalog",
-    ctaLabel: "View Catalog",
-  },
-  {
-    kicker: "Direct Production",
-    tabLabel: "Cresting",
-    lead: "Custom",
-    accent: "Cresting",
-    tail: "& Duty Wear",
-    summary: "Put your organization's identity front and center with clean embroidery, badges, and branded caps tailored to your exact brand colors.",
-    image: "/images/review-13-4eb26e.jpeg",
-    ctaHref: "/production",
-    ctaLabel: "Workshop & QC",
-  },
-  {
-    kicker: "Institutional Supply",
-    tabLabel: "Batches",
-    lead: "Tailored",
-    accent: "Batch Runs",
-    tail: "Ready to Issue",
-    summary: "From new security intakes and estates to school and corporate teams, order full batches with saved size records for effortless reorders.",
-    image: "/images/review-11-332315.jpeg",
-    ctaHref: "/quote",
-    ctaLabel: "Request Quote",
-  },
-];
 
 const SIGNATURE_LINES = [
   {
@@ -196,109 +161,8 @@ const WORLD_CLASS_SLIDES = [
 ];
 
 
-const MOTION_HERO_SLIDES = [
-  {
-    badge: "Tactical & Patrol",
-    kicker: "Workshop Lookbook",
-    lead: "Tactical",
-    accent: "Utility Vests",
-    tail: "& Field Gear",
-    summary: "Front and back tactical utility vest construction with reinforced pouches, MOLLE webbing, and field-ready durability.",
-    image: "/images/review-08-96de4b.jpeg",
-    caption: "Tactical Vest Front & Back View",
-    ctaHref: "/catalog",
-    ctaLabel: "Explore Catalog",
-  },
-  {
-    badge: "Duty Shirts",
-    kicker: "Direct Workshop Finish",
-    lead: "Tailored",
-    accent: "Duty Shirts",
-    tail: "& Belts",
-    summary: "Structured navy duty shirts with crisp collar and cuff detailing, custom crests, duty belts, and lanyards finished on our table.",
-    image: "/images/review-37-32cbe6.jpeg",
-    caption: "Folded Duty Shirt, Crest, Belt & Lanyard",
-    ctaHref: "/production",
-    ctaLabel: "Workshop & QC",
-  },
-  {
-    badge: "Uniform Kits",
-    kicker: "Complete Turnout Sets",
-    lead: "Full",
-    accent: "Uniform Kits",
-    tail: "From the Line",
-    summary: "Coordinated shirt, trouser, belt, beret, and lanyard sets crafted right beside our industrial sewing line.",
-    image: "/images/review-36-6a0f9e.jpeg",
-    caption: "Complete Uniform Set on Workshop Table",
-    ctaHref: "/production",
-    ctaLabel: "See Production",
-  },
-  {
-    badge: "Security & Guard",
-    kicker: "Active Duty Presentation",
-    lead: "Sharp",
-    accent: "Security Kits",
-    tail: "& Branded Caps",
-    summary: "Uniformed guard shirts, arm badges, duty belts, boots, and branded caps built for confident presence on post.",
-    image: "/images/review-13-4eb26e.jpeg",
-    caption: "Uniformed Security & Branded Headwear",
-    ctaHref: "/sectors",
-    ctaLabel: "View Sectors",
-  },
-  {
-    badge: "School Uniforms",
-    kicker: "Institutional & Academy",
-    lead: "Academy",
-    accent: "School Kits",
-    tail: "& Crested Shirts",
-    summary: "Clean collared shirts, embroidered school crests, and tailored plaid sets made for schools and academies.",
-    image: "/images/review-23-cacef7.jpeg",
-    caption: "Academy Uniforms & Embroidered Crests",
-    ctaHref: "/sectors",
-    ctaLabel: "Explore Sectors",
-  },
-  {
-    badge: "Pinafore & Batch",
-    kicker: "Batch Tailoring",
-    lead: "Custom",
-    accent: "Pinafores",
-    tail: "& Batch Runs",
-    summary: "Structured plaid pinafores paired with crisp collared shirts, tailored in repeatable batches for schools and organizations.",
-    image: "/images/review-24-56ce73.jpeg",
-    caption: "Plaid Pinafore & Shirt Batch Tailoring",
-    ctaHref: "/quote",
-    ctaLabel: "Request a Quote",
-  },
-];
 export default function HomePage() {
-  const [slideIdx, setSlideIdx] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(() => {
-      setSlideIdx((prev) => (prev + 1) % MOTION_HERO_SLIDES.length);
-    }, 3200);
-    return () => clearInterval(timer);
-  }, [isPaused]);
-
-  const activeHero = MOTION_HERO_SLIDES[slideIdx] ?? MOTION_HERO_SLIDES[0];
-  const goPrev = () => setSlideIdx((prev) => (prev - 1 + MOTION_HERO_SLIDES.length) % MOTION_HERO_SLIDES.length);
-  const goNext = () => setSlideIdx((prev) => (prev + 1) % MOTION_HERO_SLIDES.length);
-
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [brokenSlides, setBrokenSlides] = useState<Record<number, boolean>>({});
-  const [paused, setPaused] = useState(false);
-
-  useEffect(() => {
-    if (paused) return;
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 5500);
-    return () => clearInterval(timer);
-  }, [paused]);
-
-  const slide = HERO_SLIDES[activeSlide] ?? HERO_SLIDES[0];
 
   const normalizedGallery = WORKSHOP_GALLERY.map((item, idx) => ({
     ...item,
@@ -395,42 +259,21 @@ export default function HomePage() {
 
       <section
         aria-label="Motion Hero Showcase"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
         className="ekw-hero-bg w-full overflow-x-hidden bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-5 sm:py-10 lg:py-9"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12 items-center">
-          <div key={`copy-${slideIdx}`} className="min-w-0 lg:col-span-6 space-y-4 ekw-copy-enter">
-            <div className="flex flex-wrap items-center gap-2">
-              {MOTION_HERO_SLIDES.map((item, idx) => {
-                const isCurrent = idx === slideIdx;
-                return (
-                  <button
-                    key={item.badge}
-                    type="button"
-                    onClick={() => setSlideIdx(idx)}
-                    className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
-                      isCurrent
-                        ? "bg-[#0B1F4C] text-white shadow-sm scale-105"
-                        : "bg-[#EEF4FC] text-[#134E9E] border border-[#BFD3EE] hover:bg-[#DCE8FA]"
-                    }`}
-                  >
-                    {item.badge}
-                  </button>
-                );
-              })}
-            </div>
+          <div key="hero-static" className="min-w-0 lg:col-span-6 space-y-4 ekw-copy-enter">
 
             <p className="text-sm font-bold uppercase tracking-wider text-[#134E9E]">
-              {activeHero.kicker}
+              Active Duty Presentation
             </p>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1F4C] leading-tight">
-              {activeHero.lead} {activeHero.accent} {activeHero.tail}
+              Uniformed Security & Field Kits
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-lg">
-              {activeHero.summary}
+              Tailored duty shirts, security uniforms, belts, caps, and boots built for institutional standards.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-1 pb-14 sm:pb-0">
@@ -441,52 +284,13 @@ export default function HomePage() {
                 Get Custom Quote
               </a>
               <a
-                href={activeHero.ctaHref}
+                href="/sectors"
                 className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white hover:border-[#0B1F4C] text-[#0B1F4C] font-semibold text-base px-6 py-3.5 transition-colors"
               >
-                {activeHero.ctaLabel}
+                View Sectors
               </a>
             </div>
 
-            <div className="flex items-center justify-between max-w-md pt-3">
-              <div className="flex items-center gap-2 flex-1 pr-4">
-                {MOTION_HERO_SLIDES.map((item, idx) => (
-                  <button
-                    key={item.badge}
-                    type="button"
-                    aria-label={`Go to slide ${idx + 1}: ${item.badge}`}
-                    onClick={() => setSlideIdx(idx)}
-                    className="relative h-2.5 flex-1 max-w-[56px] rounded-full bg-slate-200 overflow-hidden cursor-pointer"
-                  >
-                    {idx === slideIdx ? (
-                      <span
-                        key={`bar-${slideIdx}-${isPaused}`}
-                        style={{ animationPlayState: isPaused ? "paused" : "running" }}
-                        className="block h-full w-full bg-[#0B1F4C] ekw-bar-fill"
-                      />
-                    ) : null}
-                  </button>
-                ))}
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={goPrev}
-                  aria-label="Previous slide"
-                  className="h-9 w-9 rounded-full border border-slate-300 bg-white hover:bg-[#EEF4FC] text-[#0B1F4C] font-bold flex items-center justify-center transition-colors cursor-pointer"
-                >
-                  &#8592;
-                </button>
-                <button
-                  type="button"
-                  onClick={goNext}
-                  aria-label="Next slide"
-                  className="h-9 w-9 rounded-full border border-slate-300 bg-white hover:bg-[#EEF4FC] text-[#0B1F4C] font-bold flex items-center justify-center transition-colors cursor-pointer"
-                >
-                  &#8594;
-                </button>
-              </div>
-            </div>
           </div>
 
           <div className="order-first lg:order-last min-w-0 lg:col-span-6">
@@ -531,8 +335,6 @@ export default function HomePage() {
 
         {/* Band 1: Motion Spotlight Hero Stage */}
         <section
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
  className="relative py 14 lg:py 24 bg gradient to b from slate 50/90 via white to white overflow hidden"
  >
  <div className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
@@ -542,30 +344,30 @@ export default function HomePage() {
               <div className="lg:col-span-5 space-y-6">
                 <div className="inline-flex items-center gap-2 rounded-full border border-[#BFD3EE] bg-[#EEF4FC]/90 px-4 py-1.5 text-sm font-bold uppercase tracking-[0.22em] text-[#134E9E]">
                   <span className="h-2 w-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] animate-pulse" />
-                  <span>{slide.kicker}</span>
+                  <span>Active Duty Presentation</span>
                 </div>
 
                 <h1
-                  key={slide.accent}
+                  key="Uniformed Security & Field Kits"
                   className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 transition-all duration-500"
                 >
-                  {slide.lead}{" "}
+                  Uniformed Security &amp; 
                   <span className="font-editorial text-[#134E9E] text-6xl sm:text-7xl lg:text-8xl">
-                    {slide.accent}
+                    Field Kits
                   </span>{" "}
-                  {slide.tail}
+
                 </h1>
 
                 <p className="text-sm sm:text-base text-slate-800 font-medium leading-relaxed max-w-md">
-                  {slide.summary}
+                  Tailored duty shirts, security uniforms, belts, caps, and boots built for institutional standards.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4 pt-1">
                   <Link
-                    href={slide.ctaHref}
+                    href="/sectors"
                     className="group inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#0B1F4C] hover:bg-[#134E9E] hover:shadow-md transition-all"
                   >
-                    <span>{slide.ctaLabel}</span>
+                    <span>View Sectors</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
 
@@ -577,55 +379,19 @@ export default function HomePage() {
                   </Link>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-2.5 pt-2">
-                  {HERO_SLIDES.map((s, idx) => {
-                    const active = activeSlide === idx;
-                    return (
-                      <button
-                        key={s.tabLabel}
-                        type="button"
-                        onClick={() => setActiveSlide(idx)}
-                        className={`rounded-full px-5 py-2.5 text-sm sm:text-[15px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                          active
-                            ? "bg-slate-950 text-white shadow-xs"
-                            : "border border-slate-200 bg-white text-slate-800 font-medium hover:border-[#BFD3EE] hover:text-[#134E9E]"
-                        }`}
-                      >
-                        {s.tabLabel}
-                      </button>
-                    );
-                  })}
-                </div>
               </div>
 
               <div className="lg:col-span-7">
                 <div className="relative h-[27rem] sm:h-[35rem] overflow-hidden rounded-3xl border border-slate-200/90 bg-slate-950 shadow-2xl">
-                  {HERO_SLIDES.map((s, idx) => {
-                    const isActive = activeSlide === idx;
-                    const imgSrc = brokenSlides[idx] ? FALLBACK_PHOTO : s.image;
-
-                    return (
-                      <Image
-                        key={`${s.tabLabel}-${s.image}`}
-                        src={imgSrc}
-                        alt={`${s.lead} ${s.accent}`}
-                        fill
-                        sizes="(min-width: 1024px) 58vw, 100vw"
-                        priority={idx === 0}
-                        loading={idx === 0 ? "eager" : "lazy"}
-                        onError={() => {
-                          setBrokenSlides((prev) =>
-                            prev[idx] ? prev : { ...prev, [idx]: true }
-                          );
-                        }}
-                        className={`object-cover transition-all duration-700 ease-out ${
-                          isActive
-                            ? "opacity-100 scale-100 animate-slow-zoom"
-                            : "opacity-0 scale-105 pointer-events-none"
-                        }`}
-                      />
-                    );
-                  })}
+                  <FallbackImage
+                    src="/images/hero-security-duo.jpeg"
+                    fallbackSrc="/images/review-06-25fc05.jpeg"
+                    alt="Uniformed security personnel in duty shirts, caps, belts, and boots"
+                    fill
+                    sizes="(min-width: 1024px) 58vw, 100vw"
+                    priority
+                    className="object-cover object-top"
+                  />
                 </div>
               </div>
             </div>
