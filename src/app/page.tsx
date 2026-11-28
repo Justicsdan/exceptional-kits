@@ -291,7 +291,7 @@ export default function HomePage() {
       lead: "Institutional &",
       accent: "Tailored",
       caption:
-        "Consistent, tidy uniforms crafted for schools, facilities, and structured organizational teams.",
+        "Consistent, tidy uniforms crafted for schools, facilities, and structured organisational teams.",
       items: galleryItems.slice(3, 6),
     },
     {
@@ -331,18 +331,18 @@ export default function HomePage() {
         className="ekw-hero-bg w-full overflow-x-hidden bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-5 sm:py-10 lg:py-9"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12 items-center">
-          <div key="hero-static" className="min-w-0 lg:col-span-6 space-y-4 ekw-copy-enter">
+          <div key={`hero-${activeSlide.id}`} onMouseEnter={() => setHeroPaused(true)} onMouseLeave={() => setHeroPaused(false)} className="min-w-0 lg:col-span-6 space-y-4 ekw-copy-enter">
 
             <p className="text-sm font-bold uppercase tracking-wider text-[#134E9E]">
-              On-Duty Standard
+              {activeSlide.kicker}
             </p>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1F4C] leading-tight">
-              Smart Security Kit, Tailored for Duty
+              {activeSlide.title}
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-lg">
-              Crisp duty shirts, belts, caps, and boots made to keep every post sharp, credible, and ready.
+              {activeSlide.summary}
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-1 pb-14 sm:pb-0">
@@ -353,10 +353,10 @@ export default function HomePage() {
                 Get Custom Quote
               </a>
               <a
-                href="/sectors"
+                href={activeSlide.ctaHref}
                 className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white hover:border-[#0B1F4C] text-[#0B1F4C] font-semibold text-base px-6 py-3.5 transition-colors"
               >
-                Explore Sectors
+                {activeSlide.ctaLabel}
               </a>
             </div>
 
