@@ -491,37 +491,15 @@ export default function HomePage() {
 
           <div className="order-first lg:order-last min-w-0 lg:col-span-6">
             <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-slate-100 ring-1 ring-[#0B1F4C]/10 shadow-[0_30px_80px_-20px_rgba(11,31,76,0.45)] h-[240px] sm:h-[450px] lg:h-[500px]">
-              {MOTION_HERO_SLIDES.map((item, idx) => {
-                const current = idx === slideIdx;
-                return (
-                  <div
-                    key={item.badge}
-                    className={`absolute inset-0 transition-all duration-500 ease-out ${
-                      current
-                        ? "opacity-100 translate-x-0 scale-100"
-                        : "opacity-0 translate-x-6 scale-105 pointer-events-none"
-                    }`}
-                  >
-                    <Image
-                      src={item.image}
-                      alt={item.caption}
-                      fill
-                      sizes="(min-width: 1024px) 50vw, 100vw"
-                      loading={idx === 0 ? "eager" : "lazy"}
-                      fetchPriority={idx === 0 ? "high" : "auto"}
-                      style={{ animationPlayState: isPaused ? "paused" : "running" }}
-                      className={`w-full h-full object-cover object-center ${
-                        current ? "ekw-photo-drift" : ""
-                      }`}
-                    />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B1F4C]/85 via-[#0B1F4C]/35 to-transparent p-5">
-                      <p className="text-sm font-semibold tracking-wide text-white">
-                        {item.caption}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
+              <FallbackImage
+                src="/images/hero-security-duo.jpeg"
+                fallbackSrc="/images/review-06-25fc05.jpeg"
+                alt="Uniformed security personnel in duty shirts, caps, belts, and boots"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                priority
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </div>
         </div>
