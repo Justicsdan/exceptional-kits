@@ -536,7 +536,7 @@ export default function HomePage() {
  </p>
               </div>
               <Link
-                href="/catalogue"
+                href="/catalog"
                 className="inline-flex items-center gap-1.5 text-sm font-bold text-[#134E9E] hover:text-[#134E9E] shrink-0"
               >
                 <span>Catalogue</span>
@@ -665,7 +665,7 @@ export default function HomePage() {
                   {band.items.map((item) => (
                     <Link
                       key={`${item.code}-${item.image}`}
-                      href="/catalogue"
+                      href="/catalog"
                       className="group space-y-4"
                     >
                       <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-xs group-hover:shadow-2xl transition-all duration-500">
