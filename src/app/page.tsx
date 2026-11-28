@@ -8,37 +8,36 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { WORKSHOP_GALLERY } from "@/data/siteData";
 
-const FALLBACK_PHOTO = "/images/review-13-4eb26e.jpeg";
-
+const FALLBACK_PHOTO = "/images/black-tactical-vest.png";
 
 const SIGNATURE_LINES = [
   {
     title: "Uniform Sets",
     tag: "Duty",
-    note: "Structured shirts and trousers built for all day presence and movement.",
-    image: "/images/bagged-uniform-batch.jpeg",
-    href: "/catalogue",
+    note: "Epaulette duty shirts, cargo trousers, and patrol boots built for daily shifts.",
+    image: "/images/black-duty-shirt-epaulettes.png",
+    href: "/catalog",
   },
   {
     title: "Tactical Vests",
     tag: "Field",
-    note: "Utility and tactical layers designed for practical gear carry and durability.",
-    image: "/images/review-13-4eb26e.jpeg",
-    href: "/catalogue",
+    note: "Multi-pouch tactical and high-visibility vests designed for practical gear carry.",
+    image: "/images/black-tactical-vest.png",
+    href: "/catalog",
   },
   {
-    title: "Branded Caps",
+    title: "Patrol & Trouser Kits",
     tag: "Cresting",
-    note: "Clean headwear and crests that keep teams looking unified and sharp.",
-    image: "/images/black-knee-elbow-pads.jpeg",
-    href: "/catalogue",
+    note: "Coordinated security trousers, boots, and custom cresting for unified teams.",
+    image: "/images/navy-cargo-pants-boots.png",
+    href: "/catalog",
   },
   {
     title: "Field Gear",
     tag: "Utility",
-    note: "Heavy duty belts, pouches, and accessories ready for active shifts.",
-    image: "/images/review-09-4e0868.jpeg",
-    href: "/catalogue",
+    note: "Two-way patrol radios, metal detectors, and rechargeable searchlights ready for duty.",
+    image: "/images/two-way-radio-set.png",
+    href: "/catalog",
   },
 ];
 
@@ -51,7 +50,7 @@ const CLIENT_PILLARS = [
   {
     icon: Ruler,
     title: "Saved Size Charts",
-    text: "We keep your organisation's sizing on record so adding new recruits or re kitting teams stays fast.",
+    text: "We keep your organisation's sizing on record so adding new recruits or re-kitting teams stays fast.",
   },
   {
     icon: Sparkles,
@@ -61,11 +60,18 @@ const CLIENT_PILLARS = [
   {
     icon: Truck,
     title: "Single-Piece & Batch Ready",
-    text: "Start with sample specs or batch runs, with single piece replacement support and nationwide dispatch.",
+    text: "Start with sample specs or batch runs, with single-piece replacement support and nationwide dispatch.",
   },
 ];
 
 const IMAGE_TITLE_MAP: Record<string, string> = {
+  "/images/black-tactical-vest.png": "Black Multi-Pouch Tactical Duty Vest",
+  "/images/hi-vis-security-vest.png": "High-Visibility Reflective Security Vest",
+  "/images/black-duty-shirt-epaulettes.png": "Short-Sleeve Epaulette Security Duty Shirt",
+  "/images/navy-cargo-pants-boots.png": "Navy Security Cargo Trousers & Patrol Boots",
+  "/images/two-way-radio-set.png": "Two-Way Patrol Radios & Earpieces",
+  "/images/handheld-metal-detector.png": "Handheld Security Wand Metal Detector",
+  "/images/led-security-searchlight.png": "Rechargeable LED Security Patrol Searchlight",
   "/images/review-13-4eb26e.jpeg": "Tactical Utility Vest",
   "/images/review-09-4e0868.jpeg": "Heavy-Duty Duty Belt",
   "/images/review-14-1b968e.jpeg": "Packaged Uniform Batch",
@@ -100,49 +106,31 @@ function cleanDisplayTitle(rawTitle: string, index: number, imagePath?: string):
   if (imagePath && IMAGE_TITLE_MAP[imagePath]) {
     return IMAGE_TITLE_MAP[imagePath];
   }
-
-  const cleaned = rawTitle
-    .replace(/^workshop\s*sample\s*\d+\s*[-–:]?\s*/i, "")
-    .replace(/\b(kit|sample)\s*[-#]?\s*\d+\b/gi, "")
-    .replace(/\s{2,}/g, " ")
-    .trim();
-
-  if (cleaned.length > 1) return cleaned;
-
-  const fallbackTitles = [
-    "Patrol Duty Kit",
-    "Tactical Utility Vest",
-    "Crested Agency Cap",
-    "Tailored Uniform Set",
-    "School Uniform Kit",
-    "Workshop Batch Run",
-  ];
-  return fallbackTitles[index % fallbackTitles.length];
+  const trimmed = rawTitle.trim();
+  if (trimmed) return trimmed;
+  return `Security Kit Item ${index + 1}`;
 }
 
-
-const WORLD_CLASS_SLIDES = [
+const SHOWCASE_PILLARS = [
   {
-    kicker: "Workshop Lookbook",
-    tabLabel: "Tactical & Patrol",
-    lead: "Security",
-    accent: "Uniforms",
-    tail: "& Tactical Kits",
+    kicker: "Security & Tactical",
+    tabLabel: "Tactical & Hi-Vis",
+    lead: "Security Uniforms",
+    accent: "& Tactical Kits",
     summary:
-      "Built for daily field wear with durable patrol sets, tactical vests, reinforced belts, and sharp custom cresting crafted straight from our workshop.",
-    image: "/images/review-13-4eb26e.jpeg",
-    ctaHref: "/catalogue",
+      "Built for daily field wear with tactical vests, high-visibility vests, duty shirts, patrol boots, and field equipment crafted straight from our workshop.",
+    image: "/images/hi-vis-security-vest.png",
+    ctaHref: "/catalog",
     ctaLabel: "Explore Catalogue",
   },
   {
-    kicker: "Direct Production",
-    tabLabel: "Custom Cresting",
-    lead: "Custom",
-    accent: "Cresting",
-    tail: "& Duty Wear",
+    kicker: "Field Screening & Patrol",
+    tabLabel: "Patrol & Screening",
+    lead: "Searchlights,",
+    accent: "Radios & Detectors",
     summary:
-      "Put your organisation identity front and centre with clean embroidery, woven badges, and branded caps tailored to your exact brand colours.",
-    image: "/images/bagged-uniform-batch.jpeg",
+      "Equip perimeter and screening posts with handheld metal detectors, two-way patrol radios, and rechargeable LED searchlights.",
+    image: "/images/handheld-metal-detector.png",
     ctaHref: "/production",
     ctaLabel: "Workshop & QC",
   },
@@ -154,23 +142,22 @@ const WORLD_CLASS_SLIDES = [
     tail: "Ready to Issue",
     summary:
       "From new security intakes and estates to school and corporate teams, order full batches with saved size records for effortless reorders.",
-    image: "/images/review-11-332315.jpeg",
+    image: "/images/led-security-searchlight.png",
     ctaHref: "/quote",
     ctaLabel: "Request a Quote",
   },
 ];
 
-
 const ROTATING_HERO_SLIDES = [
   {
-    id: "security-duo",
+    id: "security-duty-kit",
     kicker: "On-Duty Standard",
     title: "Smart Security Kit, Tailored for Duty",
     summary:
-      "Crisp duty shirts, belts, caps, and boots made to keep every post sharp, credible, and ready.",
-    src: "/images/hero-security-duo.jpeg",
-    fallbackSrc: "/images/review-06-25fc05.jpeg",
-    alt: "Uniformed security personnel in duty shirts, caps, belts, and boots",
+      "Epaulette duty shirts, tactical and high-visibility vests, cargo trousers, boots, and patrol gear made to keep every post sharp and ready.",
+    src: "/images/black-duty-shirt-epaulettes.png",
+    fallbackSrc: "/images/black-tactical-vest.png",
+    alt: "Black security duty shirt with shoulder epaulettes",
     objectPosition: "object-top",
     ctaHref: "/sectors",
     ctaLabel: "Explore Sectors",

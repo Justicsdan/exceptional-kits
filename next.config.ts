@@ -6,7 +6,7 @@ const cspReportOnly = [
   "form-action 'self'",
   "frame-ancestors 'none'",
   "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com",
-  "style-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data: https:",
   "connect-src 'self' https://cloudflareinsights.com",
