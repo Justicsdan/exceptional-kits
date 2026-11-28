@@ -16,9 +16,9 @@ const KIT_OPTIONS = [
 ];
 
 const QUANTITY_OPTIONS = [
-  "10–24 Sets (Starter Batch)",
-  "25–50 Sets",
-  "51–150 Sets",
+  "10 to 24 Sets (Starter Batch)",
+  "25 to 50 Sets",
+  "51 to 150 Sets",
   "150+ Sets (Institutional Rollout)",
   "Single / Restock Pieces",
 ];
@@ -30,7 +30,7 @@ export default function QuotePage() {
   const [organization, setOrganization] = useState("");
   const [contactName, setContactName] = useState("");
   const [phone, setPhone] = useState("");
-  const [quantity, setQuantity] = useState("25–50 Sets");
+  const [quantity, setQuantity] = useState("25 to 50 Sets");
   const [selectedLines, setSelectedLines] = useState<string[]>([
     "Complete Security Uniform Sets",
   ]);
