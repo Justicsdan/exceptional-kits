@@ -854,7 +854,7 @@ export default function HomePage() {
             <div className="grid gap-8 lg:grid-cols-12 lg:items-end border-b border-slate-200 pb-10">
               <div className="lg:col-span-7 space-y-3">
                 <p className="text-sm font-bold uppercase tracking-[0.26em] text-[#134E9E]">
-                  Why Organizations Partner With Us
+                  Why Organisations Partner With Us
                 </p>
                 <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 leading-[1.05]">
                   Dependable Supply{" "}

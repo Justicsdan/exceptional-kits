@@ -67,7 +67,7 @@ export default function QuotePage() {
               Batch Quote
             </h1>
             <p className="mt-3 text-base leading-7 text-slate-600">
-              Select your kit lines, enter your organization details, and send a ready-to-review
+              Select your kit lines, enter your organisation details, and send a ready-to-review
               brief straight to our team.
             </p>
           </div>
