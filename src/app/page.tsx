@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import FallbackImage from "@/components/FallbackImage";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, Ruler, Sparkles, Truck } from "lucide-react";
@@ -683,19 +684,15 @@ export default function HomePage() {
                 <div key={line.title} className="space-y-3">
                   <Link
                     href={line.href}
-                    className="group block h-[24rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-2xl transition-all duration-500"
+                    className="group relative block h-[24rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-2xl transition-all duration-500"
                   >
-                    <img
+                    <FallbackImage
                       src={line.image}
+                      fallbackSrc={FALLBACK_PHOTO}
                       alt={line.title}
-                      onError={(e) => {
-                        const el = e.currentTarget;
-                        if (!el.dataset.fb) {
-                          el.dataset.fb = "1";
-                          el.src = FALLBACK_PHOTO;
-                        }
-                      }}
-                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </Link>
                   <div className="px-1 pt-1 space-y-1.5">
@@ -748,18 +745,14 @@ export default function HomePage() {
                     href="/sectors"
                     className="group block space-y-4"
                   >
-                    <div className="h-[28rem] sm:h-[34rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md hover:shadow-2xl transition-all duration-500">
-                      <img
+                    <div className="relative h-[28rem] sm:h-[34rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md hover:shadow-2xl transition-all duration-500">
+                      <FallbackImage
                         src={person.image}
+                        fallbackSrc={FALLBACK_PHOTO}
                         alt={person.displayTitle}
-                        onError={(e) => {
-                          const el = e.currentTarget;
-                          if (!el.dataset.fb) {
-                            el.dataset.fb = "1";
-                            el.src = FALLBACK_PHOTO;
-                          }
-                        }}
-                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                     </div>
                     <div className="px-1 space-y-1">
@@ -810,18 +803,14 @@ export default function HomePage() {
                       href="/catalog"
                       className="group space-y-4"
                     >
-                      <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-xs group-hover:shadow-2xl transition-all duration-500">
-                        <img
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-xs group-hover:shadow-2xl transition-all duration-500">
+                        <FallbackImage
                           src={item.image}
+                          fallbackSrc={FALLBACK_PHOTO}
                           alt={item.displayTitle}
-                          onError={(e) => {
-                            const el = e.currentTarget;
-                            if (!el.dataset.fb) {
-                              el.dataset.fb = "1";
-                              el.src = FALLBACK_PHOTO;
-                            }
-                          }}
-                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                       </div>
                       <h3 className="px-1 text-base font-bold text-slate-950">
@@ -881,33 +870,25 @@ export default function HomePage() {
               </div>
 
               <div className="lg:col-span-7 grid gap-6 sm:grid-cols-12 items-center">
-                <div className="sm:col-span-7 h-[25rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md">
-                  <img
+                <div className="sm:col-span-7 relative h-[25rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md">
+                  <FallbackImage
                     src="/images/review-24-56ce73.jpeg"
+                    fallbackSrc={FALLBACK_PHOTO}
                     alt="Academy students in collared shirts, crests, and plaid uniforms"
-                    className="h-full w-full object-cover object-top"
-                    onError={(e) => {
-                      const el = e.currentTarget;
-                      if (!el.dataset.fb) {
-                        el.dataset.fb = "1";
-                        el.src = FALLBACK_PHOTO;
-                      }
-                    }}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 58vw, 42vw"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="sm:col-span-5 space-y-6">
-                  <div className="h-[15rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-                    <img
+                  <div className="relative h-[15rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+                    <FallbackImage
                       src="/images/review-11-332315.jpeg"
+                      fallbackSrc={FALLBACK_PHOTO}
                       alt="Academy uniform tailoring and fabric finish"
-                      className="h-full w-full object-cover object-center"
-                      onError={(e) => {
-                        const el = e.currentTarget;
-                        if (!el.dataset.fb) {
-                          el.dataset.fb = "1";
-                          el.src = FALLBACK_PHOTO;
-                        }
-                      }}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 42vw, 30vw"
+                      className="object-cover object-center"
                     />
                   </div>
                   <div className="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-5 space-y-1.5">
@@ -931,17 +912,13 @@ export default function HomePage() {
         <section className="border-t border-slate-200 bg-white py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6">
             <div className="relative h-[26rem] sm:h-[32rem] overflow-hidden rounded-3xl bg-slate-950">
-              <img
+              <FallbackImage
                 src="/images/review-29-ee60b9.jpeg"
+                fallbackSrc={FALLBACK_PHOTO}
                 alt="Exceptional Kits workshop"
-                onError={(e) => {
-                  const el = e.currentTarget;
-                  if (!el.dataset.fb) {
-                    el.dataset.fb = "1";
-                    el.src = FALLBACK_PHOTO;
-                  }
-                }}
-                className="h-full w-full object-cover opacity-55"
+                fill
+                sizes="100vw"
+                className="object-cover opacity-55"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-14 max-w-2xl space-y-5">
@@ -1066,18 +1043,14 @@ export default function HomePage() {
             {/* Long-form Split Editorial Feature: Clean Photo Separate From Structured Specs */}
             <div className="grid gap-10 lg:grid-cols-12 lg:items-center pt-4">
               <div className="lg:col-span-7">
-                <div className="h-[24rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg">
-                  <img
+                <div className="relative h-[24rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg">
+                  <FallbackImage
                     src="/images/review-09-4e0868.jpeg"
+                    fallbackSrc={FALLBACK_PHOTO}
                     alt="Precision workshop stitching and uniform finishing"
-                    onError={(e) => {
-                      const el = e.currentTarget;
-                      if (!el.dataset.fb) {
-                        el.dataset.fb = "1";
-                        el.src = FALLBACK_PHOTO;
-                      }
-                    }}
-                    className="h-full w-full object-cover hover:scale-105 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 58vw"
+                    className="object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </div>
               </div>
