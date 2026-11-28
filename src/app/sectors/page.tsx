@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -47,11 +48,13 @@ export default function SectorsPage() {
                       isReversed ? "lg:order-2" : "lg:order-1"
                     }`}
                   >
-                    <div className="aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200 bg-slate-950 shadow-md">
-                      <img
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200 bg-slate-950 shadow-md">
+                      <Image
                         src={imageSrc}
                         alt={sector.title}
-                        className="h-full w-full object-cover"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 58vw"
+                        className="object-cover"
                       />
                     </div>
                   </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const PHONE_DISPLAY = "0803 239 2875";
@@ -62,13 +63,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-12 px-4 pb-14 pt-16 sm:px-6 md:grid-cols-12 lg:px-8">
         <div className="md:col-span-5">
           <div className="flex items-center gap-4">
-            <img
-              src="/icon.png"
-              alt="EKW logo"
-              width={64}
-              height={64}
-              className="h-16 w-16 rounded-2xl bg-white p-1.5"
-            />
+            <Image src="/icon.png" alt="EKW logo" width={64} height={64} className="h-16 w-16 rounded-2xl bg-white p-1.5" />
             <div>
               <p className="text-xl font-extrabold tracking-tight text-white">
                 Exceptional Kits and Wears
@@ -80,7 +75,7 @@ export default function Footer() {
           </div>
           <p className="mt-6 max-w-md text-base leading-7 text-slate-200">
             Direct workshop production of security uniforms, tactical vests, branded caps and
-            duty accessories—with saved company size charts and single-piece replacement
+            duty accessories, with saved company size charts and single-piece replacement
             support.
           </p>
           <p className="mt-4 text-sm font-medium text-sky-200">

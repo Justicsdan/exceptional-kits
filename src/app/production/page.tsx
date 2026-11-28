@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -26,10 +27,13 @@ export default function ProductionPage() {
 
       <main className="flex-1">
         <section className="relative bg-slate-950 text-white py-24 lg:py-32 overflow-hidden">
-          <img
+          <Image
             src="/images/review-11-332315.jpeg"
             alt="Exceptional Kits production floor"
-            className="absolute inset-0 h-full w-full object-cover opacity-35"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-35"
           />
           <div className="relative mx-auto max-w-7xl px-6">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">
@@ -117,11 +121,13 @@ export default function ProductionPage() {
                   key={pillar.key}
                   className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xs transition-all duration-300 hover:shadow-lg"
                 >
-                  <div className="aspect-[4/3] overflow-hidden bg-slate-100">
-                    <img
+                  <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                    <Image
                       src={pillar.image}
                       alt={pillar.title}
-                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="p-6">

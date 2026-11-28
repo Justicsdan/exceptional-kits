@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -84,12 +85,8 @@ export default function CatalogPage() {
               key={item.id}
               className="group rounded-2xl border border-slate-200/90 bg-white overflow-hidden flex flex-col shadow-2xs hover:border-[#134E9E]/40 hover:shadow-md transition-all duration-200"
             >
-              <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="h-full w-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
-                />
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+                  <Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-[1.03] transition-transform duration-300" />
               </div>
 
               <div className="p-5 flex-1 flex flex-col justify-between gap-4">
