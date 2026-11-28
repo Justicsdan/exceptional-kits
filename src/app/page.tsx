@@ -161,7 +161,76 @@ const WORLD_CLASS_SLIDES = [
 ];
 
 
+const ROTATING_HERO_SLIDES = [
+  {
+    id: "security-duo",
+    kicker: "On-Duty Standard",
+    title: "Smart Security Kit, Tailored for Duty",
+    summary:
+      "Crisp duty shirts, belts, caps, and boots made to keep every post sharp, credible, and ready.",
+    src: "/images/hero-security-duo.jpeg",
+    fallbackSrc: "/images/review-06-25fc05.jpeg",
+    alt: "Uniformed security personnel in duty shirts, caps, belts, and boots",
+    objectPosition: "object-top",
+    ctaHref: "/sectors",
+    ctaLabel: "Explore Sectors",
+  },
+  {
+    id: "school-pinafore",
+    kicker: "School & Academy",
+    title: "Tailored School Kits & Pinafores",
+    summary:
+      "Neat collared shirts, custom crests, and structured plaid pinafores cut for consistent school runs.",
+    src: "/images/plaid-school-pinafore.jpeg",
+    fallbackSrc: "/images/review-06-25fc05.jpeg",
+    alt: "Tailored school uniform and plaid pinafore kit",
+    objectPosition: "object-center",
+    ctaHref: "/quote",
+    ctaLabel: "Request a Quote",
+  },
+  {
+    id: "duty-shirts",
+    kicker: "Workshop Finish",
+    title: "Sharp Duty Shirts & Field Gear",
+    summary:
+      "Clean stitching, durable crests, and reliable belts finished directly on our workshop table.",
+    src: "/images/review-37-32cbe6.jpeg",
+    fallbackSrc: "/images/review-06-25fc05.jpeg",
+    alt: "Folded duty shirt, custom crest, belt, and lanyard on workshop table",
+    objectPosition: "object-center",
+    ctaHref: "/production",
+    ctaLabel: "Workshop & QC",
+  },
+  {
+    id: "uniform-sets",
+    kicker: "Complete Turnout",
+    title: "Full Uniform Kits From the Line",
+    summary:
+      "Coordinated shirts, trousers, belts, berets, and lanyards crafted for steady batch delivery.",
+    src: "/images/review-36-6a0f9e.jpeg",
+    fallbackSrc: "/images/review-06-25fc05.jpeg",
+    alt: "Complete uniform kit laid out beside production line",
+    objectPosition: "object-center",
+    ctaHref: "/catalog",
+    ctaLabel: "Explore Catalog",
+  },
+];
+
 export default function HomePage() {
+  const [heroIdx, setHeroIdx] = useState(0);
+  const [heroPaused, setHeroPaused] = useState(false);
+
+  useEffect(() => {
+    if (heroPaused || ROTATING_HERO_SLIDES.length <= 1) return;
+    const timer = setInterval(() => {
+      setHeroIdx((prev) => (prev + 1) % ROTATING_HERO_SLIDES.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [heroPaused]);
+
+  const activeSlide =
+    ROTATING_HERO_SLIDES[heroIdx] ?? ROTATING_HERO_SLIDES[0];
+
 
 
   const normalizedGallery = WORKSHOP_GALLERY.map((item, idx) => ({
