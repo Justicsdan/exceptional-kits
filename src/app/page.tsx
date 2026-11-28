@@ -17,28 +17,28 @@ const SIGNATURE_LINES = [
     tag: "Duty",
     note: "Structured shirts and trousers built for all day presence and movement.",
     image: "/images/bagged-uniform-batch.jpeg",
-    href: "/catalog",
+    href: "/catalogue",
   },
   {
     title: "Tactical Vests",
     tag: "Field",
     note: "Utility and tactical layers designed for practical gear carry and durability.",
     image: "/images/review-13-4eb26e.jpeg",
-    href: "/catalog",
+    href: "/catalogue",
   },
   {
     title: "Branded Caps",
     tag: "Cresting",
     note: "Clean headwear and crests that keep teams looking unified and sharp.",
     image: "/images/black-knee-elbow-pads.jpeg",
-    href: "/catalog",
+    href: "/catalogue",
   },
   {
     title: "Field Gear",
     tag: "Utility",
     note: "Heavy duty belts, pouches, and accessories ready for active shifts.",
     image: "/images/review-09-4e0868.jpeg",
-    href: "/catalog",
+    href: "/catalogue",
   },
 ];
 
@@ -131,8 +131,8 @@ const WORLD_CLASS_SLIDES = [
     summary:
       "Built for daily field wear with durable patrol sets, tactical vests, reinforced belts, and sharp custom cresting crafted straight from our workshop.",
     image: "/images/review-13-4eb26e.jpeg",
-    ctaHref: "/catalog",
-    ctaLabel: "Explore Catalog",
+    ctaHref: "/catalogue",
+    ctaLabel: "Explore Catalogue",
   },
   {
     kicker: "Direct Production",
@@ -141,7 +141,7 @@ const WORLD_CLASS_SLIDES = [
     accent: "Cresting",
     tail: "& Duty Wear",
     summary:
-      "Put your organization identity front and center with clean embroidery, woven badges, and branded caps tailored to your exact brand colors.",
+      "Put your organization identity front and centre with clean embroidery, woven badges, and branded caps tailored to your exact brand colours.",
     image: "/images/bagged-uniform-batch.jpeg",
     ctaHref: "/production",
     ctaLabel: "Workshop & QC",
@@ -184,7 +184,7 @@ const ROTATING_HERO_SLIDES = [
     src: "/images/plaid-school-pinafore.jpeg",
     fallbackSrc: "/images/review-06-25fc05.jpeg",
     alt: "Tailored school uniform and plaid pinafore kit",
-    objectPosition: "object-center",
+    objectPosition: "object-centre",
     ctaHref: "/quote",
     ctaLabel: "Request a Quote",
   },
@@ -197,7 +197,7 @@ const ROTATING_HERO_SLIDES = [
     src: "/images/review-37-32cbe6.jpeg",
     fallbackSrc: "/images/review-06-25fc05.jpeg",
     alt: "Folded duty shirt, custom crest, belt, and lanyard on workshop table",
-    objectPosition: "object-center",
+    objectPosition: "object-centre",
     ctaHref: "/production",
     ctaLabel: "Workshop & QC",
   },
@@ -210,9 +210,9 @@ const ROTATING_HERO_SLIDES = [
     src: "/images/review-36-6a0f9e.jpeg",
     fallbackSrc: "/images/review-06-25fc05.jpeg",
     alt: "Complete uniform kit laid out beside production line",
-    objectPosition: "object-center",
-    ctaHref: "/catalog",
-    ctaLabel: "Explore Catalog",
+    objectPosition: "object-centre",
+    ctaHref: "/catalogue",
+    ctaLabel: "Explore Catalogue",
   },
 ];
 
@@ -307,7 +307,7 @@ export default function HomePage() {
       lead: "Batch Finishing &",
       accent: "Dispatch",
       caption:
-        "Organized workshop cuts and quality checks prepared for smooth handover and nationwide delivery.",
+        "Organised workshop cuts and quality checks prepared for smooth handover and nationwide delivery.",
       items: galleryItems.slice(9, 12),
     },
     {
@@ -330,7 +330,7 @@ export default function HomePage() {
         aria-label="Motion Hero Showcase"
         className="ekw-hero-bg w-full overflow-x-hidden bg-gradient-to-b from-[#F7FAFF] via-white to-white border-b border-slate-200 py-5 sm:py-10 lg:py-9"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12 items-centre">
           <div key={`hero-${activeSlide.id}`} onMouseEnter={() => setHeroPaused(true)} onMouseLeave={() => setHeroPaused(false)} className="min-w-0 lg:col-span-6 space-y-4 ekw-copy-enter">
 
             <p className="text-sm font-bold uppercase tracking-wider text-[#134E9E]">
@@ -345,16 +345,16 @@ export default function HomePage() {
               {activeSlide.summary}
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-1 pb-14 sm:pb-0">
+            <div className="flex flex-wrap items-centre gap-3 pt-1 pb-14 sm:pb-0">
               <a
                 href="/quote"
-                className="inline-flex items-center justify-center rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] text-white font-semibold text-base px-6 py-3.5 transition-transform duration-200 hover:-translate-y-0.5 shadow-sm"
+                className="inline-flex items-centre justify-centre rounded-lg bg-[#0B1F4C] hover:bg-[#134E9E] text-white font-semibold text-base px-6 py-3.5 transition-transform duration-200 hover:-translate-y-0.5 shadow-sm"
               >
                 Get Custom Quote
               </a>
               <a
                 href={activeSlide.ctaHref}
-                className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white hover:border-[#0B1F4C] text-[#0B1F4C] font-semibold text-base px-6 py-3.5 transition-colors"
+                className="inline-flex items-centre justify-centre rounded-lg border border-slate-300 bg-white hover:border-[#0B1F4C] text-[#0B1F4C] font-semibold text-base px-6 py-3.5 transition-colours"
               >
                 {activeSlide.ctaLabel}
               </a>
@@ -374,11 +374,11 @@ export default function HomePage() {
                 priority
                 className={`w-full h-full object-cover transition-all duration-500 ${activeSlide.objectPosition}`}
               />
-              <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between gap-3 rounded-2xl bg-slate-950/75 px-4 py-2.5 text-white backdrop-blur-xs">
+              <div className="absolute bottom-4 left-4 right-4 z-10 flex items-centre justify-between gap-3 rounded-2xl bg-slate-950/75 px-4 py-2.5 text-white backdrop-blur-xs">
                 <span className="text-xs font-medium tracking-wide text-slate-200">
                   {activeSlide.title}
                 </span>
-                <div className="flex items-center gap-1.5" role="tablist" aria-label="Hero slides">
+                <div className="flex items-centre gap-1.5" role="tablist" aria-label="Hero slides">
                   {ROTATING_HERO_SLIDES.map((slideItem, idx) => {
                     const isCurrent = idx === heroIdx;
                     return (
@@ -412,7 +412,7 @@ export default function HomePage() {
             "Batches with saved size records",
             "Serving Lagos & nationwide",
           ].map((t) => (
-            <div key={t} className="flex items-center gap-3 text-sm sm:text-[15px] font-semibold tracking-wide">
+            <div key={t} className="flex items-centre gap-3 text-sm sm:text-[15px] font-semibold tracking-wide">
               <svg viewBox="0 0 20 20" className="h-5 w-5 shrink-0 text-sky-300" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path d="M4 10.5l4 4 8-9" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -435,9 +435,9 @@ export default function HomePage() {
  <div className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
 
           <div className="relative mx-auto max-w-7xl px-6">
-            <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+            <div className="grid gap-12 lg:grid-cols-12 lg:items-centre">
               <div className="lg:col-span-5 space-y-6">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#BFD3EE] bg-[#EEF4FC]/90 px-4 py-1.5 text-sm font-bold uppercase tracking-[0.22em] text-[#134E9E]">
+                <div className="inline-flex items-centre gap-2 rounded-full border border-[#BFD3EE] bg-[#EEF4FC]/90 px-4 py-1.5 text-sm font-bold uppercase tracking-[0.22em] text-[#134E9E]">
                   <span className="h-2 w-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] animate-pulse" />
                   <span>On-Duty Standard</span>
                 </div>
@@ -457,10 +457,10 @@ export default function HomePage() {
                   Crisp duty shirts, belts, caps, and boots made to keep every post sharp, credible, and ready.
                 </p>
 
-                <div className="flex flex-wrap items-center gap-4 pt-1">
+                <div className="flex flex-wrap items-centre gap-4 pt-1">
                   <Link
                     href="/sectors"
-                    className="group inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#0B1F4C] hover:bg-[#134E9E] hover:shadow-md transition-all"
+                    className="group inline-flex items-centre gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#0B1F4C] hover:bg-[#134E9E] hover:shadow-md transition-all"
                   >
                     <span>Explore Sectors</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -468,7 +468,7 @@ export default function HomePage() {
 
                   <Link
                     href="/sectors"
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colors"
+                    className="inline-flex items-centre gap-2 rounded-full border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colours"
                   >
                     <span>Sectors</span>
                   </Link>
@@ -488,11 +488,11 @@ export default function HomePage() {
                     priority
                     className={`w-full h-full object-cover transition-all duration-500 ${activeSlide.objectPosition}`}
                   />
-                  <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between gap-3 rounded-2xl bg-slate-950/75 px-4 py-2.5 text-white backdrop-blur-xs">
+                  <div className="absolute bottom-4 left-4 right-4 z-10 flex items-centre justify-between gap-3 rounded-2xl bg-slate-950/75 px-4 py-2.5 text-white backdrop-blur-xs">
                     <span className="text-xs font-medium tracking-wide text-slate-200">
                       {activeSlide.title}
                     </span>
-                    <div className="flex items-center gap-1.5" role="tablist" aria-label="Hero slides">
+                    <div className="flex items-centre gap-1.5" role="tablist" aria-label="Hero slides">
                       {ROTATING_HERO_SLIDES.map((slideItem, idx) => {
                         const isCurrent = idx === heroIdx;
                         return (
@@ -536,10 +536,10 @@ export default function HomePage() {
  </p>
               </div>
               <Link
-                href="/catalog"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-[#134E9E] hover:text-[#134E9E] shrink-0"
+                href="/catalogue"
+                className="inline-flex items-centre gap-1.5 text-sm font-bold text-[#134E9E] hover:text-[#134E9E] shrink-0"
               >
-                <span>Catalog</span>
+                <span>Catalogue</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -596,7 +596,7 @@ export default function HomePage() {
                 </div>
                 <Link
                   href="/sectors"
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#134E9E] hover:text-[#134E9E] shrink-0"
+                  className="inline-flex items-centre gap-1.5 text-sm font-bold text-[#134E9E] hover:text-[#134E9E] shrink-0"
                 >
                   <span>Sectors</span>
                   <ArrowRight className="h-4 w-4" />
@@ -654,7 +654,7 @@ export default function HomePage() {
                   </div>
                   <Link
                     href="/quote"
-                    className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-700 hover:text-[#134E9E] shrink-0"
+                    className="inline-flex items-centre gap-1.5 text-sm font-bold text-slate-700 hover:text-[#134E9E] shrink-0"
                   >
                     <span>Order Spec</span>
                     <ArrowRight className="h-4 w-4" />
@@ -665,7 +665,7 @@ export default function HomePage() {
                   {band.items.map((item) => (
                     <Link
                       key={`${item.code}-${item.image}`}
-                      href="/catalog"
+                      href="/catalogue"
                       className="group space-y-4"
                     >
                       <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-xs group-hover:shadow-2xl transition-all duration-500">
@@ -692,7 +692,7 @@ export default function HomePage() {
                 {/* Dedicated Band: Academy & School Uniforms */}
         <section className="border-t border-slate-200 bg-white py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+            <div className="grid gap-12 lg:grid-cols-12 lg:items-centre">
               <div className="lg:col-span-5 space-y-6">
                 <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#134E9E]">
                   School &amp; Academy Tailoring
@@ -704,37 +704,37 @@ export default function HomePage() {
                   Clean collared shirts, custom embroidered crests, and tailored plaid sets crafted for schools and academies with consistent sizing across every class and term.
                 </p>
                 <ul className="space-y-3 text-sm text-slate-700">
-                  <li className="flex items-center gap-2.5">
+                  <li className="flex items-centre gap-2.5">
                     <span className="h-2 w-2 rounded-full bg-[#134E9E]" />
                     <span>Crisp shirts, plaid sets, and pinafores tailored to spec</span>
                   </li>
-                  <li className="flex items-center gap-2.5">
+                  <li className="flex items-centre gap-2.5">
                     <span className="h-2 w-2 rounded-full bg-[#134E9E]" />
                     <span>Embroidered school crests &amp; uniform trim consistency</span>
                   </li>
-                  <li className="flex items-center gap-2.5">
+                  <li className="flex items-centre gap-2.5">
                     <span className="h-2 w-2 rounded-full bg-[#134E9E]" />
                     <span>Saved size charts for smooth new-intake &amp; term reorders</span>
                   </li>
                 </ul>
-                <div className="flex flex-wrap items-center gap-3 pt-2">
+                <div className="flex flex-wrap items-centre gap-3 pt-2">
                   <Link
                     href="/quote"
-                    className="group inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-6 py-3 text-sm font-bold text-white transition-colors"
+                    className="group inline-flex items-centre gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-6 py-3 text-sm font-bold text-white transition-colours"
                   >
                     <span>Request School Quote</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Link
                     href="/sectors"
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colors"
+                    className="inline-flex items-centre gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colours"
                   >
                     <span>Explore Sectors</span>
                   </Link>
                 </div>
               </div>
 
-              <div className="lg:col-span-7 grid gap-6 sm:grid-cols-12 items-center">
+              <div className="lg:col-span-7 grid gap-6 sm:grid-cols-12 items-centre">
                 <div className="sm:col-span-7 relative h-[25rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md">
                   <FallbackImage
                     src="/images/review-24-56ce73.jpeg"
@@ -753,7 +753,7 @@ export default function HomePage() {
                       alt="Academy uniform tailoring and fabric finish"
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 42vw, 30vw"
-                      className="object-cover object-center"
+                      className="object-cover object-centre"
                     />
                   </div>
                   <div className="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-5 space-y-1.5">
@@ -786,7 +786,7 @@ export default function HomePage() {
                 className="object-cover opacity-55"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-transparent" />
-              <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-14 max-w-2xl space-y-5">
+              <div className="absolute inset-0 flex flex-col justify-centre px-8 sm:px-14 max-w-2xl space-y-5">
                 <p className="text-sm font-bold uppercase tracking-[0.24em] text-emerald-300">
                   Direct Workshop
                 </p>
@@ -803,7 +803,7 @@ export default function HomePage() {
                 <div className="pt-1">
                   <Link
                     href="/quote"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white hover:bg-emerald-500 transition-colors"
+                    className="inline-flex items-centre gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white hover:bg-emerald-500 transition-colours"
                   >
                     <span>Start Quote</span>
                     <ArrowRight className="h-4 w-4" />
@@ -833,7 +833,7 @@ export default function HomePage() {
                       key={`${title}-${i}`}
                       className="w-[260px] sm:w-[290px] shrink-0 rounded-2xl border border-white/10 bg-white/5 p-6"
                     >
-                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0B1F4C] font-extrabold">
+                      <span className="flex h-10 w-10 items-centre justify-centre rounded-full bg-white text-[#0B1F4C] font-extrabold">
                         {(i % 5) + 1}
                       </span>
                       <h3 className="mt-4 text-lg font-bold">{title}</h3>
@@ -843,7 +843,7 @@ export default function HomePage() {
                 })()}
               </ol>
             </div>
-            <a href="/quote" className="mt-10 inline-flex items-center justify-center rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-[#0B1F4C] shadow-sm transition-transform duration-200 hover:-translate-y-0.5">
+            <a href="/quote" className="mt-10 inline-flex items-centre justify-centre rounded-lg bg-white px-6 py-3.5 text-base font-semibold text-[#0B1F4C] shadow-sm transition-transform duration-200 hover:-translate-y-0.5">
               Start with a quote
             </a>
           </div>
@@ -876,14 +876,14 @@ export default function HomePage() {
                 return (
                   <article
                     key={pillar.title}
-                    className="group relative flex flex-col justify-between border-t-2 border-slate-900 pt-6 space-y-6 transition-colors duration-300 hover:border-[#BFD3EE]"
+                    className="group relative flex flex-col justify-between border-t-2 border-slate-900 pt-6 space-y-6 transition-colours duration-300 hover:border-[#BFD3EE]"
                   >
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-extrabold tracking-[0.22em] text-slate-400 group-hover:text-[#134E9E] transition-colors">
+                      <div className="flex items-centre justify-between">
+                        <span className="text-sm font-extrabold tracking-[0.22em] text-slate-400 group-hover:text-[#134E9E] transition-colours">
                           0{idx + 1}
                         </span>
-                        <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[#BFD3EE]/80 bg-[#EEF4FC]/70 text-[#134E9E] shadow-2xs group-hover:bg-[#0B1F4C] hover:bg-[#134E9E] group-hover:text-white transition-all duration-300">
+                        <div className="inline-flex h-11 w-11 items-centre justify-centre rounded-2xl border border-[#BFD3EE]/80 bg-[#EEF4FC]/70 text-[#134E9E] shadow-2xs group-hover:bg-[#0B1F4C] hover:bg-[#134E9E] group-hover:text-white transition-all duration-300">
                           <Icon className="h-5 w-5" />
                         </div>
                       </div>
@@ -906,7 +906,7 @@ export default function HomePage() {
             </div>
 
             {/* Long-form Split Editorial Feature: Clean Photo Separate From Structured Specs */}
-            <div className="grid gap-10 lg:grid-cols-12 lg:items-center pt-4">
+            <div className="grid gap-10 lg:grid-cols-12 lg:items-centre pt-4">
               <div className="lg:col-span-7">
                 <div className="relative h-[24rem] sm:h-[31rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg">
                   <FallbackImage
@@ -933,7 +933,7 @@ export default function HomePage() {
                 <p className="text-sm text-slate-300 leading-relaxed">
  Every intake brings new recruits, size adjustments, and
  replacement needs. Because we produce directly and keep your
- specifications organized, expanding or re kitting stays
+ specifications organised, expanding or re kitting stays
  straightforward.
  </p>
                 <ul className="space-y-3 border-t border-slate-800 pt-5 text-sm text-slate-200">
@@ -953,7 +953,7 @@ export default function HomePage() {
                 <div className="pt-2">
                   <Link
                     href="/production"
-                    className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-sm font-bold text-slate-950 hover:bg-emerald-400 transition-colors"
+                    className="inline-flex items-centre gap-2 rounded-full bg-emerald-500 px-6 py-3 text-sm font-bold text-slate-950 hover:bg-emerald-400 transition-colours"
                   >
                     <span>Explore Workshop Process</span>
                     <ArrowRight className="h-4 w-4" />

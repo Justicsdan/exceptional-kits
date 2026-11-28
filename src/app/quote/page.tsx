@@ -24,7 +24,7 @@ const QUANTITY_OPTIONS = [
 ];
 
 const fieldClass =
-  "w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-colors focus:border-[#134E9E] focus:outline-none";
+  "w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-colours focus:border-[#134E9E] focus:outline-none";
 
 export default function QuotePage() {
   const [organization, setOrganization] = useState("");
@@ -185,17 +185,17 @@ export default function QuotePage() {
                   rows={4}
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  placeholder="Share preferred colors, chest/sleeve embroidery, reflective strips, or delivery timeline..."
+                  placeholder="Share preferred colours, chest/sleeve embroidery, reflective strips, or delivery timeline..."
                   className={fieldClass}
                 />
               </div>
 
-              <div className="flex flex-wrap items-center gap-3.5 pt-2">
+              <div className="flex flex-wrap items-centre gap-3.5 pt-2">
                 <a
                   href={`https://wa.me/2348032392875?text=${whatsappSummary}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white transition-colors"
+                  className="inline-flex items-centre gap-2.5 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white transition-colours"
                 >
                   <WhatsAppIcon className="h-4 w-4" />
                   <span>Send Quote via WhatsApp</span>
@@ -203,7 +203,7 @@ export default function QuotePage() {
 
                 <a
                   href="tel:+2348032392875"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-900 transition-colors hover:border-[#134E9E]"
+                  className="inline-flex items-centre gap-2 rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-900 transition-colours hover:border-[#134E9E]"
                 >
                   <PhoneCall className="h-4 w-4 text-[#134E9E]" />
                   <span>Call 0803 239 2875</span>

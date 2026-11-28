@@ -19,7 +19,7 @@ export default function SectorsPage() {
 
       <main className="flex-1">
         <section className="border-b border-slate-200 bg-slate-50/70 py-16 lg:py-24">
-          <div className="mx-auto max-w-4xl px-6 text-center space-y-4">
+          <div className="mx-auto max-w-4xl px-6 text-centre space-y-4">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#134E9E]">
               Client Sectors
             </p>
@@ -41,7 +41,7 @@ export default function SectorsPage() {
               return (
                 <div
                   key={sector.title}
-                  className="grid gap-12 lg:grid-cols-12 lg:items-center"
+                  className="grid gap-12 lg:grid-cols-12 lg:items-centre"
                 >
                   <div
                     className={`lg:col-span-7 ${
@@ -76,7 +76,7 @@ export default function SectorsPage() {
                     <div className="pt-2">
                       <Link
                         href="/quote"
-                        className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white hover:bg-[#0B1F4C] hover:bg-[#134E9E] transition-colors"
+                        className="inline-flex items-centre gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white hover:bg-[#0B1F4C] hover:bg-[#134E9E] transition-colours"
                       >
                         <span>Request Quote</span>
                         <ArrowRight className="h-4 w-4" />

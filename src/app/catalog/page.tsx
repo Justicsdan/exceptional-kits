@@ -38,7 +38,7 @@ export default function CatalogPage() {
               Batch &amp; Custom Supply
             </p>
             <h1 className="mt-1.5 text-3xl sm:text-4xl font-extrabold tracking-tight text-[#061224]">
-              Product Catalog
+              Product Catalogue
             </h1>
             <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
               Browse uniforms, tactical gear, crests, and accessories available for custom batch runs and restocks.
@@ -47,13 +47,13 @@ export default function CatalogPage() {
 
           <Link
             href="/quote"
-            className="inline-flex items-center justify-center rounded-full bg-[#061224] px-5 py-2.5 text-sm font-semibold text-white shadow-2xs hover:bg-[#134E9E] transition-colors shrink-0"
+            className="inline-flex items-centre justify-centre rounded-full bg-[#061224] px-5 py-2.5 text-sm font-semibold text-white shadow-2xs hover:bg-[#134E9E] transition-colours shrink-0"
           >
             Request Batch Quote →
           </Link>
         </div>
 
-        <div className="mt-7 flex flex-wrap items-center gap-2.5">
+        <div className="mt-7 flex flex-wrap items-centre gap-2.5">
           {CATEGORIES.map((cat) => {
             const active = selectedCategory === cat;
             return (
@@ -77,7 +77,7 @@ export default function CatalogPage() {
         </div>
 
         <section
-          aria-label="Catalog items"
+          aria-label="Catalogue items"
           className="mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"
         >
           {filteredItems.map((item) => (
@@ -91,7 +91,7 @@ export default function CatalogPage() {
 
               <div className="p-5 flex-1 flex flex-col justify-between gap-4">
                 <div>
-                  <div className="flex items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wider text-[#134E9E]">
+                  <div className="flex items-centre justify-between gap-2 text-[11px] font-bold uppercase tracking-wider text-[#134E9E]">
                     <span>{item.category}</span>
                     {item.badge ? (
                       <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[10px] font-semibold text-slate-700">
@@ -112,13 +112,13 @@ export default function CatalogPage() {
                   ) : null}
                 </div>
 
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-3 text-xs">
+                <div className="pt-3 border-t border-slate-100 flex items-centre justify-between gap-3 text-xs">
                   <span className="font-semibold text-slate-700">
                     {item.minOrder || item.priceLabel || "Quote on Request"}
                   </span>
                   <Link
                     href={`/quote?item=${encodeURIComponent(item.name)}`}
-                    className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1.5 font-semibold text-[#061224] hover:bg-[#061224] hover:text-white transition-colors"
+                    className="inline-flex items-centre gap-1 rounded-full bg-slate-100 px-3 py-1.5 font-semibold text-[#061224] hover:bg-[#061224] hover:text-white transition-colours"
                   >
                     Quote →
                   </Link>

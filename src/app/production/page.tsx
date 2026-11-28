@@ -49,16 +49,16 @@ export default function ProductionPage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/quote"
-                className="inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-emerald-500 px-7 py-3.5 text-sm font-bold text-white transition-colors"
+                className="inline-flex items-centre gap-2 rounded-full bg-[#0B1F4C] hover:bg-emerald-500 px-7 py-3.5 text-sm font-bold text-white transition-colours"
               >
                 <span>Start Batch Run</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/catalog"
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/20 transition-colors"
+                href="/catalogue"
+                className="inline-flex items-centre gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/20 transition-colours"
               >
-                <span>View Catalog</span>
+                <span>View Catalogue</span>
               </Link>
             </div>
           </div>
@@ -80,11 +80,11 @@ export default function ProductionPage() {
               {PRODUCTION_STAGES.map((stage) => (
                 <article
                   key={stage.step}
-                  className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-7 shadow-2xs transition-colors hover:border-[#134E9E]/40 hover:bg-white"
+                  className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-7 shadow-2xs transition-colours hover:border-[#134E9E]/40 hover:bg-white"
                 >
                   <div className="grid gap-4 lg:grid-cols-12 lg:items-start">
                     <div className="lg:col-span-5 flex items-start gap-4">
-                      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0B1F4C] text-sm font-extrabold tracking-wider text-white">
+                      <span className="inline-flex h-10 w-10 shrink-0 items-centre justify-centre rounded-xl bg-[#0B1F4C] text-sm font-extrabold tracking-wider text-white">
                         {stage.step}
                       </span>
                       <h3 className="text-xl sm:text-2xl font-bold leading-snug text-slate-950">

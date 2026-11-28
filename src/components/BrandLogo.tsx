@@ -8,10 +8,10 @@ export default function BrandLogo({
   const isDark = variant === "dark";
 
   return (
-    <div className="group inline-flex items-center gap-2.5 sm:gap-4 min-w-0 select-none">
+    <div className="group inline-flex items-centre gap-2.5 sm:gap-4 min-w-0 select-none">
       {/* Matching Crest Card Frame for Both Header & Footer */}
       <div
-        className={`relative flex h-14 w-[72px] sm:h-[70px] sm:w-[98px] lg:h-[74px] lg:w-[106px] shrink-0 items-center justify-center rounded-2xl border p-1.5 transition-all duration-300 ease-out group-hover:-translate-y-0.5 ${
+        className={`relative flex h-14 w-[72px] sm:h-[70px] sm:w-[98px] lg:h-[74px] lg:w-[106px] shrink-0 items-centre justify-centre rounded-2xl border p-1.5 transition-all duration-300 ease-out group-hover:-translate-y-0.5 ${
           isDark
             ? "border-sky-300/60 bg-white shadow-md shadow-sky-950/50 ring-1 ring-sky-400/25 group-hover:border-sky-200 group-hover:shadow-lg"
             : "border-sky-200/90 bg-white shadow-sm ring-1 ring-slate-900/5 group-hover:border-sky-400 group-hover:shadow-md"
@@ -37,7 +37,7 @@ export default function BrandLogo({
             </linearGradient>
           </defs>
 
-          {/* Outer Thick Navy Shield (Open Center) */}
+          {/* Outer Thick Navy Shield (Open Centre) */}
           <path
             d="M82 6L116 19.5V44C116 66.5 101.2 81.5 82 89C62.8 81.5 48 66.5 48 44V19.5L82 6Z"
             stroke="url(#ekwRefNavy)"
@@ -106,7 +106,7 @@ export default function BrandLogo({
       {showWordmark && (
         <div className="min-w-0 overflow-visible">
           <span
-            className={`block text-xs sm:text-base lg:text-lg font-black tracking-tight leading-tight sm:leading-snug transition-colors duration-300 ${
+            className={`block text-xs sm:text-base lg:text-lg font-black tracking-tight leading-tight sm:leading-snug transition-colours duration-300 ${
               isDark
                 ? "text-white group-hover:text-sky-200"
                 : "text-slate-950 group-hover:text-[#0C2966]"
@@ -115,7 +115,7 @@ export default function BrandLogo({
             EXCEPTIONAL KITS AND WEARS
           </span>
           <span
-            className={`mt-1 hidden sm:flex flex-wrap items-center gap-1.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.14em] ${
+            className={`mt-1 hidden sm:flex flex-wrap items-centre gap-1.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.14em] ${
               isDark ? "text-sky-400" : "text-sky-700"
             }`}
           >

@@ -31,7 +31,7 @@ export const CATALOG_ITEMS: ProductItem[] = [
     unitPrice: 15000,
     fabricSpec: "Heavyweight Poly-Cotton Twill (240 GSM) • Fade-Resistant Dye",
     stitchingSpec: "Double-needle reinforced stress seams, bar-tacked pockets, shoulder epaulettes",
-    description: "Full operational guard uniform engineered for daily patrol durability, crisp collar structure, and batch-to-batch color consistency.",
+    description: "Full operational guard uniform engineered for daily patrol durability, crisp collar structure, and batch-to-batch colour consistency.",
     image: "/images/review-04-c206e0.jpeg",
     badge: "Most Ordered",
     minOrder: "Custom & Batch Orders",
@@ -55,7 +55,7 @@ export const CATALOG_ITEMS: ProductItem[] = [
     category: "Uniforms & Sets",
     priceLabel: "Single-Piece Restock",
     unitPrice: 4500,
-    fabricSpec: "Color-Matched 220–240 GSM Twill • Saved Client Dye Lot",
+    fabricSpec: "Colour-Matched 220–240 GSM Twill • Saved Client Dye Lot",
     stitchingSpec: "Structured fused collar, reinforced shoulder straps, custom chest embroidery ready",
     description: "Order individual replacement shirts using your saved company size chart without waiting for a full team bulk run.",
     image: "/images/review-05-1d3205.jpeg",
@@ -325,7 +325,7 @@ export const PRODUCTION_STAGES = [
 export const SECTORS = [
   {
     title: "Private Security Companies (Guard Forces)",
-    challenge: "High guard turnover forces constant small reorders that off-the-rack vendors refuse or mismatch in color.",
+    challenge: "High guard turnover forces constant small reorders that off-the-rack vendors refuse or mismatch in colour.",
     solution:
       "Saved company size charts + single-piece replacement shirts (single-piece) and trousers (single-piece) matched to your exact agency shade.",
     recommendedKit: "Complete Guard Set + Embroidered Peak Cap + Lanyard/Whistle + Saved Size Registry",
