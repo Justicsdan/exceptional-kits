@@ -214,7 +214,7 @@ export default function HomePage() {
       lead: "Patrol &",
       accent: "Tactical",
       caption:
-        "Field-ready kits and tactical layers tailored for security agencies, estates, and active patrols.",
+        "Dependable kit and utility layers cut for security firms, estates, and everyday patrols.",
       items: galleryItems.slice(0, 3),
     },
     {
@@ -265,15 +265,15 @@ export default function HomePage() {
           <div key="hero-static" className="min-w-0 lg:col-span-6 space-y-4 ekw-copy-enter">
 
             <p className="text-sm font-bold uppercase tracking-wider text-[#134E9E]">
-              Active Duty Presentation
+              On-Duty Standard
             </p>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1F4C] leading-tight">
-              Uniformed Security & Field Kits
+              Smart Security Kit, Tailored for Duty
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-lg">
-              Tailored duty shirts, security uniforms, belts, caps, and boots built for institutional standards.
+              Crisp duty shirts, belts, caps, and boots made to keep every post sharp, credible, and ready.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-1 pb-14 sm:pb-0">
@@ -287,7 +287,7 @@ export default function HomePage() {
                 href="/sectors"
                 className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white hover:border-[#0B1F4C] text-[#0B1F4C] font-semibold text-base px-6 py-3.5 transition-colors"
               >
-                View Sectors
+                Explore Sectors
               </a>
             </div>
 
@@ -344,22 +344,22 @@ export default function HomePage() {
               <div className="lg:col-span-5 space-y-6">
                 <div className="inline-flex items-center gap-2 rounded-full border border-[#BFD3EE] bg-[#EEF4FC]/90 px-4 py-1.5 text-sm font-bold uppercase tracking-[0.22em] text-[#134E9E]">
                   <span className="h-2 w-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] animate-pulse" />
-                  <span>Active Duty Presentation</span>
+                  <span>On-Duty Standard</span>
                 </div>
 
                 <h1
-                  key="Uniformed Security & Field Kits"
+                  key="Smart Security Kit, Tailored for Duty"
                   className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 transition-all duration-500"
                 >
-                  Uniformed Security &amp; 
+                  Smart Security Kit, Tailored for 
                   <span className="font-editorial text-[#134E9E] text-6xl sm:text-7xl lg:text-8xl">
-                    Field Kits
+                    Duty
                   </span>{" "}
 
                 </h1>
 
                 <p className="text-sm sm:text-base text-slate-800 font-medium leading-relaxed max-w-md">
-                  Tailored duty shirts, security uniforms, belts, caps, and boots built for institutional standards.
+                  Crisp duty shirts, belts, caps, and boots made to keep every post sharp, credible, and ready.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4 pt-1">
@@ -367,7 +367,7 @@ export default function HomePage() {
                     href="/sectors"
                     className="group inline-flex items-center gap-2 rounded-full bg-[#0B1F4C] hover:bg-[#134E9E] px-7 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#0B1F4C] hover:bg-[#134E9E] hover:shadow-md transition-all"
                   >
-                    <span>View Sectors</span>
+                    <span>Explore Sectors</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
 
@@ -608,7 +608,7 @@ export default function HomePage() {
                     href="/sectors"
                     className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-bold text-slate-900 hover:border-[#BFD3EE] hover:text-[#134E9E] transition-colors"
                   >
-                    <span>View Sectors</span>
+                    <span>Explore Sectors</span>
                   </Link>
                 </div>
               </div>
