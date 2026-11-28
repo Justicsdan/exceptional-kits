@@ -16,6 +16,15 @@ const cspReportOnly = [
 
 const nextConfig: NextConfig = {
   devIndicators: false,
+  async redirects() {
+    return [
+      {
+        source: "/catalogue",
+        destination: "/catalog",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
